@@ -1,0 +1,8 @@
+requests==2.31.0
+shapely==1.8.5.post1
+fiona==1.9.5
+pyproj==3.4.1
+geopandas==0.13.2
+pandas==1.5.3
+numpy==1.26.4
+aiohttp==3.8.4 

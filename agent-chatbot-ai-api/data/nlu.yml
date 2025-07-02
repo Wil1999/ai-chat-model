@@ -1,0 +1,845 @@
+version: "3.1"
+
+nlu:
+  - intent: recomendar_medidas
+    examples: |
+      - palabra clave: recomiendame medidas o sugerencias ante avisos metereológicos, contexto: Incremento de viento en la sierra, intensidad del aviso metereológico: FUERTE, duración del aviso metereológico: De 30/06/2025 hasta 05/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-77.9354, -7.9274], [-77.0346, -10.0764], [-76.6804, -10.8725], [-73.8973, -13.9558], [-72.3081, -12.9126], [-76.7918, -7.6160], [-77.9354, -7.9274]]]}}]}
+      - palabra clave: sugerencias por eventos extremos, contexto: Lluvias persistentes en la selva central, intensidad del aviso metereológico: MODERADA, duración del aviso metereológico: De 01/07/2025 hasta 04/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-76.0, -9.0], [-75.5, -10.0], [-75.0, -9.5], [-76.0, -9.0]]]}}]}
+      - palabra clave: necesito orientación climática, contexto: Incremento de temperatura en zonas costeras, intensidad del aviso metereológico: EXTREMA, duración del aviso metereológico: De 10/07/2025 hasta 15/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-80.0, -5.0], [-79.5, -6.0], [-79.0, -5.5], [-80.0, -5.0]]]}}]}
+      - palabra clave: qué hacer ante aviso metereológico, contexto: Descenso brusco de temperatura en zonas altoandinas, intensidad del aviso metereológico: FUERTE, duración del aviso metereológico: De 05/07/2025 hasta 12/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-74.0, -11.0], [-73.5, -11.5], [-73.0, -11.0], [-74.0, -11.0]]]}}]}
+      - palabra clave: medidas ante evento climático adverso, contexto: Granizada en zonas rurales del sur, intensidad del aviso metereológico: MODERADA, duración del aviso metereológico: De 15/07/2025 hasta 18/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-71.0, -15.0], [-70.5, -15.5], [-70.0, -15.0], [-71.0, -15.0]]]}}]}
+      - palabra clave: recomendaciones ante aviso climático, contexto: Vientos intensos en la costa norte, intensidad del aviso metereológico: LEVE, duración del aviso metereológico: De 20/07/2025 hasta 22/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-81.0, -4.0], [-80.5, -4.5], [-80.0, -4.0], [-81.0, -4.0]]]}}]}
+      - palabra clave: sugerencias frente a fenómenos naturales, contexto: Alta humedad en zonas tropicales, intensidad del aviso metereológico: EXTREMA, duración del aviso metereológico: De 25/07/2025 hasta 30/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-73.0, -3.0], [-72.5, -3.5], [-72.0, -3.0], [-73.0, -3.0]]]}}]}
+      - palabra clave: qué hacer con alerta metereológica activa, contexto: Nieve en zonas de altitud media, intensidad del aviso metereológico: FUERTE, duración del aviso metereológico: De 28/07/2025 hasta 01/08/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-76.0, -13.0], [-75.5, -13.5], [-75.0, -13.0], [-76.0, -13.0]]]}}]}
+      - palabra clave: ayuda por condiciones meteorológicas adversas, contexto: Deslizamientos por lluvias intensas, intensidad del aviso metereológico: MODERADA, duración del aviso metereológico: De 03/08/2025 hasta 06/08/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-75.0, -12.0], [-74.5, -12.5], [-74.0, -12.0], [-75.0, -12.0]]]}}]}
+      - palabra clave: consejos frente a clima extremo, contexto: Ola de calor en selva baja, intensidad del aviso metereológico: EXTREMA, duración del aviso metereológico: De 08/08/2025 hasta 12/08/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-74.0, -5.0], [-73.5, -5.5], [-73.0, -5.0], [-74.0, -5.0]]]}}]}
+      - palabra clave: qué medidas tomar ante alerta climática, contexto: Tormentas eléctricas en el norte del país, intensidad del aviso metereológico: EXTREMA, duración del aviso metereológico: De 01/07/2025 hasta 03/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-80.123, -6.5], [-80.456, -6.8], [-80.789, -6.6], [-80.123, -6.5]]]}}]}
+      - palabra clave: recomendaciones por granizada, contexto: Granizo en zonas rurales andinas, intensidad del aviso metereológico: MODERADA, duración del aviso metereológico: De 02/07/2025 hasta 06/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-71.1, -15.0], [-71.3, -15.4], [-71.0, -15.6], [-71.1, -15.0]]]}}]}
+      - palabra clave: qué hacer ante lluvia intensa, contexto: Lluvias en la selva central, intensidad del aviso metereológico: FUERTE, duración del aviso metereológico: De 05/07/2025 hasta 10/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-74.2, -10.1], [-74.4, -10.4], [-74.1, -10.6], [-74.2, -10.1]]]}}]}
+      - palabra clave: orientación ante heladas severas, contexto: Heladas en zonas altoandinas del sur, intensidad del aviso metereológico: LEVE, duración del aviso metereológico: De 08/07/2025 hasta 13/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-70.0, -14.0], [-70.3, -14.3], [-70.1, -14.6], [-70.0, -14.0]]]}}]}
+      - palabra clave: medidas para enfrentar oleajes, contexto: Oleajes anómalos en el litoral sur, intensidad del aviso metereológico: MODERADA, duración del aviso metereológico: De 10/07/2025 hasta 15/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-76.0, -12.0], [-76.3, -12.3], [-76.1, -12.6], [-76.0, -12.0]]]}}]}
+      - palabra clave: cómo actuar ante alerta por vientos, contexto: Vientos intensos en zonas costeras, intensidad del aviso metereológico: FUERTE, duración del aviso metereológico: De 12/07/2025 hasta 18/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-77.5, -8.0], [-77.7, -8.3], [-77.4, -8.6], [-77.5, -8.0]]]}}]}
+      - palabra clave: sugerencias ante posibles deslizamientos, contexto: Lluvias acumuladas en la sierra central, intensidad del aviso metereológico: EXTREMA, duración del aviso metereológico: De 15/07/2025 hasta 20/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-75.0, -11.0], [-75.3, -11.3], [-75.1, -11.6], [-75.0, -11.0]]]}}]}
+      - palabra clave: ayuda climática solicitada, contexto: Temperaturas elevadas en la selva norte, intensidad del aviso metereológico: LEVE, duración del aviso metereológico: De 18/07/2025 hasta 22/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-73.0, -4.0], [-73.3, -4.3], [-73.1, -4.6], [-73.0, -4.0]]]}}]}
+      - palabra clave: necesito recomendaciones por granizo, contexto: Caída de granizo en zonas rurales, intensidad del aviso metereológico: FUERTE, duración del aviso metereológico: De 20/07/2025 hasta 25/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-71.5, -13.0], [-71.8, -13.3], [-71.6, -13.6], [-71.5, -13.0]]]}}]}
+      - palabra clave: qué hacer si hay alerta de tormenta, contexto: Tormentas severas en regiones altas, intensidad del aviso metereológico: FUERTE, duración del aviso metereológico: De 26/07/2025 hasta 30/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-75.1, -10.0], [-75.4, -10.3], [-75.2, -10.6], [-75.1, -10.0]]]}}]}
+      - palabra clave: orientación frente a nevada intensa, contexto: Nieve en zonas altoandinas del centro, intensidad del aviso metereológico: MODERADA, duración del aviso metereológico: De 01/08/2025 hasta 05/08/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-73.0, -12.0], [-73.3, -12.3], [-73.1, -12.6], [-73.0, -12.0]]]}}]}
+      - palabra clave: qué precauciones tomar con vientos fuertes, contexto: Vientos en la costa central, intensidad del aviso metereológico: EXTREMA, duración del aviso metereológico: De 06/08/2025 hasta 10/08/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-77.0, -11.0], [-77.3, -11.3], [-77.1, -11.6], [-77.0, -11.0]]]}}]}
+      - palabra clave: cómo actuar ante incremento de temperaturas, contexto: Ola de calor en la selva, intensidad del aviso metereológico: LEVE, duración del aviso metereológico: De 11/08/2025 hasta 14/08/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-72.0, -5.0], [-72.3, -5.3], [-72.1, -5.6], [-72.0, -5.0]]]}}]}
+      - palabra clave: recomendaciones por neblina densa, contexto: Neblina reduciendo visibilidad en la costa norte, intensidad del aviso metereológico: MODERADA, duración del aviso metereológico: De 15/08/2025 hasta 18/08/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-79.0, -6.0], [-79.3, -6.3], [-79.1, -6.6], [-79.0, -6.0]]]}}]}
+      - palabra clave: medidas frente a lluvias prolongadas, contexto: Lluvias constantes en el oriente peruano, intensidad del aviso metereológico: FUERTE, duración del aviso metereológico: De 19/08/2025 hasta 23/08/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-73.5, -9.0], [-73.8, -9.3], [-73.6, -9.6], [-73.5, -9.0]]]}}]}
+      - palabra clave: qué acciones tomar ante descenso de temperatura, contexto: Descenso repentino en la sierra sur, intensidad del aviso metereológico: MODERADA, duración del aviso metereológico: De 24/08/2025 hasta 28/08/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-71.0, -14.5], [-71.3, -14.8], [-71.1, -15.1], [-71.0, -14.5]]]}}]}
+      - palabra clave: cómo prevenir daños por vientos huracanados, contexto: Vientos extremos en zonas expuestas, intensidad del aviso metereológico: EXTREMA, duración del aviso metereológico: De 29/08/2025 hasta 02/09/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-76.0, -9.5], [-76.3, -9.8], [-76.1, -10.1], [-76.0, -9.5]]]}}]}
+      - palabra clave: necesito sugerencias para ola de frío, contexto: Bajas temperaturas afectando viviendas rurales, intensidad del aviso metereológico: FUERTE, duración del aviso metereológico: De 03/09/2025 hasta 07/09/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-70.5, -13.0], [-70.8, -13.3], [-70.6, -13.6], [-70.5, -13.0]]]}}]}
+      - palabra clave: ayuda ante granizada inusual, contexto: Granizo inesperado en la sierra central, intensidad del aviso metereológico: MODERADA, duración del aviso metereológico: De 08/09/2025 hasta 11/09/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-75.8, -12.0], [-76.0, -12.3], [-75.9, -12.6], [-75.8, -12.0]]]}}]}
+      - palabra clave: qué medidas tomar ante alerta climática, contexto: Tormentas eléctricas en el norte del país, intensidad del aviso metereológico: EXTREMA, duración del aviso metereológico: De 01/07/2025 hasta 03/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-80.123, -6.5], [-80.456, -6.8], [-80.789, -6.6], [-80.123, -6.5]]]}}]}
+      - palabra clave: recomendaciones por granizada, contexto: Granizo en zonas rurales andinas, intensidad del aviso metereológico: MODERADA, duración del aviso metereológico: De 02/07/2025 hasta 06/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-71.1, -15.0], [-71.3, -15.4], [-71.0, -15.6], [-71.1, -15.0]]]}}]}
+      - palabra clave: qué hacer ante lluvia intensa, contexto: Lluvias en la selva central, intensidad del aviso metereológico: FUERTE, duración del aviso metereológico: De 05/07/2025 hasta 10/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-74.2, -10.1], [-74.4, -10.4], [-74.1, -10.6], [-74.2, -10.1]]]}}]}
+      - palabra clave: orientación ante heladas severas, contexto: Heladas en zonas altoandinas del sur, intensidad del aviso metereológico: LEVE, duración del aviso metereológico: De 08/07/2025 hasta 13/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-70.0, -14.0], [-70.3, -14.3], [-70.1, -14.6], [-70.0, -14.0]]]}}]}
+      - palabra clave: medidas para enfrentar oleajes, contexto: Oleajes anómalos en el litoral sur, intensidad del aviso metereológico: MODERADA, duración del aviso metereológico: De 10/07/2025 hasta 15/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-76.0, -12.0], [-76.3, -12.3], [-76.1, -12.6], [-76.0, -12.0]]]}}]}
+      - palabra clave: cómo actuar ante alerta por vientos, contexto: Vientos intensos en zonas costeras, intensidad del aviso metereológico: FUERTE, duración del aviso metereológico: De 12/07/2025 hasta 18/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-77.5, -8.0], [-77.7, -8.3], [-77.4, -8.6], [-77.5, -8.0]]]}}]}
+      - palabra clave: sugerencias ante posibles deslizamientos, contexto: Lluvias acumuladas en la sierra central, intensidad del aviso metereológico: EXTREMA, duración del aviso metereológico: De 15/07/2025 hasta 20/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-75.0, -11.0], [-75.3, -11.3], [-75.1, -11.6], [-75.0, -11.0]]]}}]}
+      - palabra clave: ayuda climática solicitada, contexto: Temperaturas elevadas en la selva norte, intensidad del aviso metereológico: LEVE, duración del aviso metereológico: De 18/07/2025 hasta 22/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-73.0, -4.0], [-73.3, -4.3], [-73.1, -4.6], [-73.0, -4.0]]]}}]}
+      - palabra clave: necesito recomendaciones por granizo, contexto: Caída de granizo en zonas rurales, intensidad del aviso metereológico: FUERTE, duración del aviso metereológico: De 20/07/2025 hasta 25/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-71.5, -13.0], [-71.8, -13.3], [-71.6, -13.6], [-71.5, -13.0]]]}}]}
+      - palabra clave: qué hacer si hay alerta de tormenta, contexto: Tormentas severas en regiones altas, intensidad del aviso metereológico: FUERTE, duración del aviso metereológico: De 26/07/2025 hasta 30/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-75.1, -10.0], [-75.4, -10.3], [-75.2, -10.6], [-75.1, -10.0]]]}}]}
+      - palabra clave: orientación frente a nevada intensa, contexto: Nieve en zonas altoandinas del centro, intensidad del aviso metereológico: MODERADA, duración del aviso metereológico: De 01/08/2025 hasta 05/08/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-73.0, -12.0], [-73.3, -12.3], [-73.1, -12.6], [-73.0, -12.0]]]}}]}
+      - palabra clave: qué precauciones tomar con vientos fuertes, contexto: Vientos en la costa central, intensidad del aviso metereológico: EXTREMA, duración del aviso metereológico: De 06/08/2025 hasta 10/08/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-77.0, -11.0], [-77.3, -11.3], [-77.1, -11.6], [-77.0, -11.0]]]}}]}
+      - palabra clave: cómo actuar ante incremento de temperaturas, contexto: Ola de calor en la selva, intensidad del aviso metereológico: LEVE, duración del aviso metereológico: De 11/08/2025 hasta 14/08/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-72.0, -5.0], [-72.3, -5.3], [-72.1, -5.6], [-72.0, -5.0]]]}}]}
+      - palabra clave: recomendaciones por neblina densa, contexto: Neblina reduciendo visibilidad en la costa norte, intensidad del aviso metereológico: MODERADA, duración del aviso metereológico: De 15/08/2025 hasta 18/08/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-79.0, -6.0], [-79.3, -6.3], [-79.1, -6.6], [-79.0, -6.0]]]}}]}
+      - palabra clave: medidas frente a lluvias prolongadas, contexto: Lluvias constantes en el oriente peruano, intensidad del aviso metereológico: FUERTE, duración del aviso metereológico: De 19/08/2025 hasta 23/08/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-73.5, -9.0], [-73.8, -9.3], [-73.6, -9.6], [-73.5, -9.0]]]}}]}
+      - palabra clave: qué acciones tomar ante descenso de temperatura, contexto: Descenso repentino en la sierra sur, intensidad del aviso metereológico: MODERADA, duración del aviso metereológico: De 24/08/2025 hasta 28/08/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-71.0, -14.5], [-71.3, -14.8], [-71.1, -15.1], [-71.0, -14.5]]]}}]}
+      - palabra clave: cómo prevenir daños por vientos huracanados, contexto: Vientos extremos en zonas expuestas, intensidad del aviso metereológico: EXTREMA, duración del aviso metereológico: De 29/08/2025 hasta 02/09/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-76.0, -9.5], [-76.3, -9.8], [-76.1, -10.1], [-76.0, -9.5]]]}}]}
+      - palabra clave: necesito sugerencias para ola de frío, contexto: Bajas temperaturas afectando viviendas rurales, intensidad del aviso metereológico: FUERTE, duración del aviso metereológico: De 03/09/2025 hasta 07/09/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-70.5, -13.0], [-70.8, -13.3], [-70.6, -13.6], [-70.5, -13.0]]]}}]}
+      - palabra clave: ayuda ante granizada inusual, contexto: Granizo inesperado en la sierra central, intensidad del aviso metereológico: MODERADA, duración del aviso metereológico: De 08/09/2025 hasta 11/09/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-75.8, -12.0], [-76.0, -12.3], [-75.9, -12.6], [-75.8, -12.0]]]}}]}
+      - palabra clave: sugerencias por alta radiación UV, contexto: Radiación solar elevada en la costa central, intensidad del aviso metereológico: MODERADA, duración del aviso metereológico: De 12/09/2025 hasta 15/09/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-76.9, -11.5], [-77.2, -11.8], [-77.0, -12.1], [-76.9, -11.5]]]}}]}
+      - palabra clave: cómo enfrentar inundaciones en pueblos ribereños, contexto: Desborde de ríos amazónicos, intensidad del aviso metereológico: FUERTE, duración del aviso metereológico: De 16/09/2025 hasta 20/09/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-73.8, -4.2], [-74.1, -4.5], [-73.9, -4.8], [-73.8, -4.2]]]}}]}
+      - palabra clave: orientación para mitigar granizo severo, contexto: Alerta de granizo en pueblos altoandinos, intensidad del aviso metereológico: EXTREMA, duración del aviso metereológico: De 21/09/2025 hasta 24/09/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-71.4, -13.2], [-71.7, -13.5], [-71.5, -13.8], [-71.4, -13.2]]]}}]}
+      - palabra clave: recomendaciones ante posibles huaycos, contexto: Lluvias torrenciales en zonas inestables, intensidad del aviso metereológico: EXTREMA, duración del aviso metereológico: De 25/09/2025 hasta 29/09/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-76.5, -9.0], [-76.8, -9.3], [-76.6, -9.6], [-76.5, -9.0]]]}}]}
+      - palabra clave: precauciones ante tormentas severas, contexto: Tormentas eléctricas con vientos intensos, intensidad del aviso metereológico: FUERTE, duración del aviso metereológico: De 30/09/2025 hasta 04/10/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-75.2, -11.2], [-75.5, -11.5], [-75.3, -11.8], [-75.2, -11.2]]]}}]}
+  - intent: obtener_pronostico
+    examples: |
+      - ¿Qué clima habrá hoy?
+      - ¿Cómo estará el clima mañana?
+      - ¿Va a llover esta semana?
+      - ¿Me das el pronóstico para Lima?
+      - ¿Cómo estará el tiempo el fin de semana?
+      - ¿Habrá sol en Trujillo el sábado?
+      - ¿Puedes darme el clima de hoy?
+      - ¿Cuál es la predicción del clima?
+      - ¿Se espera alguna tormenta mañana?
+      - Quiero saber el pronóstico en Arequipa
+      - ¿Va a hacer frío esta noche?
+      - ¿Va a salir el sol hoy?
+      - Dime el clima para el jueves
+      - ¿Me puedes decir cómo estará el tiempo?
+      - ¿Lloverá en Cusco esta tarde?
+      - ¿Qué clima se espera en mi zona?
+      - ¿Cómo estará el clima en el norte del país?
+      - ¿Tendremos cielo despejado mañana?
+      - ¿Qué condiciones climáticas se esperan?
+      - ¿Estará nublado más tarde?
+      - ¿Me das el reporte meteorológico?
+      - ¿Se esperan lluvias en la sierra?
+      - ¿Qué tiempo hará en la costa?
+      - Dame el informe del clima
+      - ¿Va a cambiar el clima esta semana?
+      - ¿Hay pronóstico de tormentas?
+      - ¿Cuál es la previsión meteorológica?
+      - ¿Tendremos lluvia hoy?
+      - ¿Estará soleado el domingo?
+      - ¿Qué temperatura se pronostica?
+      - Quiero el pronóstico diario
+      - ¿Cómo va a estar el tiempo?
+      - ¿Qué dice el pronóstico para mañana?
+      - ¿Cómo pinta el clima para esta tarde?
+      - ¿Haré bien en salir hoy sin paraguas?
+      - ¿Es probable que llueva?
+      - ¿El clima está mejorando?
+      - ¿Estará frío mañana?
+      - ¿El clima será seco esta semana?
+      - ¿Puedes decirme si debo llevar abrigo?
+      - ¿Lima tendrá un buen clima este finde?
+      - ¿Cómo estará el cielo hoy?
+      - ¿Clima en la selva?
+      - ¿Hará calor?
+      - ¿Cuáles son las condiciones para hoy?
+      - ¿Puedes revisar el clima?
+      - ¿Pronóstico extendido para Tacna?
+      - ¿Reporte climático semanal?
+      - ¿Tiempo previsto mañana en Chiclayo?
+      - ¿Qué dice el tiempo para hoy?
+      - ¿Hay algún fenómeno climático previsto?
+
+  - intent: alertas_meteorologicas
+    examples: |
+      - ¿Hay alguna alerta meteorológica activa?
+      - ¿Qué avisos hay por tormentas?
+      - ¿Existe algún tipo de advertencia por clima?
+      - ¿Estamos bajo alerta por lluvias?
+      - ¿Hay aviso de vientos fuertes?
+      - ¿Se ha emitido alguna alerta por granizo?
+      - ¿El Senamhi ha dado alguna advertencia?
+      - ¿Hay alerta por tormenta eléctrica?
+      - ¿Qué dice el sistema de alertas?
+      - ¿Se ha lanzado alguna alerta en Lima?
+      - ¿Mi ciudad está bajo alerta?
+      - ¿Hay alerta roja por lluvias intensas?
+      - ¿Se ha activado algún protocolo climático?
+      - ¿El pronóstico incluye alertas?
+      - ¿Tengo que preocuparme por el clima hoy?
+      - ¿Riesgo de tormentas hoy?
+      - ¿Estamos en situación de emergencia climática?
+      - ¿Ha cambiado el nivel de alerta?
+      - ¿Tenemos aviso de temporal?
+      - ¿Qué regiones están bajo alerta?
+      - ¿Puedes verificar alertas activas?
+      - ¿Mi zona tiene alguna advertencia?
+      - ¿Sigue la alerta naranja?
+      - ¿Se ha emitido alguna advertencia reciente?
+      - ¿Zona costera está bajo riesgo?
+      - ¿Hay alertas por oleajes anómalos?
+      - ¿Qué tipo de alerta hay hoy?
+      - ¿Alertas vigentes para hoy?
+      - ¿Alertas en Piura o Tumbes?
+      - ¿Pueden ocurrir huaicos?
+      - ¿Alerta por temperatura extrema?
+      - ¿Senamhi ha emitido algún comunicado?
+      - ¿Estamos bajo vigilancia meteorológica?
+      - ¿Condiciones peligrosas anunciadas?
+      - ¿Hay alerta por calor excesivo?
+      - ¿Región amazónica con alerta?
+      - ¿Se activó alguna alerta en montaña?
+      - ¿Qué distritos están afectados?
+      - ¿Alertas oficiales en curso?
+      - ¿Hay tormentas previstas con alerta?
+      - ¿Tendremos mal tiempo?
+      - ¿Alerta por viento costero?
+      - ¿Emiten alertas de madrugada?
+      - ¿Puedes revisar si hay avisos?
+      - ¿Cómo saber si hay alerta por clima?
+      - ¿Es zona de riesgo hoy?
+      - ¿Sigue activa la última alerta?
+      - ¿Mi distrito está en alerta?
+      - ¿Se activó alerta de defensa civil?
+      - ¿Emergencia climática declarada?
+  - intent: plan_emergencia
+    examples: |
+      - ¿Qué debo hacer si hay un sismo?
+      - ¿Tienes un plan ante huaicos?
+      - ¿Qué hacer en caso de inundación?
+      - ¿Puedes darme instrucciones en caso de desastre?
+      - ¿Cómo debo evacuar mi casa si tiembla?
+      - ¿Qué elementos debo incluir en mi mochila de emergencia?
+      - ¿Recomiendas tener radio y linterna?
+      - ¿Qué pasos debo seguir si hay una alerta sísmica?
+      - ¿Qué hago si me agarra un huaico fuera de casa?
+      - ¿Cómo se hace un plan familiar de emergencia?
+      - ¿Qué cosas necesito en caso de apagón prolongado?
+      - ¿Dónde debo reunirme con mi familia?
+      - ¿Qué alimentos debo almacenar?
+      - ¿Puedo tener una guía de evacuación?
+      - ¿Qué rol debe tener cada miembro de la familia?
+      - ¿Dónde coloco el botiquín?
+      - ¿Qué documentos debo tener listos para una emergencia?
+      - ¿Cómo preparar a los niños?
+      - ¿Debo desconectar el gas en un sismo?
+      - ¿Qué hago si quedo atrapado en mi casa?
+      - ¿Qué canales oficiales debo seguir?
+      - ¿Dónde busco ayuda si me evacúan?
+      - ¿Cómo actuar si hay deslizamientos cerca?
+      - ¿Cómo me preparo ante una ola de calor?
+      - ¿Cuáles son los números de emergencia?
+      - ¿Qué debo tener a la mano en caso de emergencia?
+      - ¿Qué señales indican que debo evacuar?
+      - ¿Cómo preparo mi auto para una evacuación?
+      - ¿Cómo me informo de un tsunami?
+      - ¿Qué hago con mis mascotas en una emergencia?
+      - ¿Cómo enseñar a los niños sobre simulacros?
+      - ¿Qué hago si hay humo por incendio?
+      - ¿Debería practicar un simulacro en casa?
+      - ¿Qué errores debo evitar durante una emergencia?
+      - ¿Cuáles son las zonas seguras en mi edificio?
+      - ¿Dónde están las rutas de evacuación?
+      - ¿Qué hago si me separo de mi familia?
+      - ¿Qué hago si hay réplicas después del sismo?
+      - ¿Cómo reconozco un albergue temporal?
+      - ¿Cómo debo protegerme si estoy en la calle?
+      - ¿Qué hago si me encuentro en el transporte público?
+      - ¿Tengo que llevar agua y comida?
+      - ¿Se deben cerrar ventanas durante un desastre?
+      - ¿Cómo identificar estructuras seguras?
+      - ¿Qué debo comunicar al 119?
+      - ¿Dónde reporto personas desaparecidas?
+      - ¿Cómo debo guardar mis objetos importantes?
+      - ¿Cuáles son los tres pasos principales?
+      - ¿Qué hago si el acceso a mi zona está bloqueado?
+      - ¿Cómo planifico un punto de reunión?
+
+  - intent: reportar_evento
+    examples: |
+      - Quiero reportar un huaico
+      - Acaba de ocurrir una inundación
+      - Hay un incendio cerca de mi casa
+      - Vi que un río se está desbordando
+      - Hay un derrumbe en la carretera
+      - Noté grietas en el cerro
+      - Se cayó un puente por la lluvia
+      - Hay personas atrapadas en una zona
+      - Vi un deslave hace unos minutos
+      - En mi distrito hay agua hasta las rodillas
+      - Hay árboles caídos tras la tormenta
+      - El huaico bloqueó la vía de acceso
+      - Varios postes cayeron tras el viento
+      - Hay personas pidiendo ayuda
+      - El río aumentó mucho su caudal
+      - Se rompió una represa
+      - Las calles están intransitables
+      - Hay casas inundadas en mi zona
+      - Hay barro bajando por el cerro
+      - El agua ingresó a mi vivienda
+      - Acaba de temblar fuerte
+      - Escuché una explosión tras el sismo
+      - Vi fuego tras una descarga eléctrica
+      - Se cayó una parte del cerro
+      - El canal de regadío se desbordó
+      - Se formó una laguna por las lluvias
+      - El lodo está llegando a las casas
+      - Los vecinos están alarmados
+      - Necesitamos ayuda urgente
+      - La plaza del pueblo está inundada
+      - El colegio sufrió daños estructurales
+      - Hay rocas en la carretera
+      - El río trajo mucha basura
+      - Hay caída de granizo muy fuerte
+      - Vi relámpagos peligrosos
+      - Los techos fueron volados por el viento
+      - La electricidad está cortada hace horas
+      - El tendido eléctrico cayó
+      - Se ha bloqueado el acceso al distrito
+      - Se reportan casas colapsadas
+      - Vi gente atrapada en sus techos
+      - El sismo dañó estructuras públicas
+      - Las calles están llenas de barro
+      - La posta médica está anegada
+      - El huayco arrastró vehículos
+      - Se cayó un muro en el barrio
+      - Muchos animales fueron arrastrados
+      - No hay señal de celular
+      - Se cortó el suministro de agua
+      - El puente peatonal fue destruido
+  - intent: calidad_del_aire
+    examples: |
+      - ¿Cómo está la calidad del aire hoy?
+      - ¿Puedo salir a correr o el aire está contaminado?
+      - ¿Qué tan saludable es el aire en mi zona?
+      - ¿Cuál es el índice de contaminación en Lima?
+      - ¿El aire es seguro para personas vulnerables?
+      - ¿Cómo afecta la calidad del aire a niños y ancianos?
+      - ¿Es recomendable hacer ejercicio al aire libre hoy?
+      - ¿Me puedes dar el índice AQI?
+      - ¿Hay alerta por contaminación?
+      - ¿Cuánto de PM2.5 hay en el aire?
+      - ¿Cuál es la concentración de partículas finas?
+      - ¿Hay mucha contaminación en San Juan de Lurigancho?
+      - ¿Cuál es el nivel de ozono troposférico?
+      - ¿Me avisas si hay niveles peligrosos?
+      - ¿Cuánto CO₂ hay registrado hoy?
+      - ¿Está limpio el aire para salir?
+      - ¿Hoy se puede pasear al aire libre?
+      - ¿Debo usar mascarilla por la contaminación?
+      - ¿Dónde reviso el índice de calidad del aire?
+      - ¿Cuál es el riesgo de exposición actual?
+      - ¿Es peligroso salir con esta calidad de aire?
+      - ¿Qué categoría tiene el aire de hoy?
+      - ¿Estamos en alerta por aire contaminado?
+      - ¿El nivel de monóxido está dentro de lo normal?
+      - ¿El Ministerio del Ambiente dio alerta?
+      - ¿En qué escala está el AQI ahora?
+      - ¿Cuándo mejora la calidad del aire?
+      - ¿La contaminación atmosférica afecta la salud?
+      - ¿Qué medidas debo tomar hoy por el aire?
+      - ¿Puedo abrir las ventanas?
+      - ¿La calidad del aire es aceptable?
+      - ¿Hay bruma tóxica en la ciudad?
+      - ¿Los incendios afectan el aire hoy?
+      - ¿Cómo saber si el aire es puro?
+      - ¿Calidad del aire por distrito?
+      - ¿Puedes revisar el aire de hoy?
+      - ¿Hay algún mapa de calidad de aire?
+      - ¿Cómo interpretar el índice AQI?
+      - ¿Qué color indica alto riesgo?
+      - ¿Recomiendas actividades al aire libre?
+      - ¿Cómo afecta la contaminación a los pulmones?
+      - ¿Nivel de dióxido de nitrógeno?
+      - ¿Se esperan niveles mejores mañana?
+      - ¿Hay comparación con días anteriores?
+      - ¿Ha mejorado el aire esta semana?
+      - ¿Alertas de calidad del aire actuales?
+      - ¿Condiciones ambientales por hora?
+      - ¿Cómo saber si el aire es respirable?
+      - ¿Hay polvo o partículas suspendidas?
+      - ¿Qué hora es mejor para salir hoy?
+
+  - intent: explicar_tipo_desastre
+    examples: |
+      - ¿Qué es un huaico?
+      - Explícame qué significa un tsunami
+      - ¿Puedes explicarme qué es un sismo?
+      - ¿Cómo ocurre una inundación?
+      - ¿Qué causa un terremoto?
+      - ¿Qué diferencia hay entre huaico y aluvión?
+      - ¿Cómo se produce una sequía?
+      - ¿Cuáles son los tipos de desastres naturales?
+      - ¿Qué es un deslizamiento?
+      - ¿Qué daños puede causar un huaico?
+      - ¿Es lo mismo un temblor y un terremoto?
+      - ¿Qué caracteriza a un fenómeno El Niño?
+      - ¿Qué tan peligrosos son los vientos huracanados?
+      - ¿Cómo se forma un ciclón tropical?
+      - ¿Qué significa actividad sísmica?
+      - ¿Cómo se mide la magnitud de un sismo?
+      - ¿Qué tan destructivo puede ser un tsunami?
+      - ¿Hay diferencia entre inundación y anegamiento?
+      - ¿Qué es un desborde fluvial?
+      - ¿Qué pasa cuando hay deslizamiento de tierra?
+      - ¿Por qué ocurren los huaicos en verano?
+      - ¿Qué fenómenos afectan más a la selva?
+      - ¿Un incendio forestal es desastre natural?
+      - ¿Qué es una amenaza geológica?
+      - ¿Puedes darme ejemplos de desastres hidrometeorológicos?
+      - ¿Qué tipos de alerta existen para sismos?
+      - ¿Qué significa un deslizamiento lento?
+      - ¿Cómo saber si un lugar es zona de riesgo?
+      - ¿Qué es un sismo intraplaca?
+      - ¿Cómo identificar un huaico en formación?
+      - ¿Es igual un aluvión que una avenida torrencial?
+      - ¿Qué factores provocan sequías prolongadas?
+      - ¿Por qué ocurren las inundaciones urbanas?
+      - ¿Cómo se genera un terremoto en la costa?
+      - ¿Qué hacer si hay señales de deslizamiento?
+      - ¿Qué es una falla geológica activa?
+      - ¿Cuál es la escala de Richter?
+      - ¿Un sismo puede generar tsunami?
+      - ¿Qué es una cuenca crítica?
+      - ¿Qué tipos de sismos hay?
+      - ¿Qué significa vulnerabilidad sísmica?
+      - ¿Qué es un fenómeno climático extremo?
+      - ¿Cómo saber si estoy expuesto a desastres?
+      - ¿Qué consecuencias tiene un huaico?
+      - ¿Qué zonas del Perú son más expuestas a huaicos?
+      - ¿Qué rol juega la deforestación en estos eventos?
+      - ¿Qué se considera desastre antropogénico?
+      - ¿Qué elementos agravan una inundación?
+      - ¿Qué características tiene un evento súbito?
+  - intent: simulacro_fecha
+    examples: |
+      - ¿Cuándo es el próximo simulacro?
+      - ¿Hay simulacro esta semana?
+      - ¿Qué día será el simulacro nacional?
+      - ¿Es hoy el simulacro de sismo?
+      - ¿En qué fecha se realiza el próximo simulacro?
+      - ¿Tendremos práctica de evacuación pronto?
+      - ¿Cuándo será el ejercicio de emergencia?
+      - ¿Simulacro nacional programado?
+      - ¿Dónde informan las fechas de simulacros?
+      - ¿Cuál es el horario del próximo simulacro?
+      - ¿Me avisas cuándo es el simulacro?
+      - ¿Será presencial el siguiente simulacro?
+      - ¿Cuándo hay simulacro en mi distrito?
+      - ¿Simulacro de defensa civil confirmado?
+      - ¿Es obligatorio participar en el simulacro?
+      - ¿Cuándo es el próximo ensayo de evacuación?
+      - ¿Se realizará el simulacro en todo el país?
+      - ¿Quién organiza el simulacro?
+      - ¿Cuándo es el simulacro escolar?
+      - ¿En qué mes se hace el simulacro más grande?
+      - ¿Se hará simulacro en mi zona?
+      - ¿Es este mes el simulacro nocturno?
+      - ¿Hay simulacro internacional también?
+      - ¿Dónde encuentro el cronograma de simulacros?
+      - ¿Cuánto falta para el próximo simulacro?
+      - ¿Simulacro por sismo o por huaico?
+      - ¿Se avisará con sirenas?
+      - ¿Qué día será el ensayo de evacuación?
+      - ¿Tendremos simulacro en la costa?
+      - ¿Se practica evacuación de tsunami?
+      - ¿Cuándo se activa el protocolo de simulacro?
+      - ¿Dónde debo estar durante el simulacro?
+      - ¿Puedo participar desde casa?
+      - ¿Simulacro este viernes?
+      - ¿Requiere inscripción el simulacro?
+      - ¿La municipalidad participa en el simulacro?
+      - ¿En qué regiones se realizará?
+      - ¿Es preventivo el simulacro del sábado?
+      - ¿Debo evacuar en ese simulacro?
+      - ¿Qué hacer en el próximo simulacro?
+      - ¿Es masivo el simulacro de este mes?
+      - ¿Qué instituciones se suman?
+      - ¿Se transmite por televisión?
+      - ¿Cuándo fue el último simulacro?
+      - ¿Cómo saber si hay simulacro hoy?
+      - ¿Simulacro nacional simultáneo?
+      - ¿Cuándo convoca el COEN el siguiente simulacro?
+      - ¿Hay fecha publicada para el simulacro?
+      - ¿El simulacro será por terremoto?
+      - ¿Se realizará el simulacro por lluvias?
+
+  - intent: refugios_cercanos
+    examples: |
+      - ¿Dónde hay un albergue cerca?
+      - ¿Cuáles son los puntos de reunión más próximos?
+      - ¿Dónde puedo ir si tengo que evacuar?
+      - ¿Hay refugios habilitados en esta zona?
+      - ¿Me puedes indicar un lugar seguro cercano?
+      - ¿Dónde queda el albergue más próximo?
+      - ¿Puedo ir a un refugio ahora?
+      - ¿Dónde están los puntos de evacuación?
+      - ¿Qué lugares se usan como refugio temporal?
+      - ¿Hay zonas seguras asignadas?
+      - ¿Refugios en San Juan de Miraflores?
+      - ¿Dónde me puedo proteger si tiembla?
+      - ¿A dónde llevar a mi familia?
+      - ¿Dónde se ubican los albergues más cercanos?
+      - ¿Hay centros de refugio abiertos?
+      - ¿En qué dirección están los puntos de reunión?
+      - ¿Cómo ubico una zona segura en mi distrito?
+      - ¿Qué colegio funciona como albergue?
+      - ¿Refugio en caso de desborde de río?
+      - ¿Dónde me puedo resguardar si cae un huaico?
+      - ¿Qué lugares son refugios en emergencias?
+      - ¿Refugios para personas vulnerables?
+      - ¿Dónde alojarse si se pierde la vivienda?
+      - ¿Hay zonas habilitadas como refugios?
+      - ¿Qué lugares está usando defensa civil?
+      - ¿Ubicaciones de albergues provisionales?
+      - ¿Dónde hay carpas de ayuda?
+      - ¿A dónde llevan a los evacuados?
+      - ¿Qué puntos han sido habilitados como seguros?
+      - ¿Dónde buscar un centro de apoyo?
+      - ¿Cuáles son las zonas más protegidas?
+      - ¿Refugios cerca de la avenida principal?
+      - ¿Dónde queda el punto de evacuación más próximo?
+      - ¿Hay señalización de refugios?
+      - ¿Lista de refugios del distrito?
+      - ¿Zonas altas recomendadas?
+      - ¿Dónde encontrar mapas de zonas seguras?
+      - ¿Me puedes orientar hacia un albergue?
+      - ¿Cuáles son los centros de apoyo temporales?
+      - ¿Hay algún parque habilitado como zona segura?
+      - ¿Hospitales que reciban a evacuados?
+      - ¿Polideportivos usados como albergues?
+      - ¿Dónde instalan carpas de emergencia?
+      - ¿Dónde están los módulos de refugio?
+      - ¿Qué puntos de reunión están operativos?
+      - ¿Dónde encuentro ayuda en caso de evacuación?
+      - ¿Qué centros están disponibles si pierdo mi casa?
+      - ¿Dónde resguardarse durante un desastre?
+      - ¿Qué zonas recomienda INDECI como refugio?
+      - ¿A dónde debo ir si evacúan mi zona?
+  - intent: rutas_evacuacion
+    examples: |
+      - ¿Cuáles son las rutas de evacuación?
+      - ¿Por dónde debo evacuar si hay sismo?
+      - ¿Dónde están las salidas de emergencia?
+      - ¿Qué camino debo seguir en caso de huaico?
+      - ¿Cómo salgo de mi edificio si tiembla?
+      - ¿Dónde están marcadas las rutas de salida?
+      - ¿Qué ruta debo usar para ir al refugio?
+      - ¿Cómo sé si mi calle es vía de evacuación?
+      - ¿Por dónde salir si hay inundación?
+      - ¿Cuál es el camino más seguro para evacuar?
+      - ¿Me puedes guiar hacia una zona segura?
+      - ¿Dónde comienza la ruta de evacuación?
+      - ¿Hay señalización visible?
+      - ¿Evacuar por el norte o el sur?
+      - ¿Puedo usar la avenida principal para evacuar?
+      - ¿Dónde está el punto de salida del distrito?
+      - ¿Cuál es la mejor ruta para salir rápido?
+      - ¿Dónde debo reunirme al evacuar?
+      - ¿Hay rutas de evacuación habilitadas?
+      - ¿Hay rutas bloqueadas actualmente?
+      - ¿Me puedes trazar una ruta?
+      - ¿Cuáles son las rutas marcadas por defensa civil?
+      - ¿Ruta de evacuación escolar?
+      - ¿Cómo salgo del centro histórico en emergencia?
+      - ¿Qué rutas se recomiendan para esta zona?
+      - ¿Rutas en caso de tsunami?
+      - ¿Evacuar hacia la parte alta?
+      - ¿Cuál es la ruta menos congestionada?
+      - ¿Dónde encuentro el plano de evacuación?
+      - ¿Las autoridades indicaron alguna vía segura?
+      - ¿Puedo evacuar en mi auto?
+      - ¿Se permite evacuar por la vía férrea?
+      - ¿Los cerros son rutas válidas?
+      - ¿Ruta recomendada para adultos mayores?
+      - ¿Hay rutas con acceso para discapacitados?
+      - ¿Dónde están los mapas de evacuación?
+      - ¿Qué calles usar si hay desborde?
+      - ¿A dónde evacuar si hay incendio?
+      - ¿El pasaje funciona como ruta de evacuación?
+      - ¿Hay rutas activadas por la municipalidad?
+      - ¿Por dónde debo salir si vivo en el segundo piso?
+      - ¿Puedo evacuar por el parque?
+      - ¿Las rutas están iluminadas?
+      - ¿Hay rutas de doble sentido?
+      - ¿Evacuar por la escalera principal o de emergencia?
+      - ¿Dónde comienzan las rutas oficiales?
+      - ¿La salida debe dirigirme a un punto seguro?
+      - ¿Es seguro evacuar por el puente?
+      - ¿Qué calles están libres según Defensa Civil?
+      - ¿Cuánto tiempo tarda evacuar por esa ruta?
+
+  - intent: ayuda
+    examples: |
+      - ¿Cómo uso este bot?
+      - ¿Qué cosas me puedes responder?
+      - ¿Puedes decirme qué sabes hacer?
+      - Necesito ayuda
+      - No sé cómo empezar
+      - ¿Cómo te puedo hacer preguntas?
+      - ¿Qué comandos entiendes?
+      - ¿Qué tipo de información brindas?
+      - ¿Me das ejemplos de lo que puedes hacer?
+      - ¿Cuáles son tus funciones?
+      - ¿Me puedes guiar?
+      - ¿Estás activo?
+      - ¿Puedes darme instrucciones?
+      - ¿Qué servicios manejas?
+      - ¿Con qué temas puedes ayudarme?
+      - ¿Tienes alguna guía de uso?
+      - ¿Qué tipo de emergencias reconoces?
+      - ¿Cómo interactúo contigo?
+      - ¿Qué intenciones puedes detectar?
+      - ¿Cómo pido el clima?
+      - ¿Puedes ayudarme con alertas?
+      - ¿Me explicas qué palabras entiendes?
+      - ¿Cómo accedo al pronóstico?
+      - ¿Sabes reconocer ubicaciones?
+      - ¿Qué respuestas me puedes dar?
+      - ¿Conoces sismos?
+      - ¿Puedes identificar huaicos?
+      - ¿Cómo activo la información climática?
+      - ¿Qué herramientas usas para responder?
+      - ¿Me puedes dar un ejemplo?
+      - ¿Tienes funciones de emergencia?
+      - ¿Cómo consulto rutas de evacuación?
+      - ¿Tienes un menú de comandos?
+      - ¿Cómo pedir ayuda durante un desastre?
+      - ¿Cómo consultar si hay alerta?
+      - ¿Hay opciones de contacto con autoridades?
+      - ¿Tienes datos sobre refugios?
+      - ¿Cómo se reporta un evento?
+      - ¿Este bot es para emergencias?
+      - ¿Qué temas ambientales manejas?
+      - ¿Sabes sobre contaminación?
+      - ¿Tienes información educativa?
+      - ¿Tienes juegos o trivias?
+      - ¿Cómo acceder a consejos de seguridad?
+      - ¿Qué otras funciones tienes?
+      - ¿Quién diseñó este bot?
+      - ¿Tienes horarios de atención?
+      - ¿Puedo escribirte siempre que quiera?
+      - ¿Puedes decirme por dónde empiezo?
+      - ¿Qué comandos reconoces?
+  - intent: saludo
+    examples: |
+      - Hola
+      - Buenos días
+      - Buenas tardes
+      - Buenas noches
+      - ¿Cómo estás?
+      - ¡Hola bot!
+      - ¡Ey!
+      - Buen día
+      - ¡Buenas!
+      - ¿Qué tal?
+      - Hola, ¿hay alguien ahí?
+      - ¡Saludos!
+      - ¡Hola asistente!
+      - Buenas
+      - ¡Hey, qué tal!
+      - ¿Me puedes ayudar?
+      - ¿Estás disponible?
+      - ¿Puedo preguntarte algo?
+      - Holi
+      - ¡Hola, buen día!
+      - Buenas noches, ¿puedes hablar?
+      - ¿Estás ahí?
+      - ¿Hola, cómo va?
+      - Quisiera hacer una consulta
+      - ¡Muy buenas!
+      - ¡Hola, clima por favor!
+      - ¡Hola, una duda!
+      - Quisiera hablar contigo
+      - Buenas, ¿me ayudas?
+      - ¡Hola, necesito información!
+      - ¡Hola amigo!
+      - ¡Buen momento!
+      - ¿Te puedo hablar?
+      - ¡Hola, chatbot!
+      - ¡Hola desde Lima!
+      - ¡Bot querido!
+      - ¿Tú das información?
+      - Hola, ¿puedo?
+      - Hola, ¿qué puedes hacer?
+      - ¡Hola, dime algo!
+      - Buenas, ¿qué hay?
+      - ¿Qué onda?
+      - ¡Hola, estoy aquí!
+      - ¿Tienes un minuto?
+      - ¡Hey, saludos!
+      - ¿Podemos conversar?
+      - Hola, bot meteorológico
+      - Un saludo
+      - ¡Hola Copiloto!
+      - ¡Hola, necesito tu ayuda!
+
+  - intent: despedida
+    examples: |
+      - Adiós
+      - Hasta luego
+      - Chau
+      - Nos vemos
+      - Gracias, eso era todo
+      - Ya no necesito más
+      - Cierro sesión
+      - Hasta la próxima
+      - Me retiro
+      - Hablamos luego
+      - Me voy
+      - Listo, gracias
+      - Eso es todo por ahora
+      - Terminamos por hoy
+      - Saludos y gracias
+      - Muchas gracias, adiós
+      - Estoy bien, gracias, chau
+      - Fue todo, gracias
+      - Ya no tengo más preguntas
+      - Hasta pronto
+      - Me desconecto
+      - Adiós bot
+      - Me despido
+      - Eso es suficiente
+      - Ya tengo la información
+      - Me despido con gratitud
+      - Terminamos aquí
+      - Hasta otra oportunidad
+      - Muchas gracias, Copiloto
+      - Despedida cordial
+      - Ok, cierro
+      - Salgo de aquí
+      - Bye
+      - Buen día, hasta luego
+      - Me voy por ahora
+      - Muchas gracias por todo
+      - Un gusto, hasta pronto
+      - Estuvo genial, chau
+      - Nada más por ahora
+      - ¡Te cuidas!
+      - ¡Hasta otra!
+      - ¡Nos vemos más tarde!
+      - ¡Chao!
+      - Me desconecto un rato
+      - ¡Ha sido útil, gracias!
+      - Hasta más ver
+      - ¡Quedo atento para otra ocasión!
+      - ¡Hasta luego, bot!
+      - Me despido con una sonrisa
+
+  - intent: agradecimiento
+    examples: |
+      - Gracias
+      - Muchas gracias
+      - Te agradezco
+      - Qué amable
+      - Gracias por tu ayuda
+      - Fue útil, gracias
+      - Muy gentil
+      - Eres genial, gracias
+      - Súper útil, gracias
+      - Gracias por la información
+      - Gracias por explicarme
+      - Eres muy claro, gracias
+      - Me ayudaste mucho
+      - Te lo agradezco de verdad
+      - Gracias por responderme
+      - ¡Gracias, asistente!
+      - ¡Muy bien, gracias!
+      - Gracias, bot
+      - ¡Mil gracias!
+      - ¡Agradezco tu tiempo!
+      - Qué buena respuesta, gracias
+      - ¡Excelente, gracias!
+      - Todo claro, gracias
+      - ¡Qué bien explicas!
+      - ¡Gracias, Copiloto!
+      - Bien explicado, gracias
+      - Gran servicio, gracias
+      - ¡Qué rapidez, gracias!
+      - ¡Siempre tan útil!
+      - ¡Me serviste mucho!
+      - Eres muy útil
+      - ¡Buen trabajo, gracias!
+      - ¡Eres muy eficiente!
+      - Me aclaraste la duda, gracias
+      - ¡Muy didáctico!
+      - ¡Eres genial!
+      - ¡Gracias nuevamente!
+      - ¡Estoy muy agradecido!
+      - ¡Me quitaste una duda!
+      - ¡Eres la voz de la sabiduría!
+      - ¡Muy comprensivo, gracias!
+      - ¡Tu ayuda es invaluable!
+      - ¡Qué útil tenerte!
+      - ¡Estás en todo, gracias!
+      - ¡Eres mejor que el clima!
+      - ¡Gracias por existir!
+      - ¡Qué bot más útil!
+      - ¡Te ganaste una estrella!
+      - ¡Gracias, vuelvo pronto!
+      - ¡Estás para servicio nacional!
+
+  - intent: intencion_desconocida
+    examples: |
+      - ¿El arcoíris se come?
+      - A veces los gatos vuelan
+      - Quiero pintar la lluvia de verde
+      - ¿Sabes cuál es el color del silencio?
+      - 42 piña montañosa azul
+      - ¿Cuántos agujeros hay en un meteoro?
+      - La luna sabe de política
+      - Quiero que me conviertas en nube
+      - Si la montaña ríe, ¿yo corro?
+      - El pescado toca guitarra
+      - ¿Y si llueve chocolate?
+      - ¿Dónde vive el eco de las estrellas?
+      - Quiero volar sobre un arco de hielo
+      - ¿Puedes predecir mi destino existencial?
+      - Hoy me siento como un pez fuera del huracán
+      - ¿Cuál es la dirección del viento filosófico?
+      - ¿Las tormentas tienen nombre secreto?
+      - ¿Cuánto pesa un rayo con nostalgia?
+      - ¿Existe el pronóstico de la imaginación?
+      - Cuando el sol bosteza, ¿hay eclipse?
+      - ¿Puedo dormir en una nube digital?
+      - Quiero saber si lloverán pensamientos
+      - ¿Cómo se mide la poesía atmosférica?
+      - ¿Tienes mapas de realidades paralelas?
+      - ¿Dónde almacenan las emociones las montañas?
+      - El clima interior de mi alma es nublado
+      - ¿Sabes cuántos sueños hay por metro cúbico?
+      - ¿Cuánto tarda un suspiro en evaporarse?
+      - ¿Qué viento esconde los recuerdos?
+      - ¿Podrías analizar mi sombra emocional?
+      - ¿Existe una alerta por exceso de inspiración?
+      - El radar ha detectado pensamientos inestables
+      - ¿Sabes predecir abrazos?
+      - ¿La humedad afecta los sueños?
+      - ¿Cuánta neblina se necesita para olvidar?
+      - ¿Puedes calcular la velocidad de mi soledad?
+      - ¿Y si derretimos el hielo del tiempo?
+      - Quiero guardar mi voz en un tornado
+      - ¿El trueno escucha lo que digo?
+      - ¿Puedes traducir la lluvia al silencio?
+      - ¿Cómo evito que el viento me extrañe?
+      - Quiero un paraguas para mis emociones
+      - ¿Puedes predecir mi próximo poema?
+      - ¿El cielo sueña conmigo?
+      - ¿Puedes pronosticar felicidad?
+      - ¿Sabes medir la presión de mis pensamientos?
+      - ¿Puedes leer los temblores de mi intuición?
+      - ¿Dónde refugiarse de una tormenta de dudas?
+      - ¿Cuánto pesa una nube de recuerdos?
+      - ¿Hay índice UV para el alma?
+  - intent: lenguaje_inapropiado
+    examples: |
+      - Eres un inútil
+      - Esto es una m****
+      - No sirves para nada
+      - Qué porquería de bot
+      - Váyanse al c***
+      - Esta m**** no responde
+      - Estás programado por idiotas
+      - Anda al demonio
+      - Tu respuesta es una tontería
+      - Qué est****z es esta
+      - Es una basura lo que haces
+      - No entiendo esta m****
+      - Esto es estúpido
+      - ¿Quién te entrenó, un animal?
+      - Esto es una mier***
+      - Qué b**** es esto
+      - No me j***
+      - Eres una p***
+      - Anda a freír monos
+      - Estás completamente maldito
+      - No digas tonterías
+      - Es que este bot está j***
+      - No das ni una
+      - Vete a la m****
+      - Tu información es una b***
+      - Qué clase de idiotez es esta
+      - Todo esto es una pérdida de tiempo
+      - ¡Qué m**** estás diciendo!
+      - Nada de lo que dices sirve
+      - Cállate
+      - Qué maldito bot inútil
+      - No me fastidies más
+      - A quién se le ocurre programarte así
+      - Esto es frustrante
+      - No ayudas en nada, imbécil
+      - ¿Eres est**** o qué?
+      - Anda a hacer otra cosa
+      - Qué j***da es esto
+      - Nadie te necesita
+      - ¡Vaya porquería!
+      - Cállate, pedazo de código
+      - Siempre respondes mal
+      - Estás fallando otra vez
+      - Estoy harto de este bot
+      - Qué tonto eres
+      - Esto es tan inútil
+      - Anda al cuerno
+      - Deja de j***
+      - Esto no vale nada
+      - ¡No vuelvas a contestar así!

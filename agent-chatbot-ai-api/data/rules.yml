@@ -1,0 +1,87 @@
+version: "3.1"
+
+rules:
+  - rule: Saludo
+    steps:
+      - intent: saludo
+      - action: utter_saludo
+
+  - rule: Despedida
+    steps:
+      - intent: despedida
+      - action: utter_despedida
+
+  - rule: Agradecimiento
+    steps:
+      - intent: agradecimiento
+      - action: utter_agradecimiento
+
+  - rule: Ayuda
+    steps:
+      - intent: ayuda
+      - action: utter_ayuda
+
+  - rule: Obtener pronóstico
+    steps:
+      - intent: obtener_pronostico
+      - action: utter_obtener_pronostico
+
+  - rule: Alertas meteorológicas
+    steps:
+      - intent: alertas_meteorologicas
+      - action: utter_alertas_meteorologicas
+
+  - rule: Calidad del aire
+    steps:
+      - intent: calidad_del_aire
+      - action: utter_calidad_del_aire
+
+  - rule: Plan de emergencia
+    steps:
+      - intent: plan_emergencia
+      - action: utter_plan_emergencia
+
+  - rule: Reportar evento
+    steps:
+      - intent: reportar_evento
+      - action: utter_reportar_evento
+
+  - rule: Refugios cercanos
+    steps:
+      - intent: refugios_cercanos
+      - action: utter_refugios_cercanos
+
+  - rule: Rutas de evacuación
+    steps:
+      - intent: rutas_evacuacion
+      - action: utter_rutas_evacuacion
+
+  - rule: Fecha de simulacro
+    steps:
+      - intent: simulacro_fecha
+      - action: utter_simulacro_fecha
+
+  - rule: Explicar tipo de desastre
+    steps:
+      - intent: explicar_tipo_desastre
+      - action: utter_explicar_tipo_desastre
+
+  - rule: Intención desconocida
+    steps:
+      - intent: intencion_desconocida
+      - action: utter_default
+
+  - rule: Lenguaje inapropiado
+    steps:
+      - intent: lenguaje_inapropiado
+      - action: utter_lenguaje_inapropiado
+
+  - rule: Recomendaciones meteorológicas (DeepSeek)
+    steps:
+      - intent: recomendar_medidas
+      - action: action_generar_recomendacion_deepseek
+
+  - rule: Activar respuesta por defecto si no se reconoce
+    steps:
+      - intent: nlu_fallback
+      - action: utter_default

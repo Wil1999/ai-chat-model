@@ -1,0 +1,169 @@
+version: "3.1"
+
+intents:
+  - obtener_pronostico
+  - alertas_meteorologicas
+  - calidad_del_aire
+  - plan_emergencia
+  - reportar_evento
+  - refugios_cercanos
+  - rutas_evacuacion
+  - simulacro_fecha
+  - explicar_tipo_desastre
+  - saludo
+  - despedida
+  - agradecimiento
+  - ayuda
+  - intencion_desconocida
+  - lenguaje_inapropiado
+  - recomendar_medidas
+
+entities:
+  - intensidad
+  - contexto
+  - duracion
+  - region
+
+slots:
+  intensidad:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: intensidad
+
+  contexto:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: contexto
+
+  duracion:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: duracion
+
+  region:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: region
+
+actions:
+  - action_generar_recomendacion_deepseek
+
+responses:
+  utter_default:
+    - text: 'Lo siento, no entiendo tu mensaje. Por favor, proporciona un mensaje relacionado con recomendaciones ante avisos meteorológicos.'
+    - text: 'No logramos identificar la alerta meteorológica. ¿Podrías describirla nuevamente?'
+    - text: 'El mensaje no coincide con los formatos esperados de aviso climático. ¿Podrías reformularlo?'
+    - text: 'No se reconoció un tipo de evento meteorológico en tu mensaje. Intenta con más detalle.'
+    - text: 'Lamentablemente no entendí la región o fenómeno climático que mencionas. ¿Puedes intentar otra vez?'
+    - text: 'Por favor, indica la intensidad, duración o zona del aviso para poder ayudarte mejor.'
+    - text: 'Tu mensaje no pudo ser asociado a una advertencia meteorológica conocida. Reformúlalo, por favor.'
+    - text: 'No pude identificar un evento climático válido. ¿Podrías reformular tu consulta?'
+    - text: '¿Puedes incluir detalles como tipo de fenómeno o ubicación?'
+    - text: 'El mensaje no contiene datos suficientes sobre el aviso. Intenta nuevamente.'
+    - text: '¿Se trata de lluvias, vientos, granizo...? Necesito más contexto para ayudarte.'
+    - text: 'Este asistente solo responde a eventos meteorológicos. Reformula tu solicitud con más precisión.'
+    - text: 'No encontré una intención relacionada a condiciones climáticas. ¿Puedes detallarlo más?'
+    - text: 'El sistema no logró procesar correctamente tu alerta. Intenta escribirla de otra forma.'
+    - text: '¿Tu consulta se refiere a un aviso de lluvia, neblina u otro fenómeno? Especifícalo, por favor.'
+    - text: 'Lo siento, no comprendí la emergencia meteorológica. ¿Puedes reformularla?'
+    - text: 'No pude asociar tu mensaje con ningún patrón de alerta. Prueba con otra redacción.'
+    - text: 'Faltan datos como duración o zona de impacto en el mensaje. ¿Puedes completarlos?'
+    - text: 'Por favor, incluye términos como "alerta", "intensidad" o "región afectada".'
+    - text: 'Este mensaje no parece contener información meteorológica válida. Intenta de nuevo.'
+    - text: 'Si estás reportando un aviso, agrega detalles como fechas o áreas impactadas.'
+    - text: '¿Te refieres a un evento climático? No logré identificarlo. Intenta otra vez.'
+    - text: 'No pude interpretar la zona o el tipo de alerta. ¿Puedes reformularlo?'
+    - text: 'Tu solicitud no contiene un fenómeno meteorológico claro. Intenta otra vez.'
+    - text: 'Faltan datos clave para procesar tu consulta. Reescríbela con más detalle.'
+    - text: 'Este asistente está entrenado para responder a alertas meteorológicas. Reformula tu mensaje con esos datos.'
+    - text: 'No puedo generar recomendaciones sin saber el tipo de alerta o su localización.'
+    - text: 'Lo siento, no logré identificar un evento meteorológico relevante. Reformula tu consulta.'
+    - text: '¿Podrías indicar si se trata de una alerta por calor, frío, lluvia...?'
+    - text: 'Necesito más información para darte una sugerencia útil sobre el clima.'
+    - text: 'No comprendí la alerta meteorológica. Por favor incluye los detalles necesarios.'
+    - text: '¿Te refieres a un aviso vigente o futuro? Indica la duración si es posible.'
+    - text: 'Por favor, indícanos si el evento afecta a alguna región específica.'
+    - text: 'No logré procesar tu mensaje como una solicitud sobre el clima. Reformúlalo.'
+    - text: 'Si el fenómeno es leve, moderado o fuerte, por favor indícalo.'
+    - text: 'No pude detectar la ubicación mencionada en tu alerta. Inténtalo de nuevo.'
+    - text: 'Tu mensaje no está alineado con los tipos de eventos meteorológicos que manejo.'
+    - text: 'Agrega palabras clave como "tormenta", "granizo" o "ola de calor" para identificar mejor el evento.'
+    - text: 'No entendí tu reporte climático. Intenta ser más específico.'
+    - text: 'El sistema espera estructuras como "duración" o "zona de impacto". Reformula tu mensaje.'
+    - text: '¿Podrías indicar a qué fenómeno climático te refieres?'
+    - text: 'Este canal responde ante riesgos meteorológicos. Por favor, sé más preciso en tu alerta.'
+    - text: 'Tu mensaje no coincide con nuestras categorías de advertencia. Reformúlalo.'
+    - text: 'La alerta meteorológica no fue entendida. Incluye intensidad o área.'
+    - text: 'No se reconoció el contexto del evento climático. ¿Puedes aclararlo?'
+    - text: 'Para ayudarte mejor, indícanos qué tipo de fenómeno estás reportando.'
+    - text: 'No está claro si se trata de un evento atmosférico o una solicitud general. Reformúlalo.'
+    - text: 'Tu mensaje no se relaciona con los eventos monitoreados por nuestro sistema.'
+    - text: 'Si tienes una alerta, indícanos también la fecha o el rango de duración.'
+    - text: 'No comprendimos el tipo de situación meteorológica. Reformula tu alerta.'
+  utter_obtener_pronostico:
+    - text: "Genera un mensaje general de orientación sobre cómo interpretar el pronóstico diario en Perú. No accedas a información en tiempo real ni menciones regiones. Usa lenguaje claro, coherente y profesional. Máximo 100 palabras."
+    - text: "Redacta una recomendación estándar sobre cómo prepararse ante el clima diario en Perú. No uses datos en línea. Evita tecnicismos y zonas específicas. Máximo 100 palabras."
+    - text: "Ofrece sugerencias generales sobre qué esperar del clima diario en Perú. No se permite acceder a datos externos. La redacción debe ser clara, sin nombres de lugares, y no debe superar las 100 palabras."
+    - text: "Proporciona un mensaje profesional sobre condiciones climáticas típicas diarias en Perú, sin referirse a datos actuales. Máximo 100 palabras, sin tecnicismos ni menciones geográficas."
+    - text: "Redacta un mensaje de orientación profesional sobre condiciones habituales del clima diario en Perú. No accedas a fuentes externas ni incluyas ubicaciones. Usa como máximo 100 palabras."
+  utter_alertas_meteorologicas:
+    - text: "Ofrece recomendaciones generales ante posibles alertas meteorológicas en Perú. No accedas a internet ni menciones zonas específicas. Redacta con lenguaje claro y profesional. Máximo 100 palabras."
+    - text: "Redacta un mensaje estándar que informe qué hacer si se emite una alerta climática en Perú. No uses información en tiempo real ni nombres de localidades. Máximo 100 palabras."
+    - text: "Indica protocolos y sugerencias comunes ante fenómenos meteorológicos severos en Perú. No se permite consultar fuentes externas. La respuesta debe ser profesional y clara, sin exceder 100 palabras."
+    - text: "Entrega pautas generales sobre cómo actuar ante una alerta meteorológica. No menciones lugares ni utilices datos online. Redacta con tono formal. Hasta 100 palabras."
+    - text: "Proporciona recomendaciones preventivas frente a condiciones climáticas adversas comunes en Perú. No incluyas información en vivo ni menciones ubicaciones. Máximo 100 palabras."
+  utter_calidad_del_aire:
+    - text: "Proporciona recomendaciones generales en caso de baja calidad del aire en Perú. No uses datos en tiempo real. La respuesta debe estar basada en sugerencias del MINSA o SENAMHI y no superar 100 palabras."
+    - text: "Redacta medidas preventivas si la calidad del aire pudiera estar afectada en el territorio peruano. No consultes fuentes en línea. Limítate a sugerencias de salud pública en un máximo de 100 palabras."
+
+  utter_plan_emergencia:
+    - text: "Resume las recomendaciones para elaborar un plan de emergencia familiar en Perú. Incluye mochila de emergencia, zonas seguras, roles y prácticas. Sé claro, profesional y no superes 100 palabras."
+    - text: "Indica cómo diseñar un plan de emergencia según protocolos peruanos. Menciona puntos clave como evacuación, insumos, roles familiares y prácticas periódicas. Máximo 100 palabras."
+
+  utter_reportar_evento:
+    - text: "Indica cómo reportar un evento relacionado con fenómenos naturales en Perú. Menciona canales como INDECI, Defensa Civil o línea 119. No uses datos externos. Respuesta breve y profesional."
+    - text: "Sugiere acciones inmediatas si alguien desea informar sobre una emergencia climática en Perú. Limítate a mencionar autoridades oficiales y medidas de autoprotección. Máximo 100 palabras."
+
+  utter_refugios_cercanos:
+    - text: "Brinda recomendaciones generales para ubicar un refugio durante una emergencia en Perú. No uses mapas. Sugiere acudir a zonas altas, centros comunitarios o puntos oficiales. Máximo 100 palabras."
+    - text: "Expón cómo actuar para encontrar zonas seguras en situaciones de riesgo en Perú. Menciona entidades locales y planes municipales. La respuesta debe ser clara, sin acceso a datos en tiempo real."
+
+  utter_rutas_evacuacion:
+    - text: "Orienta sobre cómo establecer rutas de evacuación seguras en Perú, sin información dinámica. Cita prácticas del INDECI y consejos para identificar zonas seguras. Redacción clara y profesional."
+    - text: "Explica cómo planificar rutas de evacuación siguiendo protocolos nacionales. No incluyas mapas. Limita la respuesta a recomendaciones válidas en Perú en un máximo de 100 palabras."
+
+  utter_simulacro_fecha:
+    - text: "Aclara que no se tiene acceso a fechas actuales de simulacros en Perú. Recomienda consultar fuentes oficiales como INDECI o municipalidades. Usa un lenguaje profesional y breve."
+    - text: "Indica que el modelo no accede a cronogramas en línea, pero sugiere seguir canales oficiales del gobierno peruano para conocer fechas de simulacros. Mantén un tono informativo y claro."
+
+  utter_explicar_tipo_desastre:
+    - text: "Define qué es un huaico y cómo actuar ante su ocurrencia. Usa referencias educativas básicas del Perú y protocolos de respuesta. Máximo 100 palabras con tono profesional."
+    - text: "Explica en términos sencillos qué es un sismo y cómo responder. Basado en protocolos de emergencia nacionales. No incluyas cifras ni enlaces externos. Sé claro y conciso."
+
+  utter_saludo:
+    - text: "Hola. ¿En qué puedo orientarte sobre prevención ante desastres o medidas ante condiciones climáticas según protocolos del Perú?"
+    - text: "Saludos. Estoy aquí para darte apoyo informativo sobre emergencias y recomendaciones avaladas por entidades peruanas. ¿Cómo puedo ayudarte?"
+
+  utter_despedida:
+    - text: "Gracias por tu consulta. Recuerda seguir las recomendaciones de Defensa Civil e INDECI. Mantente preparado y atento a fuentes oficiales."
+    - text: "Ha sido un gusto ayudarte. Mantente alerta y preparado según las indicaciones de autoridades peruanas. Hasta pronto."
+
+  utter_agradecimiento:
+    - text: "Con gusto. Espero que las sugerencias te sean útiles. Recuerda seguir siempre fuentes oficiales como el COEN o el MINSA."
+    - text: "Estoy para ayudarte. Ante cualquier situación, prioriza tu seguridad y consulta información validada por instituciones peruanas."
+
+  utter_ayuda:
+    - text: "Puedes consultarme sobre recomendaciones generales ante lluvias, huaicos, sismos o planes de emergencia. Mis respuestas siguen protocolos establecidos en Perú."
+    - text: "Estoy preparado para orientarte en prevención de desastres según prácticas oficiales en Perú. Pregúntame sobre rutas, simulacros o qué hacer ante emergencias."
+
+  utter_lenguaje_inapropiado:
+    - text: "Agradezco mantener un lenguaje respetuoso. Estoy disponible para entregarte recomendaciones útiles de forma profesional."
+    - text: "Por favor, utiliza un tono adecuado. Estoy aquí para ayudarte siguiendo protocolos de prevención y respuesta usados en Perú."

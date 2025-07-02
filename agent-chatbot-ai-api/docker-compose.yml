@@ -1,0 +1,29 @@
+version: '3.0'
+
+services:
+  rasa:
+    image: rasa/rasa:3.6.20-full
+    ports:
+      - "5005:5005"
+    volumes:
+      - ./:/app
+    command:
+      - run
+      - --enable-api
+      - --cors
+      - "*"
+    depends_on:
+      - action_server
+    environment:
+      - SQLALCHEMY_WARN_20=1
+
+  action_server:
+    image: rasa/rasa-sdk:3.6.2
+    ports:
+      - "5055:5055"
+    user: "0"
+    volumes:
+      - ./actions:/app/actions
+    working_dir: /app/actions
+    entrypoint: /bin/bash
+    command: -c "pip install -r requirements.txt && python -m rasa_sdk --actions actions"
