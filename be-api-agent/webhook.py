@@ -7,9 +7,9 @@ import asyncio
 import locale
 
 app = FastAPI()
-locale.setlocale(locale.LC_TIME, "Spanish_Spain")
-RASA_WEBHOOK = "http://localhost:5005/webhooks/rest/webhook"
-MODEL_SEMANTIC = "http://127.0.0.1:5000/recomendar"
+locale.setlocale(locale.LC_TIME, "es_ES.UTF-8")
+RASA_WEBHOOK = "http://agent-chatbot-ai-api-rasa-1t:5005/webhooks/rest/webhook"
+MODEL_SEMANTIC = "http://engine-recommender-api:5000/recomendar"
 
 @app.post("/chat")
 async def chat(request: Request):
@@ -79,14 +79,14 @@ async def enviar_a_modelo_recomendacion(mensaje):
         header ={
             "Content-Type": "application/json"
         }
-        async with session.post("http://127.0.0.1:5000/recomendar",json=payload,headers=header) as resp:
+        async with session.post("http://engine-recommender-api:5000/recomendar",json=payload,headers=header) as resp:
             data = await resp.json()
             return data["recomendaciones"]
         
 async def enviar_a_agente_ia(prompt):
     async with aiohttp.ClientSession() as session:
         payload = {
-                 "model":"deepseek/deepseek-chat-v3-0324",
+                 "model":"deepseek/deepseek-r1-0528-qwen3-8b:free",
                  "messages":[
                      {
                      "role": "user",
@@ -94,7 +94,7 @@ async def enviar_a_agente_ia(prompt):
                      }]}
         header ={
             "Content-Type": "application/json",
-            "Authorization": "Bearer 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"
+            "Authorization": "Bearer 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"
             }
         async with session.post("https://openrouter.ai/api/v1/chat/completions",json=payload,headers=header) as resp:
             data = await resp.json()
