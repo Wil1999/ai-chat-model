@@ -5,7 +5,7 @@ services:
     build: .
     container_name: be-api-agent
     ports:
-      - "8000:8000"
+      - "5050:5050"
     environment:
       - PYTHONUNBUFFERED=1
     volumes:

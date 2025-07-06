@@ -19,6 +19,6 @@ RUN pip install --upgrade pip && \
 
 COPY . .
 
-EXPOSE 8000
+EXPOSE 5050
 
-CMD ["uvicorn", "webhook:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "webhook:app", "--host", "0.0.0.0", "--port", "5050"]
