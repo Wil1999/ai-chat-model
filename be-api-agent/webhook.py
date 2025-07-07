@@ -94,7 +94,7 @@ async def enviar_a_agente_ia(prompt):
                      }]}
         header ={
             "Content-Type": "application/json",
-            "Authorization": "Bearer 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"
+            "Authorization": "Bearer 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"
             }
         async with session.post("https://openrouter.ai/api/v1/chat/completions",json=payload,headers=header) as resp:
             data = await resp.json()
