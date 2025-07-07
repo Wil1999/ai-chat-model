@@ -71,31 +71,51 @@ def enviar_a_rasa(mensaje):
     return resp.json()
 
 async def enviar_a_modelo_recomendacion(mensaje):
-    async with aiohttp.ClientSession() as session:
-        payload = {
-                    "mensaje":mensaje,
-                    "top_k":10
-                  }
-        header ={
-            "Content-Type": "application/json"
-        }
-        async with session.post("http://engine-recommender-api:5000/recomendar",json=payload,headers=header) as resp:
-            data = await resp.json()
-            return data["recomendaciones"]
+    try:
+        async with aiohttp.ClientSession() as session:
+            payload = {
+                        "mensaje":mensaje,
+                        "top_k":10
+                    }
+            header ={
+                "Content-Type": "application/json"
+            }
+            async with session.post("http://engine-recommender-api:5000/recomendar",json=payload,headers=header) as resp:
+                if resp.status != 200:
+                    error_text = await resp.text()
+                    return f"Error: código de estado {resp.status}. Detalles: {error_text}"
+
+                data = await resp.json()
+                if "recomendaciones" in data:
+                    return data["recomendaciones"]
+                else:
+                    return f"Respuesta inesperada del modelo: {data}"
+    except Exception as e:
+        return f"Error al comunicarse con el modelo de recomendación. \n ERROR: {e}"
         
 async def enviar_a_agente_ia(prompt):
-    async with aiohttp.ClientSession() as session:
-        payload = {
-                 "model":"deepseek/deepseek-r1-0528-qwen3-8b:free",
-                 "messages":[
-                     {
-                     "role": "user",
-                     "content": prompt
-                     }]}
-        header ={
-            "Content-Type": "application/json",
-            "Authorization": "Bearer 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"
-            }
-        async with session.post("https://openrouter.ai/api/v1/chat/completions",json=payload,headers=header) as resp:
-            data = await resp.json()
-            return data["choices"][0]["message"]["content"]
+    try:
+        async with aiohttp.ClientSession() as session:
+            payload = {
+                    "model":"deepseek/deepseek-r1-0528-qwen3-8b:free",
+                    "messages":[
+                        {
+                        "role": "user",
+                        "content": prompt
+                        }]}
+            header ={
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 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"
+                }
+            async with session.post("https://openrouter.ai/api/v1/chat/completions",json=payload,headers=header) as resp:
+                if resp.status != 200:
+                    error_text = await resp.text()
+                    return f"Error: código de estado {resp.status}. Detalles: {error_text}"
+
+                data = await resp.json()
+                if "choices" in data and len(data["choices"]) > 0:
+                    return data["choices"][0]["message"]["content"]
+                else:
+                    return f"Respuesta inesperada del modelo: {data}"
+    except Exception as e:
+        return f"Error al comunicarse con el agente. \n ERROR: {e}"
