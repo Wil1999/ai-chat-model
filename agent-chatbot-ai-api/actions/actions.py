@@ -18,7 +18,7 @@ class ActionGenerarRecomendacionDeepseek(Action):
             # resp = requests.post("http://localhost:11434/api/generate", json={"model":"deepseek-coder","prompt": prompt,"stream":False})
             # recomendacion = resp.json().get("respuesta", "No se obtuvo respuesta de la IA.")
             payload = {
-                     "model":"deepseek/deepseek-chat-v3-0324",
+                     "model":"deepseek/deepseek-r1-0528-qwen3-8b:free",
                      "messages":[
                          {
                          "role": "user",
@@ -28,7 +28,7 @@ class ActionGenerarRecomendacionDeepseek(Action):
                      }
             header ={
                 "Content-Type": "application/json",
-                "Authorization": "Bearer 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"
+                "Authorization": "Bearer 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"
             }
             async with session.post("https://openrouter.ai/api/v1/chat/completions",json=payload,headers=header) as resp:
                 data = await resp.json()
