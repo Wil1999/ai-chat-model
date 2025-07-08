@@ -105,7 +105,7 @@ async def enviar_a_agente_ia(prompt):
                     return f"Error: código de estado {resp.status}. Detalles: {error_text}"
 
                 data = await resp.json()
-                if "choices" in data and len(data["respueta"]) > 0:
+                if  len(data["respueta"]) > 0:
                     return data["respuesta"]
                 else:
                     return f"Respuesta inesperada del modelo: {data}"
