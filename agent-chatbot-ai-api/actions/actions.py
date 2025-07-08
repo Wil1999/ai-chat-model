@@ -33,7 +33,7 @@ class ActionGenerarRecomendacionDeepseek(Action):
             header ={
                 "Content-Type": "application/json"
             }
-            async with session.post("http://engine-recommender-api:5000/recomendar",json=payload,headers=header) as resp:
+            async with session.post("http://localhost:5000/recomendar",json=payload,headers=header) as resp:
                 data = await resp.json()
                 return data["recomendaciones"]
 
