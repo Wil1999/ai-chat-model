@@ -8,8 +8,8 @@ import locale
 
 app = FastAPI()
 locale.setlocale(locale.LC_TIME, "es_ES.UTF-8")
-RASA_WEBHOOK = "http://agent-chatbot-ai-api-rasa-1t:5005/webhooks/rest/webhook"
-MODEL_SEMANTIC = "http://engine-recommender-api:5000/recomendar"
+RASA_WEBHOOK = "http://localhost:5005/webhooks/rest/webhook"
+MODEL_SEMANTIC = "http://localhost:5000/recomendar"
 
 @app.post("/chat")
 async def chat(request: Request):
@@ -80,7 +80,7 @@ async def enviar_a_modelo_recomendacion(mensaje):
             header ={
                 "Content-Type": "application/json"
             }
-            async with session.post("http://engine-recommender-api:5000/recomendar",json=payload,headers=header) as resp:
+            async with session.post("http://localhost:5000/recomendar",json=payload,headers=header) as resp:
                 if resp.status != 200:
                     error_text = await resp.text()
                     return f"Error: código de estado {resp.status}. Detalles: {error_text}"
