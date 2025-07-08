@@ -1,11 +1,23 @@
+# version: '3.9'
+
+# services:
+#   fastapi_app:
+#     build: .
+#     container_name: be-api-agent
+#     ports:
+#       - "5050:5050"
+#     environment:
+#       - PYTHONUNBUFFERED=1
+#     volumes:
+      # - .:/app
+
 version: '3.9'
 
 services:
   fastapi_app:
     build: .
     container_name: be-api-agent
-    ports:
-      - "5050:5050"
+    network_mode: "host" # Tener en cuenta que esto solo funciona en Linux
     environment:
       - PYTHONUNBUFFERED=1
     volumes:
