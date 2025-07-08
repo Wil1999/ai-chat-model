@@ -97,24 +97,16 @@ async def enviar_a_agente_ia(prompt):
     try:
         async with aiohttp.ClientSession() as session:
             payload = {
-                    "model":"deepseek/deepseek-r1-0528-qwen3-8b:free",
-                    "messages":[
-                        {
-                        "role": "user",
-                        "content": prompt
-                        }]}
-            header ={
-                "Content-Type": "application/json",
-                "Authorization": "Bearer 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"
-                }
-            async with session.post("https://openrouter.ai/api/v1/chat/completions",json=payload,headers=header) as resp:
+                    "prompt": prompt
+                    }
+            async with session.post("http://localhost:8600/generar",json=payload) as resp:
                 if resp.status != 200:
                     error_text = await resp.text()
                     return f"Error: código de estado {resp.status}. Detalles: {error_text}"
 
                 data = await resp.json()
-                if "choices" in data and len(data["choices"]) > 0:
-                    return data["choices"][0]["message"]["content"]
+                if "choices" in data and len(data["respueta"]) > 0:
+                    return data["respuesta"]
                 else:
                     return f"Respuesta inesperada del modelo: {data}"
     except Exception as e:
