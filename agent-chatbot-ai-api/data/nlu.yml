@@ -653,7 +653,7 @@ nlu:
 
   - intent: agradecimiento
     examples: |
-       - Gracias
+      - Gracias
       - Muchas gracias
       - Mil gracias por tu ayuda
       - Te lo agradezco mucho
