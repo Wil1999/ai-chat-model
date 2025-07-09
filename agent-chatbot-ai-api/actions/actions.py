@@ -31,12 +31,14 @@ class ActionGenerarRecomendacionDeepseek(Action):
 
             # Construcción del prompt para el modelo IA
             prompt_final = (
-                f"Analizar el siguiente escenario climático y proporcionar recomendaciones claras, prácticas y basadas en evidencia para proteger a la población,\n"
-                f"Que la respuesta sea como máximo 150 palabras con un mensaje claro y profesional y no actúes como robot, para generar las recomendaciones considera la siguiente información:\n"
-                f"Frase clave: {resp_recom['frase']},\n"
-                f"{resp_recom['prompt']},\n"
-                f"Es sumamente importante cuando realices la respuesta se debe presentar y/o referenciar el siguiente enlace: {resp_recom['enlaces']},\n"
+                f"Analiza el siguiente escenario climático y ofrece recomendaciones claras, prácticas y basadas en evidencia para proteger a la población. "
+                f"Limita tu respuesta a 150 palabras como máximo y emplea un tono profesional y cercano, evitando sonar robótico. "
+                f"Considera únicamente la información relevante al escenario climático; si la Frase clave o el Contexto no aportan valor, ignóralos. "
+                f"Incluye y referencia este enlace en tu respuesta: {resp_recom['enlaces']}\n\n"
+                f"Frase clave: {resp_recom['frase']}\n"
+                f"Contexto: {resp_recom['prompt']}"
             )
+
 
             payload_ia = {"prompt": prompt_final}
             response_ia = requests.post("http://10.10.50.253:5500/generar", json=payload_ia)
@@ -44,24 +46,14 @@ class ActionGenerarRecomendacionDeepseek(Action):
                 return [dispatcher.utter_message(text=f"Error del modelo IA: {response_ia.status_code}\n{response_ia.text}")]
 
             data_ia = response_ia.json()
-            respuesta_modelo = data_ia.get("respuesta", [])
-
-            def limpiar_texto(texto: str) -> str:
-                # Reemplaza caracteres inválidos si existen
-                return texto.encode('utf-8', 'replace').decode('utf-8')
-
-            # En tu método run
-            respuesta = data_ia.get("respuesta", "")
-            if isinstance(respuesta, list):
-                respuesta = "\n\n".join(respuesta)
-
-            respuesta = limpiar_texto(respuesta)
-
-            if isinstance(respuesta, str):
-                dispatcher.utter_message(text=respuesta)
+            raw = data_ia.get("respuesta", "")
+            if isinstance(raw, list):
+                respuesta_texto = " ".join(str(item) for item in raw)
             else:
-                dispatcher.utter_message(text="Respuesta inesperada del modelo IA.")
-
+                respuesta_texto = str(raw)
+            respuesta_texto = respuesta_texto.encode("utf-8", "replace").decode("utf-8")
+            dispatcher.utter_message(text=respuesta_texto)
+            
         except Exception as e:
             dispatcher.utter_message(text=f"Error al conectar con los servicios: {str(e)}")
             return []
