@@ -46,14 +46,21 @@ class ActionGenerarRecomendacionDeepseek(Action):
             data_ia = response_ia.json()
             respuesta_modelo = data_ia.get("respuesta", [])
 
-           # Si es lista, unir todo en un solo texto
-            if isinstance(respuesta_modelo, list):
-                texto_unico = "\n\n".join(respuesta_modelo)
-                dispatcher.utter_message(text=texto_unico)
-            elif isinstance(respuesta_modelo, str):
-                dispatcher.utter_message(text=respuesta_modelo)
+            def limpiar_texto(texto: str) -> str:
+                # Reemplaza caracteres inválidos si existen
+                return texto.encode('utf-8', 'replace').decode('utf-8')
+
+            # En tu método run
+            respuesta = data_ia.get("respuesta", "")
+            if isinstance(respuesta, list):
+                respuesta = "\n\n".join(respuesta)
+
+            respuesta = limpiar_texto(respuesta)
+
+            if isinstance(respuesta, str):
+                dispatcher.utter_message(text=respuesta)
             else:
-                dispatcher.utter_message(text=f"Respuesta inesperada del modelo IA: {data_ia}")
+                dispatcher.utter_message(text="Respuesta inesperada del modelo IA.")
 
         except Exception as e:
             dispatcher.utter_message(text=f"Error al conectar con los servicios: {str(e)}")
