@@ -70,8 +70,10 @@ class ActionGenerarRecomendacionDeepseek(Action):
                         return f"Error: código de estado {resp.status}. Detalles: {error_text}"
                     data = await resp.json()
                     if  len(data["respuesta"]) > 0:
-                        return data
+                        dispatcher.utter_message(text=data["respuesta"])
                     else:
-                        return f"Respuesta inesperada del modelo IA: {data}"
+                        dispatcher.utter_message(text=f"Respuesta inesperada del modelo IA: {data}")
+                        return []
         except Exception as e:
-            return {"error": e}
+            dispatcher.utter_message(text=f"Error al conectar con el modelo IA: {str(e)}")
+            return []
