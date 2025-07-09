@@ -62,7 +62,7 @@ async def enviar_a_modelo_recomendacion(mensaje):
         async with aiohttp.ClientSession() as session:
             payload = {
                         "mensaje":mensaje,
-                        "top_k":10
+                        "top_k":5
                     }
             header ={
                 "Content-Type": "application/json"
