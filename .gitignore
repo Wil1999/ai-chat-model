@@ -3,3 +3,4 @@ agent-chatbot-ai-api/.config
 agent-chatbot-ai-api/.keras
 agent-chatbot-ai-api/.rasa
 be-api-agent/env
+engine-recommender-api/venv

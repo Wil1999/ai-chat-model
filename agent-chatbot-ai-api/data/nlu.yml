@@ -3,584 +3,555 @@ version: "3.1"
 nlu:
   - intent: recomendar_medidas
     examples: |
-      - palabra clave: recomiendame medidas o sugerencias ante avisos metereológicos, contexto: Incremento de viento en la sierra, intensidad del aviso metereológico: FUERTE, duración del aviso metereológico: De 30/06/2025 hasta 05/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-77.9354, -7.9274], [-77.0346, -10.0764], [-76.6804, -10.8725], [-73.8973, -13.9558], [-72.3081, -12.9126], [-76.7918, -7.6160], [-77.9354, -7.9274]]]}}]}
-      - palabra clave: sugerencias por eventos extremos, contexto: Lluvias persistentes en la selva central, intensidad del aviso metereológico: MODERADA, duración del aviso metereológico: De 01/07/2025 hasta 04/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-76.0, -9.0], [-75.5, -10.0], [-75.0, -9.5], [-76.0, -9.0]]]}}]}
-      - palabra clave: necesito orientación climática, contexto: Incremento de temperatura en zonas costeras, intensidad del aviso metereológico: EXTREMA, duración del aviso metereológico: De 10/07/2025 hasta 15/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-80.0, -5.0], [-79.5, -6.0], [-79.0, -5.5], [-80.0, -5.0]]]}}]}
-      - palabra clave: qué hacer ante aviso metereológico, contexto: Descenso brusco de temperatura en zonas altoandinas, intensidad del aviso metereológico: FUERTE, duración del aviso metereológico: De 05/07/2025 hasta 12/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-74.0, -11.0], [-73.5, -11.5], [-73.0, -11.0], [-74.0, -11.0]]]}}]}
-      - palabra clave: medidas ante evento climático adverso, contexto: Granizada en zonas rurales del sur, intensidad del aviso metereológico: MODERADA, duración del aviso metereológico: De 15/07/2025 hasta 18/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-71.0, -15.0], [-70.5, -15.5], [-70.0, -15.0], [-71.0, -15.0]]]}}]}
-      - palabra clave: recomendaciones ante aviso climático, contexto: Vientos intensos en la costa norte, intensidad del aviso metereológico: LEVE, duración del aviso metereológico: De 20/07/2025 hasta 22/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-81.0, -4.0], [-80.5, -4.5], [-80.0, -4.0], [-81.0, -4.0]]]}}]}
-      - palabra clave: sugerencias frente a fenómenos naturales, contexto: Alta humedad en zonas tropicales, intensidad del aviso metereológico: EXTREMA, duración del aviso metereológico: De 25/07/2025 hasta 30/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-73.0, -3.0], [-72.5, -3.5], [-72.0, -3.0], [-73.0, -3.0]]]}}]}
-      - palabra clave: qué hacer con alerta metereológica activa, contexto: Nieve en zonas de altitud media, intensidad del aviso metereológico: FUERTE, duración del aviso metereológico: De 28/07/2025 hasta 01/08/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-76.0, -13.0], [-75.5, -13.5], [-75.0, -13.0], [-76.0, -13.0]]]}}]}
-      - palabra clave: ayuda por condiciones meteorológicas adversas, contexto: Deslizamientos por lluvias intensas, intensidad del aviso metereológico: MODERADA, duración del aviso metereológico: De 03/08/2025 hasta 06/08/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-75.0, -12.0], [-74.5, -12.5], [-74.0, -12.0], [-75.0, -12.0]]]}}]}
-      - palabra clave: consejos frente a clima extremo, contexto: Ola de calor en selva baja, intensidad del aviso metereológico: EXTREMA, duración del aviso metereológico: De 08/08/2025 hasta 12/08/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-74.0, -5.0], [-73.5, -5.5], [-73.0, -5.0], [-74.0, -5.0]]]}}]}
-      - palabra clave: qué medidas tomar ante alerta climática, contexto: Tormentas eléctricas en el norte del país, intensidad del aviso metereológico: EXTREMA, duración del aviso metereológico: De 01/07/2025 hasta 03/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-80.123, -6.5], [-80.456, -6.8], [-80.789, -6.6], [-80.123, -6.5]]]}}]}
-      - palabra clave: recomendaciones por granizada, contexto: Granizo en zonas rurales andinas, intensidad del aviso metereológico: MODERADA, duración del aviso metereológico: De 02/07/2025 hasta 06/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-71.1, -15.0], [-71.3, -15.4], [-71.0, -15.6], [-71.1, -15.0]]]}}]}
-      - palabra clave: qué hacer ante lluvia intensa, contexto: Lluvias en la selva central, intensidad del aviso metereológico: FUERTE, duración del aviso metereológico: De 05/07/2025 hasta 10/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-74.2, -10.1], [-74.4, -10.4], [-74.1, -10.6], [-74.2, -10.1]]]}}]}
-      - palabra clave: orientación ante heladas severas, contexto: Heladas en zonas altoandinas del sur, intensidad del aviso metereológico: LEVE, duración del aviso metereológico: De 08/07/2025 hasta 13/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-70.0, -14.0], [-70.3, -14.3], [-70.1, -14.6], [-70.0, -14.0]]]}}]}
-      - palabra clave: medidas para enfrentar oleajes, contexto: Oleajes anómalos en el litoral sur, intensidad del aviso metereológico: MODERADA, duración del aviso metereológico: De 10/07/2025 hasta 15/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-76.0, -12.0], [-76.3, -12.3], [-76.1, -12.6], [-76.0, -12.0]]]}}]}
-      - palabra clave: cómo actuar ante alerta por vientos, contexto: Vientos intensos en zonas costeras, intensidad del aviso metereológico: FUERTE, duración del aviso metereológico: De 12/07/2025 hasta 18/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-77.5, -8.0], [-77.7, -8.3], [-77.4, -8.6], [-77.5, -8.0]]]}}]}
-      - palabra clave: sugerencias ante posibles deslizamientos, contexto: Lluvias acumuladas en la sierra central, intensidad del aviso metereológico: EXTREMA, duración del aviso metereológico: De 15/07/2025 hasta 20/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-75.0, -11.0], [-75.3, -11.3], [-75.1, -11.6], [-75.0, -11.0]]]}}]}
-      - palabra clave: ayuda climática solicitada, contexto: Temperaturas elevadas en la selva norte, intensidad del aviso metereológico: LEVE, duración del aviso metereológico: De 18/07/2025 hasta 22/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-73.0, -4.0], [-73.3, -4.3], [-73.1, -4.6], [-73.0, -4.0]]]}}]}
-      - palabra clave: necesito recomendaciones por granizo, contexto: Caída de granizo en zonas rurales, intensidad del aviso metereológico: FUERTE, duración del aviso metereológico: De 20/07/2025 hasta 25/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-71.5, -13.0], [-71.8, -13.3], [-71.6, -13.6], [-71.5, -13.0]]]}}]}
-      - palabra clave: qué hacer si hay alerta de tormenta, contexto: Tormentas severas en regiones altas, intensidad del aviso metereológico: FUERTE, duración del aviso metereológico: De 26/07/2025 hasta 30/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-75.1, -10.0], [-75.4, -10.3], [-75.2, -10.6], [-75.1, -10.0]]]}}]}
-      - palabra clave: orientación frente a nevada intensa, contexto: Nieve en zonas altoandinas del centro, intensidad del aviso metereológico: MODERADA, duración del aviso metereológico: De 01/08/2025 hasta 05/08/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-73.0, -12.0], [-73.3, -12.3], [-73.1, -12.6], [-73.0, -12.0]]]}}]}
-      - palabra clave: qué precauciones tomar con vientos fuertes, contexto: Vientos en la costa central, intensidad del aviso metereológico: EXTREMA, duración del aviso metereológico: De 06/08/2025 hasta 10/08/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-77.0, -11.0], [-77.3, -11.3], [-77.1, -11.6], [-77.0, -11.0]]]}}]}
-      - palabra clave: cómo actuar ante incremento de temperaturas, contexto: Ola de calor en la selva, intensidad del aviso metereológico: LEVE, duración del aviso metereológico: De 11/08/2025 hasta 14/08/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-72.0, -5.0], [-72.3, -5.3], [-72.1, -5.6], [-72.0, -5.0]]]}}]}
-      - palabra clave: recomendaciones por neblina densa, contexto: Neblina reduciendo visibilidad en la costa norte, intensidad del aviso metereológico: MODERADA, duración del aviso metereológico: De 15/08/2025 hasta 18/08/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-79.0, -6.0], [-79.3, -6.3], [-79.1, -6.6], [-79.0, -6.0]]]}}]}
-      - palabra clave: medidas frente a lluvias prolongadas, contexto: Lluvias constantes en el oriente peruano, intensidad del aviso metereológico: FUERTE, duración del aviso metereológico: De 19/08/2025 hasta 23/08/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-73.5, -9.0], [-73.8, -9.3], [-73.6, -9.6], [-73.5, -9.0]]]}}]}
-      - palabra clave: qué acciones tomar ante descenso de temperatura, contexto: Descenso repentino en la sierra sur, intensidad del aviso metereológico: MODERADA, duración del aviso metereológico: De 24/08/2025 hasta 28/08/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-71.0, -14.5], [-71.3, -14.8], [-71.1, -15.1], [-71.0, -14.5]]]}}]}
-      - palabra clave: cómo prevenir daños por vientos huracanados, contexto: Vientos extremos en zonas expuestas, intensidad del aviso metereológico: EXTREMA, duración del aviso metereológico: De 29/08/2025 hasta 02/09/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-76.0, -9.5], [-76.3, -9.8], [-76.1, -10.1], [-76.0, -9.5]]]}}]}
-      - palabra clave: necesito sugerencias para ola de frío, contexto: Bajas temperaturas afectando viviendas rurales, intensidad del aviso metereológico: FUERTE, duración del aviso metereológico: De 03/09/2025 hasta 07/09/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-70.5, -13.0], [-70.8, -13.3], [-70.6, -13.6], [-70.5, -13.0]]]}}]}
-      - palabra clave: ayuda ante granizada inusual, contexto: Granizo inesperado en la sierra central, intensidad del aviso metereológico: MODERADA, duración del aviso metereológico: De 08/09/2025 hasta 11/09/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-75.8, -12.0], [-76.0, -12.3], [-75.9, -12.6], [-75.8, -12.0]]]}}]}
-      - palabra clave: qué medidas tomar ante alerta climática, contexto: Tormentas eléctricas en el norte del país, intensidad del aviso metereológico: EXTREMA, duración del aviso metereológico: De 01/07/2025 hasta 03/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-80.123, -6.5], [-80.456, -6.8], [-80.789, -6.6], [-80.123, -6.5]]]}}]}
-      - palabra clave: recomendaciones por granizada, contexto: Granizo en zonas rurales andinas, intensidad del aviso metereológico: MODERADA, duración del aviso metereológico: De 02/07/2025 hasta 06/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-71.1, -15.0], [-71.3, -15.4], [-71.0, -15.6], [-71.1, -15.0]]]}}]}
-      - palabra clave: qué hacer ante lluvia intensa, contexto: Lluvias en la selva central, intensidad del aviso metereológico: FUERTE, duración del aviso metereológico: De 05/07/2025 hasta 10/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-74.2, -10.1], [-74.4, -10.4], [-74.1, -10.6], [-74.2, -10.1]]]}}]}
-      - palabra clave: orientación ante heladas severas, contexto: Heladas en zonas altoandinas del sur, intensidad del aviso metereológico: LEVE, duración del aviso metereológico: De 08/07/2025 hasta 13/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-70.0, -14.0], [-70.3, -14.3], [-70.1, -14.6], [-70.0, -14.0]]]}}]}
-      - palabra clave: medidas para enfrentar oleajes, contexto: Oleajes anómalos en el litoral sur, intensidad del aviso metereológico: MODERADA, duración del aviso metereológico: De 10/07/2025 hasta 15/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-76.0, -12.0], [-76.3, -12.3], [-76.1, -12.6], [-76.0, -12.0]]]}}]}
-      - palabra clave: cómo actuar ante alerta por vientos, contexto: Vientos intensos en zonas costeras, intensidad del aviso metereológico: FUERTE, duración del aviso metereológico: De 12/07/2025 hasta 18/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-77.5, -8.0], [-77.7, -8.3], [-77.4, -8.6], [-77.5, -8.0]]]}}]}
-      - palabra clave: sugerencias ante posibles deslizamientos, contexto: Lluvias acumuladas en la sierra central, intensidad del aviso metereológico: EXTREMA, duración del aviso metereológico: De 15/07/2025 hasta 20/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-75.0, -11.0], [-75.3, -11.3], [-75.1, -11.6], [-75.0, -11.0]]]}}]}
-      - palabra clave: ayuda climática solicitada, contexto: Temperaturas elevadas en la selva norte, intensidad del aviso metereológico: LEVE, duración del aviso metereológico: De 18/07/2025 hasta 22/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-73.0, -4.0], [-73.3, -4.3], [-73.1, -4.6], [-73.0, -4.0]]]}}]}
-      - palabra clave: necesito recomendaciones por granizo, contexto: Caída de granizo en zonas rurales, intensidad del aviso metereológico: FUERTE, duración del aviso metereológico: De 20/07/2025 hasta 25/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-71.5, -13.0], [-71.8, -13.3], [-71.6, -13.6], [-71.5, -13.0]]]}}]}
-      - palabra clave: qué hacer si hay alerta de tormenta, contexto: Tormentas severas en regiones altas, intensidad del aviso metereológico: FUERTE, duración del aviso metereológico: De 26/07/2025 hasta 30/07/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-75.1, -10.0], [-75.4, -10.3], [-75.2, -10.6], [-75.1, -10.0]]]}}]}
-      - palabra clave: orientación frente a nevada intensa, contexto: Nieve en zonas altoandinas del centro, intensidad del aviso metereológico: MODERADA, duración del aviso metereológico: De 01/08/2025 hasta 05/08/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-73.0, -12.0], [-73.3, -12.3], [-73.1, -12.6], [-73.0, -12.0]]]}}]}
-      - palabra clave: qué precauciones tomar con vientos fuertes, contexto: Vientos en la costa central, intensidad del aviso metereológico: EXTREMA, duración del aviso metereológico: De 06/08/2025 hasta 10/08/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-77.0, -11.0], [-77.3, -11.3], [-77.1, -11.6], [-77.0, -11.0]]]}}]}
-      - palabra clave: cómo actuar ante incremento de temperaturas, contexto: Ola de calor en la selva, intensidad del aviso metereológico: LEVE, duración del aviso metereológico: De 11/08/2025 hasta 14/08/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-72.0, -5.0], [-72.3, -5.3], [-72.1, -5.6], [-72.0, -5.0]]]}}]}
-      - palabra clave: recomendaciones por neblina densa, contexto: Neblina reduciendo visibilidad en la costa norte, intensidad del aviso metereológico: MODERADA, duración del aviso metereológico: De 15/08/2025 hasta 18/08/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-79.0, -6.0], [-79.3, -6.3], [-79.1, -6.6], [-79.0, -6.0]]]}}]}
-      - palabra clave: medidas frente a lluvias prolongadas, contexto: Lluvias constantes en el oriente peruano, intensidad del aviso metereológico: FUERTE, duración del aviso metereológico: De 19/08/2025 hasta 23/08/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-73.5, -9.0], [-73.8, -9.3], [-73.6, -9.6], [-73.5, -9.0]]]}}]}
-      - palabra clave: qué acciones tomar ante descenso de temperatura, contexto: Descenso repentino en la sierra sur, intensidad del aviso metereológico: MODERADA, duración del aviso metereológico: De 24/08/2025 hasta 28/08/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-71.0, -14.5], [-71.3, -14.8], [-71.1, -15.1], [-71.0, -14.5]]]}}]}
-      - palabra clave: cómo prevenir daños por vientos huracanados, contexto: Vientos extremos en zonas expuestas, intensidad del aviso metereológico: EXTREMA, duración del aviso metereológico: De 29/08/2025 hasta 02/09/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-76.0, -9.5], [-76.3, -9.8], [-76.1, -10.1], [-76.0, -9.5]]]}}]}
-      - palabra clave: necesito sugerencias para ola de frío, contexto: Bajas temperaturas afectando viviendas rurales, intensidad del aviso metereológico: FUERTE, duración del aviso metereológico: De 03/09/2025 hasta 07/09/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-70.5, -13.0], [-70.8, -13.3], [-70.6, -13.6], [-70.5, -13.0]]]}}]}
-      - palabra clave: ayuda ante granizada inusual, contexto: Granizo inesperado en la sierra central, intensidad del aviso metereológico: MODERADA, duración del aviso metereológico: De 08/09/2025 hasta 11/09/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-75.8, -12.0], [-76.0, -12.3], [-75.9, -12.6], [-75.8, -12.0]]]}}]}
-      - palabra clave: sugerencias por alta radiación UV, contexto: Radiación solar elevada en la costa central, intensidad del aviso metereológico: MODERADA, duración del aviso metereológico: De 12/09/2025 hasta 15/09/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-76.9, -11.5], [-77.2, -11.8], [-77.0, -12.1], [-76.9, -11.5]]]}}]}
-      - palabra clave: cómo enfrentar inundaciones en pueblos ribereños, contexto: Desborde de ríos amazónicos, intensidad del aviso metereológico: FUERTE, duración del aviso metereológico: De 16/09/2025 hasta 20/09/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-73.8, -4.2], [-74.1, -4.5], [-73.9, -4.8], [-73.8, -4.2]]]}}]}
-      - palabra clave: orientación para mitigar granizo severo, contexto: Alerta de granizo en pueblos altoandinos, intensidad del aviso metereológico: EXTREMA, duración del aviso metereológico: De 21/09/2025 hasta 24/09/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-71.4, -13.2], [-71.7, -13.5], [-71.5, -13.8], [-71.4, -13.2]]]}}]}
-      - palabra clave: recomendaciones ante posibles huaycos, contexto: Lluvias torrenciales en zonas inestables, intensidad del aviso metereológico: EXTREMA, duración del aviso metereológico: De 25/09/2025 hasta 29/09/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-76.5, -9.0], [-76.8, -9.3], [-76.6, -9.6], [-76.5, -9.0]]]}}]}
-      - palabra clave: precauciones ante tormentas severas, contexto: Tormentas eléctricas con vientos intensos, intensidad del aviso metereológico: FUERTE, duración del aviso metereológico: De 30/09/2025 hasta 04/10/2025, región de afectación: {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Polygon', 'coordinates': [[[-75.2, -11.2], [-75.5, -11.5], [-75.3, -11.8], [-75.2, -11.2]]]}}]}
+      - ¿Qué precauciones debería tomar ante una alerta de huracán?
+      - Recomiéndame qué hacer si se pronostica una ola de calor extrema.
+      - Necesito saber cómo proteger mi casa ante tormentas eléctricas.
+      - Es recomendable reforzar ventanas antes de un vendaval?
+      - Quiero informarme sobre medidas para evitar inundaciones en casa.
+      - Actuar frente a granizadas: ¿qué pasos seguir?
+      - Indícame acciones para cuidar a mi familia durante lluvias intensas.
+      - Sugerencias para almacenar agua en caso de sequía prolongada.
+      - Debo preparar un kit de emergencia si hay alerta de tsunami?
+      - Me interesa conocer protocolos ante desbordes de ríos.
+      - Durante un friaje en la selva, ¿cómo me mantengo abrigado?
+      - ¿Cuál es el procedimiento en caso de huaicos en zonas rurales?
+      - Es vital proteger cultivos antes de lluvias torrenciales.
+      - Necesito orientación sobre evacuación en sismos y lluvias.
+      - Dime qué hacer para evitar deslizamientos tras fuertes precipitaciones.
+      - ¿Cómo resguardar alimentos si se corta el suministro de luz?
+      - Actuaciones preventivas ante ola de frío en altitudes altas.
+      - Recomiéndame buenas prácticas para asegurar mi vehículo.
+      - Quiero saber cómo reforzar el techo ante tormentas.
+      - Consulta: ¿qué se recomienda para gestionar inundaciones?
+      - Estoy buscando consejos para mantener comunicación en emergencias.
+      - Recomendaciones para asegurar tuberías contra heladas.
+      - Me gustaría saber acciones para proteger a mis mascotas.
+      - Es seguro permanecer en casa durante granizo intenso?
+      - Indica estrategias para limpiar drenajes antes de lluvias fuertes.
+      - ¿Qué debo incluir en un plan familiar de emergencia?
+      - Medidas de protección para comunidades costeras vulnerables.
+      - Es necesario revisar techos antes de vendavales fuertes.
+      - Consulta: ¿cómo monitorear niveles de río en tiempo real?
+      - Idea: crear barreras de sacos de arena ante crecidas de río.
+      - ¿Cuál es la temperatura límite para emitir alerta de calor?
+      - Quiero recomendaciones para primeros auxilios por hipotermia.
+      - Debo reforzar puertas contra vientos huracanados?
+      - ¿Es útil sellar ventanas con cinta adhesiva antes de lluvia?
+      - Solicito indicaciones para proteger equipos electrónicos.
+      - Necesito saber cómo asegurar muebles durante sismos y lluvias.
+      - Acción preventiva: drenar charcos para evitar criaderos de mosquitos.
+      - Medidas para reducir riesgo de electrocución en exteriores.
+      - Quiero consejos para organizar un refugio temporal.
+      - ¿Qué pasos seguir si se interrumpe la comunicación móvil?
+      - Planeación familiar: ¿cómo distribuyo roles ante una alerta?
+      - Declaración: Es esencial tener linternas y baterías listas.
+      - Consulta técnica: sistemas de bombeo contra inundaciones.
+      - Afirmación: Mantener comida no perecible en casa es clave.
+      - Idea creativa: cosechar agua de lluvia con bidones.
+      - ¿Cómo protejo pozos de agua ante posible contaminación?
+      - Sugerencias para señalización de rutas de evacuación.
+      - Me interesa saber sobre seguros ante desastres naturales.
+      - Solución práctica: usar sacos terreros para levantar barreras.
+      - ¿Qué recomendaciones generales existen para reducir daños materiales?
   - intent: obtener_pronostico
     examples: |
-      - ¿Qué clima habrá hoy?
-      - ¿Cómo estará el clima mañana?
-      - ¿Va a llover esta semana?
-      - ¿Me das el pronóstico para Lima?
-      - ¿Cómo estará el tiempo el fin de semana?
-      - ¿Habrá sol en Trujillo el sábado?
-      - ¿Puedes darme el clima de hoy?
-      - ¿Cuál es la predicción del clima?
-      - ¿Se espera alguna tormenta mañana?
-      - Quiero saber el pronóstico en Arequipa
-      - ¿Va a hacer frío esta noche?
-      - ¿Va a salir el sol hoy?
-      - Dime el clima para el jueves
-      - ¿Me puedes decir cómo estará el tiempo?
-      - ¿Lloverá en Cusco esta tarde?
-      - ¿Qué clima se espera en mi zona?
-      - ¿Cómo estará el clima en el norte del país?
-      - ¿Tendremos cielo despejado mañana?
-      - ¿Qué condiciones climáticas se esperan?
-      - ¿Estará nublado más tarde?
-      - ¿Me das el reporte meteorológico?
-      - ¿Se esperan lluvias en la sierra?
-      - ¿Qué tiempo hará en la costa?
-      - Dame el informe del clima
-      - ¿Va a cambiar el clima esta semana?
-      - ¿Hay pronóstico de tormentas?
-      - ¿Cuál es la previsión meteorológica?
-      - ¿Tendremos lluvia hoy?
-      - ¿Estará soleado el domingo?
-      - ¿Qué temperatura se pronostica?
-      - Quiero el pronóstico diario
-      - ¿Cómo va a estar el tiempo?
-      - ¿Qué dice el pronóstico para mañana?
-      - ¿Cómo pinta el clima para esta tarde?
-      - ¿Haré bien en salir hoy sin paraguas?
-      - ¿Es probable que llueva?
-      - ¿El clima está mejorando?
-      - ¿Estará frío mañana?
-      - ¿El clima será seco esta semana?
-      - ¿Puedes decirme si debo llevar abrigo?
-      - ¿Lima tendrá un buen clima este finde?
-      - ¿Cómo estará el cielo hoy?
-      - ¿Clima en la selva?
-      - ¿Hará calor?
-      - ¿Cuáles son las condiciones para hoy?
-      - ¿Puedes revisar el clima?
-      - ¿Pronóstico extendido para Tacna?
-      - ¿Reporte climático semanal?
-      - ¿Tiempo previsto mañana en Chiclayo?
-      - ¿Qué dice el tiempo para hoy?
-      - ¿Hay algún fenómeno climático previsto?
-
+      - ¿Cuál es el pronóstico del tiempo para hoy?
+      - Quiero saber cómo estará el clima mañana en Lima.
+      - Solicito la previsión meteorológica de esta semana.
+      - Dime si va a llover en Cusco el fin de semana.
+      - Muéstrame el pronóstico de temperaturas en Arequipa para mañana.
+      - ¿Qué pronóstico hay para la costa peruana?
+      - Necesito el reporte del clima en Puno esta tarde.
+      - ¿Cómo estará el tiempo en Iquitos este fin de semana?
+      - Proporciona la previsión de lluvias en Piura para los próximos días.
+      - ¿Se pronostica una ola de calor en la selva?
+      - Consulta el clima de hoy en Huancayo.
+      - Agradecería el pronóstico de viento en Tacna mañana.
+      - ¿Qué temperatura mínima se espera en Huaraz esta noche?
+      - Dime la previsión de granizo en Cajamarca.
+      - Solicito información sobre la humedad en Chachapoyas.
+      - ¿Cómo estará el clima al mediodía en Chiclayo?
+      - Quiero el pronóstico de días soleados en Tumbes.
+      - Informe meteorológico para Arequipa esta mañana.
+      - ¿Va a haber heladas en Juliaca al amanecer?
+      - Dame la previsión de lluvias dispersas en Ucayali.
+      - ¿Cuál es la probabilidad de tormentas eléctricas en Madre de Dios?
+      - Necesito saber si habrá neblina en Huancavelica.
+      - Solicito el pronóstico de temperaturas altas en Tacna para hoy.
+      - Quisiera la previsión de vientos fuertes en Callao.
+      - Informe: clima en la sierra central mañana.
+      - ¿Qué se espera para la calidad del aire en Lima hoy?
+      - Dime la previsión de presión atmosférica en Moquegua.
+      - ¿Cómo estará la sensación térmica en Piura?
+      - Consulta: clima nocturno en Tingo María.
+      - Solicita el reporte de precipitaciones en Satipo.
+      - ¿Qué pronóstico meteorológico hay para el jueves?
+      - Quiero saber el tiempo en Chimbote este fin de semana.
+      - Dame la previsión de sol y nubes en Huaral.
+      - ¿Se esperan lluvias intensas en Ica?
+      - Informe de condiciones climáticas en Villa El Salvador.
+      - ¿Cómo estará el clima en Ventanilla mañana?
+      - Solicito el pronóstico de granizadas en Oxapampa.
+      - Requiero estimación de humedad relativa en Susapaya.
+      - ¿Va a hacer frío en Yungay esta madrugada?
+      - Dime la previsión de lluvia ligera en Tumbes.
+      - Quiero conocer la previsión de oleaje en la costa.
+      - ¿Qué se pronostica para la visibilidad en la Carretera Central?
+      - Muéstrame el clima en Ayacucho para la próxima semana.
+      - Necesito la previsión de radiación UV en Lima hoy.
+      - Consulta meteorológica en Barranca para mañana.
+      - Informe de condiciones climáticas en Satipo esta tarde.
+      - ¿Cómo estará el tiempo en Ilo al atardecer?
   - intent: alertas_meteorologicas
     examples: |
-      - ¿Hay alguna alerta meteorológica activa?
-      - ¿Qué avisos hay por tormentas?
-      - ¿Existe algún tipo de advertencia por clima?
-      - ¿Estamos bajo alerta por lluvias?
-      - ¿Hay aviso de vientos fuertes?
-      - ¿Se ha emitido alguna alerta por granizo?
-      - ¿El Senamhi ha dado alguna advertencia?
-      - ¿Hay alerta por tormenta eléctrica?
-      - ¿Qué dice el sistema de alertas?
-      - ¿Se ha lanzado alguna alerta en Lima?
-      - ¿Mi ciudad está bajo alerta?
-      - ¿Hay alerta roja por lluvias intensas?
-      - ¿Se ha activado algún protocolo climático?
-      - ¿El pronóstico incluye alertas?
-      - ¿Tengo que preocuparme por el clima hoy?
-      - ¿Riesgo de tormentas hoy?
-      - ¿Estamos en situación de emergencia climática?
-      - ¿Ha cambiado el nivel de alerta?
-      - ¿Tenemos aviso de temporal?
-      - ¿Qué regiones están bajo alerta?
-      - ¿Puedes verificar alertas activas?
-      - ¿Mi zona tiene alguna advertencia?
-      - ¿Sigue la alerta naranja?
-      - ¿Se ha emitido alguna advertencia reciente?
-      - ¿Zona costera está bajo riesgo?
-      - ¿Hay alertas por oleajes anómalos?
-      - ¿Qué tipo de alerta hay hoy?
-      - ¿Alertas vigentes para hoy?
-      - ¿Alertas en Piura o Tumbes?
-      - ¿Pueden ocurrir huaicos?
-      - ¿Alerta por temperatura extrema?
-      - ¿Senamhi ha emitido algún comunicado?
-      - ¿Estamos bajo vigilancia meteorológica?
-      - ¿Condiciones peligrosas anunciadas?
-      - ¿Hay alerta por calor excesivo?
-      - ¿Región amazónica con alerta?
-      - ¿Se activó alguna alerta en montaña?
-      - ¿Qué distritos están afectados?
-      - ¿Alertas oficiales en curso?
-      - ¿Hay tormentas previstas con alerta?
-      - ¿Tendremos mal tiempo?
-      - ¿Alerta por viento costero?
-      - ¿Emiten alertas de madrugada?
-      - ¿Puedes revisar si hay avisos?
-      - ¿Cómo saber si hay alerta por clima?
-      - ¿Es zona de riesgo hoy?
-      - ¿Sigue activa la última alerta?
-      - ¿Mi distrito está en alerta?
-      - ¿Se activó alerta de defensa civil?
-      - ¿Emergencia climática declarada?
+      - ¿Hay alguna alerta meteorológica vigente?
+      - ¿Qué alertas meteorológicas hay hoy?
+      - Infórmame sobre las alertas de lluvias intensas.
+      - Aviso de inundación en Lima: ¿está activo?
+      - ¿Hay un comunicado de heladas en Puno?
+      - Necesito saber si existe alerta de huaico en la sierra.
+      - Dime si hay notificaciones de granizo.
+      - Quiero conocer los boletines de ola de calor.
+      - ¿Está vigente la alerta de friaje en la selva?
+      - Actualiza las alertas de tormentas eléctricas.
+      - Revisa si hay aviso de vendaval en la costa.
+      - Estado de alerta por tsunami para el litoral.
+      - Comunicado de riesgo por desborde de ríos.
+      - ¿Se emitió alerta de nevadas en la sierra?
+      - Informe de alertas por lluvias torrenciales.
+      - Dime las últimas alertas meteorológicas.
+      - Notificaciones de clima severo en Arequipa.
+      - ¿Han lanzado alerta de granizada esta semana?
+      - Alerta de sequía en Piura: ¿confirmada?
+      - Consulta de avisos de viento huracanado.
+      - ¿Qué alertas hay para hoy en Lima?
+      - Muéstrame un listado de alertas vigentes.
+      - ¿Me puedes decir las alertas por heladas?
+      - Estado actual de alertas de desastres naturales.
+      - Requiero información de alerta de inundaciones.
+      - He recibido un mensaje de alerta, ¿qué significa?
+      - Alerta amarilla de lluvias intensas: ¿qué implica?
+      - ¿Hay alerta naranja de huaicos en Junín?
+      - Solicito detalles sobre la alerta de vendavales.
+      - Dime si hay advertencia de granizo en Cusco.
+      - Boletín meteorológico: alertas activas hoy.
+      - Informe de riesgo por ríos desbordados en Huancayo.
+      - ¿Existe alerta de tsunami para Chimbote?
+      - Alerta de viento fuerte: ¿cómo está el nivel?
+      - Estado de alertas de inundación en Piura.
+      - Comunicado oficial de advertencia por sequía.
+      - Verifica alerta de tormentas en Madre de Dios.
+      - ¿Se espera alerta de calor extremo?
+      - Notifica si hay alerta de friaje en Ayacucho.
+      - Alerta de granizadas en Tacna: ¿activada?
+      - Dime si hay advertencia de vendaval costero.
+      - Solicita boletas de alerta meteorológica.
+      - ¿Qué nivel de alerta tienen las lluvias?
+      - Consulta el historial de alertas recientes.
+      - Notificación de riesgo de huaicos en Ancash.
+      - ¿Hay pronóstico de alerta por tormentas?
+      - Resume las alertas de clima adverso.
+      - Estado de los avisos de clima en Ica.
+      - ¿Cuáles son las últimas alertas meteorológicas?
+      - Dame un reporte de alertas de desbordes.
   - intent: plan_emergencia
     examples: |
-      - ¿Qué debo hacer si hay un sismo?
-      - ¿Tienes un plan ante huaicos?
-      - ¿Qué hacer en caso de inundación?
-      - ¿Puedes darme instrucciones en caso de desastre?
-      - ¿Cómo debo evacuar mi casa si tiembla?
-      - ¿Qué elementos debo incluir en mi mochila de emergencia?
-      - ¿Recomiendas tener radio y linterna?
-      - ¿Qué pasos debo seguir si hay una alerta sísmica?
-      - ¿Qué hago si me agarra un huaico fuera de casa?
-      - ¿Cómo se hace un plan familiar de emergencia?
-      - ¿Qué cosas necesito en caso de apagón prolongado?
-      - ¿Dónde debo reunirme con mi familia?
-      - ¿Qué alimentos debo almacenar?
-      - ¿Puedo tener una guía de evacuación?
-      - ¿Qué rol debe tener cada miembro de la familia?
-      - ¿Dónde coloco el botiquín?
-      - ¿Qué documentos debo tener listos para una emergencia?
-      - ¿Cómo preparar a los niños?
-      - ¿Debo desconectar el gas en un sismo?
-      - ¿Qué hago si quedo atrapado en mi casa?
-      - ¿Qué canales oficiales debo seguir?
-      - ¿Dónde busco ayuda si me evacúan?
-      - ¿Cómo actuar si hay deslizamientos cerca?
-      - ¿Cómo me preparo ante una ola de calor?
-      - ¿Cuáles son los números de emergencia?
-      - ¿Qué debo tener a la mano en caso de emergencia?
-      - ¿Qué señales indican que debo evacuar?
-      - ¿Cómo preparo mi auto para una evacuación?
-      - ¿Cómo me informo de un tsunami?
-      - ¿Qué hago con mis mascotas en una emergencia?
-      - ¿Cómo enseñar a los niños sobre simulacros?
-      - ¿Qué hago si hay humo por incendio?
-      - ¿Debería practicar un simulacro en casa?
-      - ¿Qué errores debo evitar durante una emergencia?
-      - ¿Cuáles son las zonas seguras en mi edificio?
-      - ¿Dónde están las rutas de evacuación?
-      - ¿Qué hago si me separo de mi familia?
-      - ¿Qué hago si hay réplicas después del sismo?
-      - ¿Cómo reconozco un albergue temporal?
-      - ¿Cómo debo protegerme si estoy en la calle?
-      - ¿Qué hago si me encuentro en el transporte público?
-      - ¿Tengo que llevar agua y comida?
-      - ¿Se deben cerrar ventanas durante un desastre?
-      - ¿Cómo identificar estructuras seguras?
-      - ¿Qué debo comunicar al 119?
-      - ¿Dónde reporto personas desaparecidas?
-      - ¿Cómo debo guardar mis objetos importantes?
-      - ¿Cuáles son los tres pasos principales?
-      - ¿Qué hago si el acceso a mi zona está bloqueado?
-      - ¿Cómo planifico un punto de reunión?
-
+      - ¿Cómo elaboro un plan de emergencia para mi familia?
+      - Necesito un plan de evacuación ante inundaciones.
+      - Por favor, asesórame para crear un plan de contingencia en caso de terremotos.
+      - Quiero un plan de emergencia específico para huaicos.
+      - ¿Qué elementos debo incluir en mi plan de emergencia?
+      - Dame un ejemplo de plan de emergencia doméstico.
+      - Plan de evacuación familiar: ¿cuáles son los pasos?
+      - Definir roles y responsabilidades en un plan de emergencias.
+      - ¿Cómo organizo un simulacro de emergencia en casa?
+      - Solicito un plan de emergencia comunitario.
+      - Crear lista de verificación para un plan de emergencia.
+      - Plan de emergencia escolar: instrucciones detalladas.
+      - ¿Cómo planifico rutas de evacuación seguras?
+      - Indícame los procedimientos en un plan de contingencia.
+      - Plan de emergencia para adultos mayores: recomendaciones.
+      - Elaborar un plan para refugio temporal cercano.
+      - ¿Cuál es el mejor formato para un plan de emergencia?
+      - Debo considerar refugios y puntos de encuentro en mi plan.
+      - Sugerencias para un plan de emergencia en oficina.
+      - Quiero un plan de emergencia enfocado en sismos.
+      - Establecer protocolo de comunicación en el plan de emergencia.
+      - ¿Cómo coordino a los vecinos en un plan de evacuación?
+      - Lista de suministros imprescindibles para un plan de emergencia.
+      - Reducir riesgos: elementos clave en el plan de emergencia.
+      - Evaluación de peligros y riesgos en un plan de contingencia.
+      - Comunicar y difundir el plan de emergencia: pautas.
+      - Tener un plan de emergencia es esencial para la seguridad.
+      - ¿Cómo reviso y actualizo mi plan de emergencia?
+      - Idea: usar una app móvil para gestionar el plan de emergencia.
+      - Estrategias para programar simulacros periódicos según el plan.
+      - ¿Qué documentos y contactos incluir en el plan de emergencia?
+      - Solicito plantillas y modelos de plan de emergencia.
+      - ¿Con quién debo compartir mi plan de emergencia?
+      - Se necesita un plan para sismos y excesivas lluvias.
+      - Plan de emergencia empresarial: directrices básicas.
+      - Incluir teléfonos de emergencia en el plan.
+      - Diseño de señalización y rutas en el plan de evacuación.
+      - Revisión anual del plan de emergencia: pasos a seguir.
+      - Implementar simulacros prácticos basados en el plan.
+      - Un buen plan de emergencia debe ser claro y práctico.
+      - Consulta técnica: sistemas de alerta para el plan de emergencia.
+      - ¿Cómo personalizo el plan según la distribución de mi casa?
+      - Recomendaciones para un plan de emergencia en departamentos.
+      - Plan de emergencia para embarazos de alto riesgo.
+      - Protocolos de primeros auxilios incluidos en el plan.
+      - Alternativa: plan de emergencia para mascotas.
+      - Idea creativa: marcar puntos de encuentro con señalética.
+      - ¿Cómo capacito a mi familia en el cumplimiento del plan?
+      - Solicito un plan de emergencia para zonas rurales.
+      - Modelo de plan de emergencia con mapas y diagramas.
   - intent: reportar_evento
     examples: |
-      - Quiero reportar un huaico
-      - Acaba de ocurrir una inundación
-      - Hay un incendio cerca de mi casa
-      - Vi que un río se está desbordando
-      - Hay un derrumbe en la carretera
-      - Noté grietas en el cerro
-      - Se cayó un puente por la lluvia
-      - Hay personas atrapadas en una zona
-      - Vi un deslave hace unos minutos
-      - En mi distrito hay agua hasta las rodillas
-      - Hay árboles caídos tras la tormenta
-      - El huaico bloqueó la vía de acceso
-      - Varios postes cayeron tras el viento
-      - Hay personas pidiendo ayuda
-      - El río aumentó mucho su caudal
-      - Se rompió una represa
-      - Las calles están intransitables
-      - Hay casas inundadas en mi zona
-      - Hay barro bajando por el cerro
-      - El agua ingresó a mi vivienda
-      - Acaba de temblar fuerte
-      - Escuché una explosión tras el sismo
-      - Vi fuego tras una descarga eléctrica
-      - Se cayó una parte del cerro
-      - El canal de regadío se desbordó
-      - Se formó una laguna por las lluvias
-      - El lodo está llegando a las casas
-      - Los vecinos están alarmados
-      - Necesitamos ayuda urgente
-      - La plaza del pueblo está inundada
-      - El colegio sufrió daños estructurales
-      - Hay rocas en la carretera
-      - El río trajo mucha basura
-      - Hay caída de granizo muy fuerte
-      - Vi relámpagos peligrosos
-      - Los techos fueron volados por el viento
-      - La electricidad está cortada hace horas
-      - El tendido eléctrico cayó
-      - Se ha bloqueado el acceso al distrito
-      - Se reportan casas colapsadas
-      - Vi gente atrapada en sus techos
-      - El sismo dañó estructuras públicas
-      - Las calles están llenas de barro
-      - La posta médica está anegada
-      - El huayco arrastró vehículos
-      - Se cayó un muro en el barrio
-      - Muchos animales fueron arrastrados
-      - No hay señal de celular
-      - Se cortó el suministro de agua
-      - El puente peatonal fue destruido
+      - Estoy viendo inundación en mi calle.
+      - Reporto granizo en Trujillo.
+      - ¿Hay huaico en la carretera Panamericana?
+      - Registra vendaval en mi zona.
+      - Se desbordó el río en Piura.
+      - Reporto ola de calor de 40 °C en Ica.
+      - Hay helada intensa en Puno.
+      - Observo tormenta eléctrica cerca de Arequipa.
+      - Veo neblina en la Carretera Central.
+      - Reporto nieve en Huaraz.
+      - ¿Está lloviendo moderadamente en Lima Norte?
+      - Reporto friaje en Madre de Dios.
+      - Granizadas fuertes en Huancayo.
+      - Tromba de agua en Cusco.
+      - Observando caída de granizo en Cajamarca.
+      - Rayos y truenos constantes en Tacna.
+      - Caída de árboles por viento en Piura.
+      - Nubes oscuras y relámpagos en Huancavelica.
+      - Olas altas en la costa de Tumbes.
+      - Tormenta de arena en Ica.
+      - ¿Ha caído granizo en Chachapoyas?
+      - Inundación subterránea en el metro de Lima.
+      - Charcos profundos tras lluvias intensas.
+      - Corte de luz por tormenta eléctrica.
+      - Deslizamiento de barro en zonas andinas.
+      - Lago temporal en Piura.
+      - Ola de calor en Chiclayo.
+      - Variaciones drásticas de temperatura en Trujillo.
+      - Inundación en la autopista Panamericana.
+      - Heladas matutinas en Ayacucho.
+      - Vendaval arrasando cultivos en Lambayeque.
+      - Ráfagas de viento de 80 km/h en Ancash.
+      - Nube de polvo en Arequipa.
+      - Lluvias prolongadas sin parar en Lima.
+      - Viento huracanado en la costa norte.
+      - Granizada repentina en Junín.
+      - Inundación pluvial en San Juan de Lurigancho.
+      - Chubascos esporádicos en Piura.
+      - ¿Se está formando banco de niebla en el valle del Mantaro?
+      - Bruma costera en Barranco.
+      - Agua estancada por lluvias en Miraflores.
+      - Llovizna constante en Huacho.
+      - Viento frío en la selva alta.
+      - Ola de frío en la sierra sur.
+      - Tormentas aisladas en Madre de Dios.
+      - Granizadas intermitentes en Áncash.
+      - Vientos cruzados en la costa limeña.
+      - Nevisca ligera en Abancay.
+      - ¿Hay lluvia torrencial en Chachapoyas?
+      - Frío extremo en Puno.
   - intent: calidad_del_aire
     examples: |
-      - ¿Cómo está la calidad del aire hoy?
-      - ¿Puedo salir a correr o el aire está contaminado?
-      - ¿Qué tan saludable es el aire en mi zona?
-      - ¿Cuál es el índice de contaminación en Lima?
-      - ¿El aire es seguro para personas vulnerables?
-      - ¿Cómo afecta la calidad del aire a niños y ancianos?
-      - ¿Es recomendable hacer ejercicio al aire libre hoy?
-      - ¿Me puedes dar el índice AQI?
-      - ¿Hay alerta por contaminación?
-      - ¿Cuánto de PM2.5 hay en el aire?
-      - ¿Cuál es la concentración de partículas finas?
-      - ¿Hay mucha contaminación en San Juan de Lurigancho?
-      - ¿Cuál es el nivel de ozono troposférico?
-      - ¿Me avisas si hay niveles peligrosos?
-      - ¿Cuánto CO₂ hay registrado hoy?
-      - ¿Está limpio el aire para salir?
-      - ¿Hoy se puede pasear al aire libre?
-      - ¿Debo usar mascarilla por la contaminación?
-      - ¿Dónde reviso el índice de calidad del aire?
-      - ¿Cuál es el riesgo de exposición actual?
-      - ¿Es peligroso salir con esta calidad de aire?
-      - ¿Qué categoría tiene el aire de hoy?
-      - ¿Estamos en alerta por aire contaminado?
-      - ¿El nivel de monóxido está dentro de lo normal?
-      - ¿El Ministerio del Ambiente dio alerta?
-      - ¿En qué escala está el AQI ahora?
-      - ¿Cuándo mejora la calidad del aire?
-      - ¿La contaminación atmosférica afecta la salud?
-      - ¿Qué medidas debo tomar hoy por el aire?
-      - ¿Puedo abrir las ventanas?
-      - ¿La calidad del aire es aceptable?
-      - ¿Hay bruma tóxica en la ciudad?
-      - ¿Los incendios afectan el aire hoy?
-      - ¿Cómo saber si el aire es puro?
-      - ¿Calidad del aire por distrito?
-      - ¿Puedes revisar el aire de hoy?
-      - ¿Hay algún mapa de calidad de aire?
-      - ¿Cómo interpretar el índice AQI?
-      - ¿Qué color indica alto riesgo?
-      - ¿Recomiendas actividades al aire libre?
-      - ¿Cómo afecta la contaminación a los pulmones?
-      - ¿Nivel de dióxido de nitrógeno?
-      - ¿Se esperan niveles mejores mañana?
-      - ¿Hay comparación con días anteriores?
-      - ¿Ha mejorado el aire esta semana?
-      - ¿Alertas de calidad del aire actuales?
-      - ¿Condiciones ambientales por hora?
-      - ¿Cómo saber si el aire es respirable?
-      - ¿Hay polvo o partículas suspendidas?
-      - ¿Qué hora es mejor para salir hoy?
+      - ¿Cómo está la calidad del aire en Lima esta mañana?
+      - Muéstrame el índice AQI de Arequipa.
+      - Necesito saber el nivel de PM2.5 en Cusco.
+      - Dame el reporte de contaminación atmosférica en Trujillo.
+      - ¿Cuál es la concentración de ozono en Iquitos?
+      - Quiero el valor de partículas finas en Piura hoy.
+      - Consulta: calidad del aire en Puno al mediodía.
+      - ¿Está saludable respirar en Huancayo ahora?
+      - Informe sobre niveles de smog en Chiclayo.
+      - ¿Hay alerta de polución en Chimbote?
+      - Revisa la calidad del aire en Tacna.
+      - Necesito datos de PM10 en Huancavelica.
+      - ¿Cómo afecta la contaminación a la selva amazónica?
+      - Dime la clasificación AQI para Arequipa esta tarde.
+      - Indícame el nivel de gases tóxicos en Callao.
+      - ¿Cuál es el índice de micropartículas en Ayacucho?
+      - Estado actual del aire en Tumbes.
+      - Proporciona lectura de calidad del aire en Huacho.
+      - Sencillo: calidad del aire en Madre de Dios.
+      - ¿Se mantiene estable la AQI en Cajamarca?
+      - Quiero ver la evolución del índice en Huaraz.
+      - Informe meteorológico: calidad del aire en Chachapoyas.
+      - ¿Cuál es el pronóstico de contaminación para mañana?
+      - Dime si habrá empeoramiento del aire en Sullana.
+      - Consulta técnica sobre emisiones en Abancay.
+      - ¿Cómo varía el AQI en Ancash durante el día?
+      - Reporte diario de calidad del aire en Villa El Salvador.
+      - Solicito los niveles de PM2.5 y PM10 en Juliaca.
+      - ¿Está bajo riesgo respiratorio en Ventanilla?
+      - Estado de calidad del aire en Ilo esta noche.
+      - Dame el índice de partículas suspendidas en Satipo.
+      - Indícame si la AQI está por encima de 100 en Ica.
+      - ¿Afecta la quema de rastrojo al aire en Piura?
+      - Proyección de calidad del aire para mañana en Lima.
+      - Necesito saber si hay humo en Pucallpa.
+      - ¿Cómo ha variado la contaminación en Tarma esta semana?
+      - Informe urgente: aire inseguro en Jaén.
+      - Sugerencias para protegerme de la mala calidad del aire.
+      - ¿Cuál es el nivel de dióxido de nitrógeno en Chulucanas?
+      - Muéstrame el historial de AQI en Huánuco.
+      - Reporte: partículas ultrafinas en Ayacucho.
+      - ¿La AQI superó hoy los límites en Huaral?
+      - Consulta práctica: calidad del aire en San Martín.
+      - Informe de alertas por smog en Madre de Dios.
+      - Estado de contaminación industrial en Pisco.
+      - Solicito datos de calidad del aire en Oxapampa.
+      - ¿Se recomienda salir a correr con esta AQI?
+      - Dime si el aire es apto para niños en Arequipa.
 
   - intent: explicar_tipo_desastre
     examples: |
-      - ¿Qué es un huaico?
-      - Explícame qué significa un tsunami
-      - ¿Puedes explicarme qué es un sismo?
-      - ¿Cómo ocurre una inundación?
-      - ¿Qué causa un terremoto?
-      - ¿Qué diferencia hay entre huaico y aluvión?
-      - ¿Cómo se produce una sequía?
-      - ¿Cuáles son los tipos de desastres naturales?
-      - ¿Qué es un deslizamiento?
-      - ¿Qué daños puede causar un huaico?
-      - ¿Es lo mismo un temblor y un terremoto?
-      - ¿Qué caracteriza a un fenómeno El Niño?
-      - ¿Qué tan peligrosos son los vientos huracanados?
-      - ¿Cómo se forma un ciclón tropical?
-      - ¿Qué significa actividad sísmica?
-      - ¿Cómo se mide la magnitud de un sismo?
-      - ¿Qué tan destructivo puede ser un tsunami?
-      - ¿Hay diferencia entre inundación y anegamiento?
-      - ¿Qué es un desborde fluvial?
-      - ¿Qué pasa cuando hay deslizamiento de tierra?
-      - ¿Por qué ocurren los huaicos en verano?
-      - ¿Qué fenómenos afectan más a la selva?
-      - ¿Un incendio forestal es desastre natural?
-      - ¿Qué es una amenaza geológica?
-      - ¿Puedes darme ejemplos de desastres hidrometeorológicos?
-      - ¿Qué tipos de alerta existen para sismos?
-      - ¿Qué significa un deslizamiento lento?
-      - ¿Cómo saber si un lugar es zona de riesgo?
-      - ¿Qué es un sismo intraplaca?
-      - ¿Cómo identificar un huaico en formación?
-      - ¿Es igual un aluvión que una avenida torrencial?
-      - ¿Qué factores provocan sequías prolongadas?
-      - ¿Por qué ocurren las inundaciones urbanas?
-      - ¿Cómo se genera un terremoto en la costa?
-      - ¿Qué hacer si hay señales de deslizamiento?
-      - ¿Qué es una falla geológica activa?
-      - ¿Cuál es la escala de Richter?
-      - ¿Un sismo puede generar tsunami?
-      - ¿Qué es una cuenca crítica?
-      - ¿Qué tipos de sismos hay?
-      - ¿Qué significa vulnerabilidad sísmica?
-      - ¿Qué es un fenómeno climático extremo?
-      - ¿Cómo saber si estoy expuesto a desastres?
-      - ¿Qué consecuencias tiene un huaico?
-      - ¿Qué zonas del Perú son más expuestas a huaicos?
-      - ¿Qué rol juega la deforestación en estos eventos?
-      - ¿Qué se considera desastre antropogénico?
-      - ¿Qué elementos agravan una inundación?
-      - ¿Qué características tiene un evento súbito?
+      - ¿Qué es un terremoto?
+      - Explícame en qué consiste un tsunami.
+      - Defíneme qué ocurre durante un huracán.
+      - Describe cómo se forma un deslizamiento de tierra.
+      - Quiero saber qué caracteriza a una inundación.
+      - ¿En qué consiste un huaico?
+      - Cuéntame qué provoca una erupción volcánica.
+      - ¿Cuál es la diferencia entre sequía y desertificación?
+      - Explica el fenómeno de las olas de calor.
+      - ¿Cómo se origina una avalancha de nieve?
+      - Define incendio forestal.
+      - ¿Qué implica un vendaval?
+      - Descríbeme un friaje.
+      - Quisiera entender qué es un alud.
+      - Explícame la naturaleza de un tornado.
+      - ¿Qué tipo de desastre es una granizada?
+      - Cuál es la causa de un corrimiento de lodo.
+      - Detalla el proceso de formación de un ciclón tropical.
+      - ¿Qué sucede durante un colapso de dique?
+      - Aclarar qué es una ola de frío extremo.
+      - Explica el término “sequía prolongada”.
+      - Describe un vuelco masivo de rocas.
+      - ¿En qué consiste un colapso urbano por inundación?
+      - Define un tsunami costero.
+      - ¿Qué es un terremoto de subducción?
+      - Explícame la diferencia entre huracán y tifón.
+      - Cuéntame sobre los sismos inducidos por actividad humana.
+      - ¿Cómo ocurren las tormentas eléctricas severas?
+      - Define flujo de escombros (debris flow).
+      - Explica qué es una nube ardiente (nuée ardente).
+      - ¿Qué caracteriza una riada?
+      - Describe la génesis de un mega-incendio.
+      - ¿Qué es una erupción freática?
+      - Defíneme un pull-apart basin.
+      - Quiero entender el fenómeno de licuefacción del suelo.
+      - Explica la dinámica de un tsunami de deslizamiento submarino.
+      - Define un evento de acreción de hielo.
+      - ¿En qué consiste una tormenta de arena?
+      - Describe la formación de una célula convectiva.
+      - Explica qué es un temblor superficial versus profundo.
+      - ¿Qué es un viento katabático?
+      - Cuéntame sobre la foliosis de presas.
+      - Diferencia entre tornados y trombas marinas.
+      - Define un vulcanismo fisural.
+      - ¿Qué implica un colapso de glaciar?
+      - Explícame la génesis de un desbordamiento fluvial.
+      - Describe un evento de tsunami meteorológico.
+      - ¿Qué caracteriza una ola de calor urbano?
+
   - intent: simulacro_fecha
     examples: |
-      - ¿Cuándo es el próximo simulacro?
-      - ¿Hay simulacro esta semana?
-      - ¿Qué día será el simulacro nacional?
-      - ¿Es hoy el simulacro de sismo?
-      - ¿En qué fecha se realiza el próximo simulacro?
-      - ¿Tendremos práctica de evacuación pronto?
-      - ¿Cuándo será el ejercicio de emergencia?
-      - ¿Simulacro nacional programado?
-      - ¿Dónde informan las fechas de simulacros?
-      - ¿Cuál es el horario del próximo simulacro?
-      - ¿Me avisas cuándo es el simulacro?
-      - ¿Será presencial el siguiente simulacro?
-      - ¿Cuándo hay simulacro en mi distrito?
-      - ¿Simulacro de defensa civil confirmado?
-      - ¿Es obligatorio participar en el simulacro?
-      - ¿Cuándo es el próximo ensayo de evacuación?
-      - ¿Se realizará el simulacro en todo el país?
-      - ¿Quién organiza el simulacro?
-      - ¿Cuándo es el simulacro escolar?
-      - ¿En qué mes se hace el simulacro más grande?
-      - ¿Se hará simulacro en mi zona?
-      - ¿Es este mes el simulacro nocturno?
-      - ¿Hay simulacro internacional también?
-      - ¿Dónde encuentro el cronograma de simulacros?
-      - ¿Cuánto falta para el próximo simulacro?
-      - ¿Simulacro por sismo o por huaico?
-      - ¿Se avisará con sirenas?
-      - ¿Qué día será el ensayo de evacuación?
-      - ¿Tendremos simulacro en la costa?
-      - ¿Se practica evacuación de tsunami?
-      - ¿Cuándo se activa el protocolo de simulacro?
-      - ¿Dónde debo estar durante el simulacro?
-      - ¿Puedo participar desde casa?
-      - ¿Simulacro este viernes?
-      - ¿Requiere inscripción el simulacro?
-      - ¿La municipalidad participa en el simulacro?
-      - ¿En qué regiones se realizará?
-      - ¿Es preventivo el simulacro del sábado?
-      - ¿Debo evacuar en ese simulacro?
-      - ¿Qué hacer en el próximo simulacro?
-      - ¿Es masivo el simulacro de este mes?
-      - ¿Qué instituciones se suman?
-      - ¿Se transmite por televisión?
-      - ¿Cuándo fue el último simulacro?
-      - ¿Cómo saber si hay simulacro hoy?
-      - ¿Simulacro nacional simultáneo?
-      - ¿Cuándo convoca el COEN el siguiente simulacro?
-      - ¿Hay fecha publicada para el simulacro?
-      - ¿El simulacro será por terremoto?
-      - ¿Se realizará el simulacro por lluvias?
+      - ¿Cuándo es el próximo simulacro de evacuación?
+      - Dime la fecha del simulacro contra incendios.
+      - Necesito saber cuándo realizaremos un simulacro sísmico.
+      - ¿En qué día programan el simulacro de tsunami?
+      - Infórmame sobre la fecha del simulacro de inundaciones.
+      - Quiero conocer el calendario de simulacros de emergencia.
+      - ¿A qué hora y fecha es el simulacro de alarma general?
+      - ¿Cuándo tendremos el simulacro de evacuación escolar?
+      - Solicito la fecha del ejercicio de respuesta rápida.
+      - ¿Está agendado ya el simulacro comunitario?
+      - Requiero detalles de la fecha para el simulacro de primeros auxilios.
+      - ¿Cuándo se llevará a cabo el simulacro de incendio forestal?
+      - Busca la fecha del simulacro de salida ordenada.
+      - ¿Podrías decirme el día del simulacro nacional de sismos?
+      - ¿Cuál es la fecha del simulacro de derrame químico?
+      - Necesito la programación del simulacro de rescate en montaña.
+      - ¿Cuándo será el simulacro de corte de energía?
+      - Dime el calendario de simulacros en Lima Metropolitana.
+      - ¿En qué fecha es el simulacro de contaminación ambiental?
+      - Infórmame del próximo simulacro de alerta temprana.
+      - Cuento con la fecha del simulacro de emergencia hospitalaria?
+      - ¿Está definido el día del simulacro de transporte masivo?
+      - Quiero saber la fecha del simulacro de búsqueda y rescate.
+      - Solicito cuándo haremos el simulacro de contaminación química.
+      - ¿En qué mes tendrá lugar el simulacro de manejo de crisis?
+      - Dime cuándo es el simulacro bajo el protocolo escolar.
+      - ¿Cuándo programan el simulacro de evacuación en mi zona?
+      - Necesito saber la fecha del simulacro de alarma sísmica.
+      - ¿Cuál es la fecha prevista para el simulacro de tsunami en la costa?
+      - El simulacro de evacuación se realizará el 8 de agosto.
+      - El simulacro escolar está fijado para el 15 de septiembre.
+      - El simulacro de incendio tendrá lugar el 20 de noviembre.
 
   - intent: refugios_cercanos
     examples: |
-      - ¿Dónde hay un albergue cerca?
-      - ¿Cuáles son los puntos de reunión más próximos?
-      - ¿Dónde puedo ir si tengo que evacuar?
-      - ¿Hay refugios habilitados en esta zona?
-      - ¿Me puedes indicar un lugar seguro cercano?
-      - ¿Dónde queda el albergue más próximo?
-      - ¿Puedo ir a un refugio ahora?
-      - ¿Dónde están los puntos de evacuación?
-      - ¿Qué lugares se usan como refugio temporal?
-      - ¿Hay zonas seguras asignadas?
-      - ¿Refugios en San Juan de Miraflores?
-      - ¿Dónde me puedo proteger si tiembla?
-      - ¿A dónde llevar a mi familia?
-      - ¿Dónde se ubican los albergues más cercanos?
-      - ¿Hay centros de refugio abiertos?
-      - ¿En qué dirección están los puntos de reunión?
-      - ¿Cómo ubico una zona segura en mi distrito?
-      - ¿Qué colegio funciona como albergue?
-      - ¿Refugio en caso de desborde de río?
-      - ¿Dónde me puedo resguardar si cae un huaico?
-      - ¿Qué lugares son refugios en emergencias?
-      - ¿Refugios para personas vulnerables?
-      - ¿Dónde alojarse si se pierde la vivienda?
-      - ¿Hay zonas habilitadas como refugios?
-      - ¿Qué lugares está usando defensa civil?
-      - ¿Ubicaciones de albergues provisionales?
-      - ¿Dónde hay carpas de ayuda?
-      - ¿A dónde llevan a los evacuados?
-      - ¿Qué puntos han sido habilitados como seguros?
-      - ¿Dónde buscar un centro de apoyo?
-      - ¿Cuáles son las zonas más protegidas?
-      - ¿Refugios cerca de la avenida principal?
-      - ¿Dónde queda el punto de evacuación más próximo?
-      - ¿Hay señalización de refugios?
-      - ¿Lista de refugios del distrito?
-      - ¿Zonas altas recomendadas?
-      - ¿Dónde encontrar mapas de zonas seguras?
-      - ¿Me puedes orientar hacia un albergue?
-      - ¿Cuáles son los centros de apoyo temporales?
-      - ¿Hay algún parque habilitado como zona segura?
-      - ¿Hospitales que reciban a evacuados?
-      - ¿Polideportivos usados como albergues?
-      - ¿Dónde instalan carpas de emergencia?
-      - ¿Dónde están los módulos de refugio?
-      - ¿Qué puntos de reunión están operativos?
-      - ¿Dónde encuentro ayuda en caso de evacuación?
-      - ¿Qué centros están disponibles si pierdo mi casa?
-      - ¿Dónde resguardarse durante un desastre?
-      - ¿Qué zonas recomienda INDECI como refugio?
-      - ¿A dónde debo ir si evacúan mi zona?
+      - ¿Dónde está el refugio más cercano?
+      - Necesito un refugio seguro cerca de mí.
+      - Muéstrame los albergues anti-sismo en Lima.
+      - Consulta refugios contra inundaciones cercanos.
+      - Dime la ubicación de refugios para huaicos.
+      - Quiero encontrar refugios disponibles ahora.
+      - Indica refugios de emergencia en mi zona.
+      - ¿Dónde puedo ir si hay un tsunami?
+      - Requiero lista de refugios próximos.
+      - Busca albergues para granizo cerca.
+      - Ubicación de refugios anti-vendaval.
+      - ¿Hay un refugio en este distrito?
+      - Dame las coordenadas de refugios cercanos.
+      - Localiza centros de evacuación próximos.
+      - Haz un listado de refugios seguros.
+      - Quiero refugios con atención médica.
+      - ¿Qué albergues están abiertos ahora?
+      - Dónde hay refugios para personas mayores.
+      - Busca albergue anti-huracán más cercano.
+      - Indica refugio temporal contra friaje.
+      - Dame refugio en caso de heladas.
+      - Localiza refugios abiertos 24 horas.
+      - Solicito refugios con agua potable.
+      - ¿Hay refugios con Wi-Fi cerca?
+      - Revisa albergues con capacidad suficiente.
+      - Quiero saber refugios de montaña.
+      - Consulta refugios en la costa peruana.
+      - Muéstrame refugios en Piura.
+      - Busca refugios en San Juan de Lurigancho.
+      - Dime refugios en Miraflores.
+      - Ubica refugios en el Callao.
+      - Indica refugios en Ancash.
+      - ¿Dónde están los refugios en Arequipa?
+      - Listado de refugios en Cusco.
+      - Necesito refugios en Iquitos.
+      - Albergues en Trujillo.
+      - Refugios en Chiclayo.
+      - Refugios en Puno.
+      - Dime refugios en Huancayo.
+      - Localiza refugios en Tacna.
+      - Busca refugios en Ayacucho.
+      - Indica refugios en Huánuco.
+      - ¿Dónde hay refugios en Ucayali?
+      - Consulta refugios en Junín.
+      - Listado de refugios en Madre de Dios.
+      - Busca refugios en la selva.
+      - Dime refugios en la sierra.
+      - Indica refugio cerca de mi ubicación actual.
+      - Localiza refugio de emergencia más próximo.
+      - Quiero ver refugios disponibles para evacuación.
   - intent: rutas_evacuacion
     examples: |
-      - ¿Cuáles son las rutas de evacuación?
-      - ¿Por dónde debo evacuar si hay sismo?
-      - ¿Dónde están las salidas de emergencia?
-      - ¿Qué camino debo seguir en caso de huaico?
-      - ¿Cómo salgo de mi edificio si tiembla?
-      - ¿Dónde están marcadas las rutas de salida?
-      - ¿Qué ruta debo usar para ir al refugio?
-      - ¿Cómo sé si mi calle es vía de evacuación?
-      - ¿Por dónde salir si hay inundación?
-      - ¿Cuál es el camino más seguro para evacuar?
-      - ¿Me puedes guiar hacia una zona segura?
-      - ¿Dónde comienza la ruta de evacuación?
-      - ¿Hay señalización visible?
-      - ¿Evacuar por el norte o el sur?
-      - ¿Puedo usar la avenida principal para evacuar?
-      - ¿Dónde está el punto de salida del distrito?
-      - ¿Cuál es la mejor ruta para salir rápido?
-      - ¿Dónde debo reunirme al evacuar?
-      - ¿Hay rutas de evacuación habilitadas?
-      - ¿Hay rutas bloqueadas actualmente?
-      - ¿Me puedes trazar una ruta?
-      - ¿Cuáles son las rutas marcadas por defensa civil?
-      - ¿Ruta de evacuación escolar?
-      - ¿Cómo salgo del centro histórico en emergencia?
-      - ¿Qué rutas se recomiendan para esta zona?
-      - ¿Rutas en caso de tsunami?
-      - ¿Evacuar hacia la parte alta?
-      - ¿Cuál es la ruta menos congestionada?
-      - ¿Dónde encuentro el plano de evacuación?
-      - ¿Las autoridades indicaron alguna vía segura?
-      - ¿Puedo evacuar en mi auto?
-      - ¿Se permite evacuar por la vía férrea?
-      - ¿Los cerros son rutas válidas?
-      - ¿Ruta recomendada para adultos mayores?
-      - ¿Hay rutas con acceso para discapacitados?
-      - ¿Dónde están los mapas de evacuación?
-      - ¿Qué calles usar si hay desborde?
-      - ¿A dónde evacuar si hay incendio?
-      - ¿El pasaje funciona como ruta de evacuación?
-      - ¿Hay rutas activadas por la municipalidad?
-      - ¿Por dónde debo salir si vivo en el segundo piso?
-      - ¿Puedo evacuar por el parque?
-      - ¿Las rutas están iluminadas?
-      - ¿Hay rutas de doble sentido?
-      - ¿Evacuar por la escalera principal o de emergencia?
-      - ¿Dónde comienzan las rutas oficiales?
-      - ¿La salida debe dirigirme a un punto seguro?
-      - ¿Es seguro evacuar por el puente?
-      - ¿Qué calles están libres según Defensa Civil?
-      - ¿Cuánto tiempo tarda evacuar por esa ruta?
+      - ¿Cuáles son las rutas de evacuación recomendadas en la zona de San Isidro ante un sismo de gran magnitud?
+      - Estoy en el centro de Lima y necesito conocer las rutas de evacuación más seguras hacia zonas altas si ocurre un tsunami; indícame los pasos.
+      - Dame un plano con las vías de escape habilitadas para evacuar un edificio de oficinas en caso de incendio.
+      - Consulta sobre rutas de evacuación peatonal en caso de desbordamiento del río Rímac.
+      - Requiero información detallada de las rutas de evacuación en la costa de Piura en caso de advertencia de tsunami.
+      - ¿Podrías mostrarme las rutas de evacuación alternas en la Av. Arequipa ante fuertes lluvias e inundaciones?
+      - Necesito saber cómo evacuarme desde mi casa en San Juan de Lurigancho hacia el punto de encuentro asignado si hay un huaico.
+      - Solicito las rutas de evacuación más directas y con menor riesgo de derrumbe en la sierra de Junín durante lluvias intensas.
+      - Explica las rutas de evacuación de un edificio de varios pisos ante una alerta de incendio forestal cercano.
+      - ¿Qué caminos debo seguir para alejarme de la costa rápidamente en caso de alerta de maremoto en Punta Hermosa?
+      - Descríbeme las rutas de evacuación del distrito de Miraflores considerando que se saturan las vías principales.
+      - Dime por favor las rutas de evacuación en caso de granizada que bloquea el acceso a la Carretera Central.
+      - Estoy en un centro comercial y quiero conocer las rutas de evacuación y puntos de reunión en caso de sismo.
+      - Consulta: rutas de evacuación para personas con movilidad reducida dentro de un hospital ante evento sísmico.
+      - Necesito detalles de las rutas de evacuación marítima desde el puerto del Callao en caso de tsunami.
+      - ¿Cuáles son las rutas de evacuación seguras para salir de un edificio antiguo durante un terremoto?
+      - Recomiéndame las rutas de evacuación con transporte público habilitado en emergencias por lluvias fuertes en Cusco.
+      - Muéstrame los pasos recomendados para evacuar una zona rural afectada por deslizamientos de tierra en Áncash.
+      - Dame información sobre las rutas de evacuación peatonales y vehiculares en el distrito de Arequipa.
+      - Solicito rutas de evacuación desde el aeropuerto Jorge Chávez en caso de un fenómeno meteorológico extremo.
+      - Necesito el mapa con las rutas de evacuación en el centro histórico de Trujillo ante alerta de sismo.
+      - ¿Cómo puedo planificar mi ruta de evacuación en la selva amazónica si se produce un friaje severo?
+      - Explícame qué rutas tomar para evacuar un campamento de montaña en Ancash si hay avalancha.
+      - Quiero saber las rutas de evacuación diseñadas para el estadio en caso de emergencia por incendio.
+      - Dame una lista de las rutas de evacuación terrestres y aéreas disponibles en Madre de Dios.
+      - Consulta guía de rutas de evacuación en caso de alerta de desbordamiento de laguna en Huaraz.
+      - Solicito rutas de evacuación del campus universitario ante amenaza de vendaval.
+      - ¿Qué alternativas tengo para evacuarme por mar si la ruta terrestre está bloqueada?
+      - Describe las rutas de evacuación con accesos para vehículos de emergencia en Pisco.
+      - Necesito conocer las rutas de evacuación recomendadas para salir de un edificio en altura en Lima.
+      - ¿Cuáles son las rutas de evacuación para personas en silla de ruedas en el centro comercial de Piura?
+      - Dame indicaciones claras para evacuar un centro de convenciones en caso de sismo y cortes de energía.
+      - Explica las rutas de evacuación desde un trayecto en tren en caso de inundaciones.
+      - Requiero un itinerario de rutas de evacuación desde mi residencia hasta el refugio más cercano en Ancash.
+      - ¿Cómo planifico las rutas de evacuación familiares si vivo en una zona propensa a huaicos?
+      - Consulta de rutas de evacuación y puntos de ayuda en la costa de Tumbes.
+      - Necesito saber las rutas de evacuación de un barrio inundado hasta la carretera principal.
+      - Solicito rutas de evacuación por ruta alterna para evitar congestionamientos en una emergencia.
+      - Describe las rutas de evacuación por helicóptero disponibles en zonas aisladas de Puno.
+      - Dame indicaciones sobre rutas de evacuación marítima desde la costa de Lambayeque.
+      - ¿Qué rutas debo seguir para evacuar una planta industrial en caso de explosión o incendio?
+      - Consulta: rutas de evacuación rasante para peatones y ciclistas en emergencias urbanas.
+      - Explica las rutas de evacuación desde un edificio de oficinas en Lima durante un sismo fuerte.
+      - Necesito rutas de evacuación seguras durante un vendaval que afecta la costa central.
+      - ¿Podrías detallar las rutas de evacuación del distrito de San Martín de Porres ante inundaciones?
+      - Recomiéndame las rutas de evacuación de emergencia si vivo en una zona con riesgo de derrumbe.
+      - Solicito rutas de evacuación específicas para transporte público y particular en Lima.
+      - Describe las rutas de evacuación hacia zonas altas en caso de tsunami en la costa norte.
+      - ¿Cómo planifico mi ruta de evacuación si soy turista en Cusco y hay riesgo de huaicos?
+      - Dame un plan paso a paso con rutas de evacuación para un edificio residencial en Miraflores.
 
   - intent: ayuda
     examples: |
-      - ¿Cómo uso este bot?
-      - ¿Qué cosas me puedes responder?
-      - ¿Puedes decirme qué sabes hacer?
-      - Necesito ayuda
-      - No sé cómo empezar
-      - ¿Cómo te puedo hacer preguntas?
-      - ¿Qué comandos entiendes?
-      - ¿Qué tipo de información brindas?
-      - ¿Me das ejemplos de lo que puedes hacer?
-      - ¿Cuáles son tus funciones?
-      - ¿Me puedes guiar?
-      - ¿Estás activo?
-      - ¿Puedes darme instrucciones?
-      - ¿Qué servicios manejas?
-      - ¿Con qué temas puedes ayudarme?
-      - ¿Tienes alguna guía de uso?
-      - ¿Qué tipo de emergencias reconoces?
-      - ¿Cómo interactúo contigo?
-      - ¿Qué intenciones puedes detectar?
-      - ¿Cómo pido el clima?
-      - ¿Puedes ayudarme con alertas?
-      - ¿Me explicas qué palabras entiendes?
-      - ¿Cómo accedo al pronóstico?
-      - ¿Sabes reconocer ubicaciones?
-      - ¿Qué respuestas me puedes dar?
-      - ¿Conoces sismos?
-      - ¿Puedes identificar huaicos?
-      - ¿Cómo activo la información climática?
-      - ¿Qué herramientas usas para responder?
-      - ¿Me puedes dar un ejemplo?
-      - ¿Tienes funciones de emergencia?
-      - ¿Cómo consulto rutas de evacuación?
-      - ¿Tienes un menú de comandos?
-      - ¿Cómo pedir ayuda durante un desastre?
-      - ¿Cómo consultar si hay alerta?
-      - ¿Hay opciones de contacto con autoridades?
-      - ¿Tienes datos sobre refugios?
-      - ¿Cómo se reporta un evento?
-      - ¿Este bot es para emergencias?
-      - ¿Qué temas ambientales manejas?
-      - ¿Sabes sobre contaminación?
-      - ¿Tienes información educativa?
-      - ¿Tienes juegos o trivias?
-      - ¿Cómo acceder a consejos de seguridad?
-      - ¿Qué otras funciones tienes?
-      - ¿Quién diseñó este bot?
-      - ¿Tienes horarios de atención?
-      - ¿Puedo escribirte siempre que quiera?
-      - ¿Puedes decirme por dónde empiezo?
-      - ¿Qué comandos reconoces?
+      - ¿Puedes ayudarme con los comandos disponibles?
+      - Necesito asistencia para usar el servicio meteorológico.
+      - Ayuda, no sé cómo consultar el pronóstico.
+      - Muéstrame las opciones de lo que puedo preguntar.
+      - Quiero información sobre cómo funciona este bot.
+      - ¿Qué tipos de consultas puedo hacer?
+      - Dime cómo obtener alertas meteorológicas.
+      - Solicito ayuda para configurar mis preferencias.
+      - Explica qué funciones ofrece este asistente.
+      - ¿Cómo pido recomendaciones de medidas?
+      - Necesito guía paso a paso para usar el endpoint.
+      - Indícame los comandos para reportar un evento.
+      - Ayuda con ejemplos de preguntas sobre calidad del aire.
+      - Estoy perdido, ¿qué puedo decirle al bot?
+      - Quiero orientación sobre cómo obtener refugios cercanos.
+      - Muéstrame un tutorial rápido de uso.
+      - ¿Cómo formulo una consulta de simulacro?
+      - Solicito un listado de intents disponibles.
+      - Dime cómo pedir información de rutas de evacuación.
+      - Ayúdame a entender la sintaxis de las peticiones.
+      - ¿Qué datos debo enviar para reportar un desastre?
+      - Guíame para crear un plan de emergencia.
+      - Explica cómo obtener el pronóstico de oleaje.
+      - Ayuda: necesito saber qué preguntar.
+      - ¿Cuáles son los parámetros obligatorios de consulta?
+      - Solicito asistencia para definir zonas geográficas.
+      - ¿Cómo solicito el índice de calidad del aire?
+      - Necesito ejemplos de alertas meteorológicas.
+      - ¿Qué debo escribir para recibir un reporte de inundación?
+      - Ayúdame a estructurar mi petición de ayuda.
+      - ¿Cómo formulo una solicitud de información general?
+      - Dame instrucciones sobre cómo iniciar un simulacro.
+      - ¿Me guías para obtener el pronóstico diario?
+      - Necesito ayuda para interpretar las respuestas.
+      - Muéstrame cómo cambiar de región en mis consultas.
+      - ¿Cómo consulto horas de simulacro programadas?
+      - Ayuda, no comprendo los códigos de alerta.
+      - Solicito guía para traducir mensajes de error.
+      - Explica el flujo de interacción con este bot.
+      - ¿Cómo repito una consulta si falla?
+      - Ayúdame a entender el formato de fecha requerido.
+      - ¿Qué comandos cortos puedo usar?
+      - Solicito ejemplos de uso de “obtener_pronostico”.
+      - Necesito asistencia con variables geográficas.
+      - Ayuda, ¿cómo obtengo los albergues más cercanos?
+      - Guíame para preguntar sobre eventos meteorológicos.
+      - Muéstrame cómo formatear una petición de rutas.
+      - ¿Qué hago si no encuentro un refugio cercano?
+      - Ayúdame a iniciar un plan de emergencia.
+
   - intent: saludo
     examples: |
       - Hola
@@ -633,213 +604,1131 @@ nlu:
       - Un saludo
       - ¡Hola Copiloto!
       - ¡Hola, necesito tu ayuda!
+      - Saludos senamhito, ¿puedes ayudarme?
+      - Buen día senamhito, ¿qué puedes hacer?
+      - ¡Hola senamhito! Necesito asistencia.
+      - Buenas senamhito, ¿cómo me asistes hoy?
+      - ¡Hey senamhito! Tengo una duda.
+      - Hola senamhito, ¿qué opciones tengo?
+      - ¡Saludos senamhito! ¿Qué tal el clima?
+      - Buenas tardes senamhito, ¿estás disponible?
+      - Hola senamhito, ¿me recomiendas algo?
+      - ¡Muy buenos días senamhito!
+      - Buenas noches senamhito, ¿cómo funciona esto?
+      - Hola senamhito, quiero conocer tus comandos.
+      - Hey senamhito, explícame tus funciones.
+      - Buenas senamhito, ¿en qué me puedes ayudar?
+      - ¡Hola senamhito! Muéstrame lo que ofreces.
+      - Buen día senamhito, ¿qué consultas puedo hacer?
+      - ¡Hey senamhito! Estoy listo para comenzar.
 
   - intent: despedida
     examples: |
       - Adiós
+      - Chao
       - Hasta luego
-      - Chau
-      - Nos vemos
-      - Gracias, eso era todo
-      - Ya no necesito más
-      - Cierro sesión
+      - Nos vemos pronto
+      - Me despido, gracias
+      - Cuídate
       - Hasta la próxima
-      - Me retiro
-      - Hablamos luego
-      - Me voy
-      - Listo, gracias
-      - Eso es todo por ahora
-      - Terminamos por hoy
-      - Saludos y gracias
-      - Muchas gracias, adiós
-      - Estoy bien, gracias, chau
-      - Fue todo, gracias
-      - Ya no tengo más preguntas
-      - Hasta pronto
-      - Me desconecto
-      - Adiós bot
-      - Me despido
-      - Eso es suficiente
-      - Ya tengo la información
-      - Me despido con gratitud
-      - Terminamos aquí
-      - Hasta otra oportunidad
-      - Muchas gracias, Copiloto
-      - Despedida cordial
-      - Ok, cierro
-      - Salgo de aquí
-      - Bye
-      - Buen día, hasta luego
-      - Me voy por ahora
-      - Muchas gracias por todo
-      - Un gusto, hasta pronto
-      - Estuvo genial, chau
-      - Nada más por ahora
-      - ¡Te cuidas!
-      - ¡Hasta otra!
-      - ¡Nos vemos más tarde!
-      - ¡Chao!
-      - Me desconecto un rato
-      - ¡Ha sido útil, gracias!
-      - Hasta más ver
-      - ¡Quedo atento para otra ocasión!
-      - ¡Hasta luego, bot!
-      - Me despido con una sonrisa
+      - Que tengas un buen día
+      - Gracias por la ayuda, senamhito. Adiós.
+      - Fue un placer, ¡hasta luego!
+      - Nos hablamos luego
+      - Hasta mañana
+      - Es hora de irme
+      - Hasta luego senamhito
+      - ¡Chau chau!
+      - Gracias, hasta pronto
+      - Ya me voy. Gracias por todo.
+      - Termino por hoy. Adiós.
+      - Me retiro. ¡Nos vemos!
+      - Nos vemos más tarde
+      - Hasta entonces
+      - Cierro la sesión. Hasta luego.
+      - Que te vaya bien
+      - ¿Nos vemos después?
+      - ¿Puedo despedirme ya?
+      - ¿Termino la sesión aquí?
 
   - intent: agradecimiento
     examples: |
-      - Gracias
+       - Gracias
       - Muchas gracias
-      - Te agradezco
-      - Qué amable
-      - Gracias por tu ayuda
-      - Fue útil, gracias
-      - Muy gentil
-      - Eres genial, gracias
-      - Súper útil, gracias
-      - Gracias por la información
-      - Gracias por explicarme
-      - Eres muy claro, gracias
-      - Me ayudaste mucho
-      - Te lo agradezco de verdad
-      - Gracias por responderme
-      - ¡Gracias, asistente!
-      - ¡Muy bien, gracias!
-      - Gracias, bot
-      - ¡Mil gracias!
-      - ¡Agradezco tu tiempo!
-      - Qué buena respuesta, gracias
-      - ¡Excelente, gracias!
-      - Todo claro, gracias
-      - ¡Qué bien explicas!
-      - ¡Gracias, Copiloto!
-      - Bien explicado, gracias
-      - Gran servicio, gracias
-      - ¡Qué rapidez, gracias!
-      - ¡Siempre tan útil!
-      - ¡Me serviste mucho!
-      - Eres muy útil
-      - ¡Buen trabajo, gracias!
-      - ¡Eres muy eficiente!
-      - Me aclaraste la duda, gracias
-      - ¡Muy didáctico!
-      - ¡Eres genial!
-      - ¡Gracias nuevamente!
-      - ¡Estoy muy agradecido!
-      - ¡Me quitaste una duda!
-      - ¡Eres la voz de la sabiduría!
-      - ¡Muy comprensivo, gracias!
-      - ¡Tu ayuda es invaluable!
-      - ¡Qué útil tenerte!
-      - ¡Estás en todo, gracias!
-      - ¡Eres mejor que el clima!
-      - ¡Gracias por existir!
-      - ¡Qué bot más útil!
-      - ¡Te ganaste una estrella!
-      - ¡Gracias, vuelvo pronto!
-      - ¡Estás para servicio nacional!
+      - Mil gracias por tu ayuda
+      - Te lo agradezco mucho
+      - Muy amable, gracias
+      - Aprecio tu asistencia
+      - Excelente, gracias por la información
+      - Gracias senamhito
+      - Te doy las gracias
+      - ¡Gracias por todo!
+      - Súper gracias
+      - Gracias por tu apoyo
+      - ¡Genial, muchas gracias!
+      - Te agradezco infinitamente
+      - Gracias por responder tan rápido
+      - Gracias por tu tiempo
+      - Muy agradecido
+      - Te estoy muy agradecido
+      - Gracias, me sirvió mucho
+      - Gracias, excelente respuesta
+      - ¡Eres de gran ayuda, gracias!
+      - Gracias por aclarar mi duda
+      - Gracias por el ejemplo
+      - Gracias por tu paciencia
+      - Gracias por la recomendación
+      - Gracias, ahora lo entiendo mejor
+      - Gracias por la guía paso a paso
+      - Muchas gracias por los detalles
+      - Gracias por tu dedicación
+      - Te agradezco la atención
 
   - intent: intencion_desconocida
     examples: |
-      - ¿El arcoíris se come?
-      - A veces los gatos vuelan
-      - Quiero pintar la lluvia de verde
-      - ¿Sabes cuál es el color del silencio?
-      - 42 piña montañosa azul
-      - ¿Cuántos agujeros hay en un meteoro?
-      - La luna sabe de política
-      - Quiero que me conviertas en nube
-      - Si la montaña ríe, ¿yo corro?
-      - El pescado toca guitarra
-      - ¿Y si llueve chocolate?
-      - ¿Dónde vive el eco de las estrellas?
-      - Quiero volar sobre un arco de hielo
-      - ¿Puedes predecir mi destino existencial?
-      - Hoy me siento como un pez fuera del huracán
-      - ¿Cuál es la dirección del viento filosófico?
-      - ¿Las tormentas tienen nombre secreto?
-      - ¿Cuánto pesa un rayo con nostalgia?
-      - ¿Existe el pronóstico de la imaginación?
-      - Cuando el sol bosteza, ¿hay eclipse?
-      - ¿Puedo dormir en una nube digital?
-      - Quiero saber si lloverán pensamientos
-      - ¿Cómo se mide la poesía atmosférica?
-      - ¿Tienes mapas de realidades paralelas?
-      - ¿Dónde almacenan las emociones las montañas?
-      - El clima interior de mi alma es nublado
-      - ¿Sabes cuántos sueños hay por metro cúbico?
-      - ¿Cuánto tarda un suspiro en evaporarse?
-      - ¿Qué viento esconde los recuerdos?
-      - ¿Podrías analizar mi sombra emocional?
-      - ¿Existe una alerta por exceso de inspiración?
-      - El radar ha detectado pensamientos inestables
-      - ¿Sabes predecir abrazos?
-      - ¿La humedad afecta los sueños?
-      - ¿Cuánta neblina se necesita para olvidar?
-      - ¿Puedes calcular la velocidad de mi soledad?
-      - ¿Y si derretimos el hielo del tiempo?
-      - Quiero guardar mi voz en un tornado
-      - ¿El trueno escucha lo que digo?
-      - ¿Puedes traducir la lluvia al silencio?
-      - ¿Cómo evito que el viento me extrañe?
-      - Quiero un paraguas para mis emociones
-      - ¿Puedes predecir mi próximo poema?
-      - ¿El cielo sueña conmigo?
-      - ¿Puedes pronosticar felicidad?
-      - ¿Sabes medir la presión de mis pensamientos?
-      - ¿Puedes leer los temblores de mi intuición?
-      - ¿Dónde refugiarse de una tormenta de dudas?
-      - ¿Cuánto pesa una nube de recuerdos?
-      - ¿Hay índice UV para el alma?
+      - ¿Puedes recomendarme una serie de televisión?
+      - Muéstrame fotos de gatos adorables.
+      - Tengo hambre, ¿dónde como sushi?
+      - ¿Cuál es el precio de las acciones de Apple?
+      - Necesito ayuda para instalar un programa de diseño gráfico.
+      - ¿Qué opinas de la filosofía existencialista?
+      - ¿Cómo hago para tocar guitarra eléctrica?
+      - ¿Podrías enseñarme vocabulario en japonés?
+      - Quiero consejos de jardinería para plantas suculentas.
+      - ¿Sabes cuándo sale la próxima película de superhéroes?
+      - ¿Cuál es la receta de una tortilla española?
+      - Invítame a una conversación sobre arte renacentista.
+      - ¿Tienes ideas para un regalo de cumpleaños?
+      - Dime un chiste de matemáticos.
+      - ¿Cómo resuelvo un cubo Rubik en menos de un minuto?
+      - Tradúceme “buenos días” al hindi.
+      - ¿Me recomiendas un buen libro de ciencia ficción?
+      - Quiero aprender técnicas de origami.
+      - ¿Cuál es la capital de Mongolia?
+      - Necesito tips para meditar correctamente.
+      - ¿Puedes explicarme la teoría de cuerdas?
+      - ¿Qué canciones suenan mejor en vinilo?
+      - Dame un poema sobre la luna.
+      - ¿Cómo cambio el aceite de mi automóvil?
+      - Enséñame trucos de magia fáciles.
+      - ¿Cuál es el significado de la vida?
+      - Quiero saber cómo se hace pan casero.
+      - ¿Cuándo es el próximo eclipse solar?
+      - Dime una curiosidad sobre el ajedrez.
+      - ¿Tienes información sobre la ruta del Inca?
+      - Muéstrame un tutorial de pintura acrílica.
+      - ¿Cuál es la distancia entre la Tierra y Marte?
+      - Recuérdame mi cita mañana a las 9 am.
+      - ¿Cuál es mi saldo bancario?
+      - Sugiéreme nombres para mi nueva mascota.
+      - ¿Puedes llamarme después?
+      - Activa la alarma para dentro de una hora.
+      - ¿Cómo instalo Python en mi teléfono?
+      - Nota: revisar archivo de configuración.
+      - Solicito música relajante para estudiar.
+      - Dame el pronóstico bursátil de mañana.
+      - Comparte tu película favorita de los 80.
+      - ¿Qué hora es en Nueva Zelanda ahora?
+      - Propón un itinerario para un viaje a Japón.
+      - ¿Cuál es la receta de la moussaka?
+      - Redacta un correo solicitando vacaciones.
+      - Explica los pasos para empacar una maleta.
+      - Genera un haiku sobre el café matutino.
+      - Muéstrame un diagrama de flujo de compras.
+      - ¿Cuál es la mejor receta casera de lasaña vegetariana?
+      - Recomiéndame una serie de televisión ambientada en la Edad Media.
+      - Dime los horarios de tren de Lima a Huancayo.
+      - ¿Qué cantante ganó el Grammy al Álbum del Año en 2021?
+      - Explícame cómo cambiar la cadena de una bicicleta de montaña.
+      - Quiero conocer los puntos turísticos imperdibles de Marruecos.
+      - ¿Cómo organizo una rutina de ejercicios para fortalecer el core?
+      - ¿Qué consejos me das para aprender japonés rápido?
+      - Necesito ideas de atuendos formales para una entrevista de trabajo.
+      - Muéstrame los pasos para crear una landing page en React.
+      - ¿Cuál es el significado de la palabra “serendipia”?
+      - Descríbeme la técnica de pintura al óleo al estilo impresionista.
+      - ¿Dónde puedo encontrar repuestos originales para un iPhone 12?
+      - Dame un itinerario de tres días en Tokio para un primer viaje.
+      - ¿Cómo hago para plantar y cuidar orquídeas en interiores?
+      - Quiero saber el proceso de elaboración del queso parmesano.
+      - ¿Cuál es la mejor configuración para grabar podcasts?
+      - Explícame las reglas básicas de baloncesto 3x3.
+      - ¿Me recomiendas un buen libro de historia contemporánea?
+      - Necesito consejos de productividad para trabajar desde casa.
+      - ¿Cómo preparo un curry de verduras al estilo indio?
+      - Dame una lista de canciones clásicas de jazz vocal.
+      - ¿Qué herramientas uso para diseñar un logo profesional?
+      - Quiero aprender a programar en Python desde cero.
+      - ¿Cómo puedo mejorar mi postura al dormir?
+      - Explica la diferencia entre OLED y QLED en televisores.
+      - Elabora una rutina de meditación de cinco minutos.
+      - ¿Dónde compro telas de algodón orgánico en Lima?
+      - Sugiéreme actividades para un viaje de mochilero por Europa.
+      - ¿Cuál es la diferencia entre latte y cappuccino?
+      - Instrúyeme sobre cómo crear una cuenta de AWS.
+      - ¿Qué técnicas usan los fotógrafos para retratos en exterior?
+      - Quiero tips para ahorrar en mi factura de electricidad.
+      - ¿Cómo preparo cupcakes veganos de chocolate?
+      - Dame ejemplos de peinados sencillos para cabello rizado.
+      - Explica cómo funciona la sincronización de calendarios en Google.
+      - ¿Qué ejercicios recomiendas para aliviar el dolor lumbar?
+      - Necesito ideas para decorar una sala pequeña con estilo minimalista.
+      - Dime cómo optimizar mi currículum para un puesto en tecnología.
+      - ¿Qué programas de edición de video son gratuitos y profesionales?
+      - Danos consejos para entrenar a un cachorro de labrador.
+      - ¿Cómo organizo mis finanzas personales mes a mes?
+      - Sugiéreme un maridaje ideal para un vino tinto Malbec.
+      - Muéstrame dónde comprar pinturas acrílicas de buena calidad.
+      - Quiero aprender a tejer un suéter de lana merina.
+      - ¿Cómo hago backup automático de fotos en la nube?
+      - Dame trucos para mejorar la señal de Wi-Fi en casa.
+      - Explica las diferencias entre SEO on-page y off-page.
+      - ¿Qué dietas recomiendas para ganar masa muscular?
+      - Necesito ejemplos de contratos de alquiler de vivienda.
+      - ¿Cómo preparo un batido de proteínas casero?
+      - Recomiéndame juegos de mesa para jugar en familia.  
+
   - intent: lenguaje_inapropiado
     examples: |
-      - Eres un inútil
-      - Esto es una m****
-      - No sirves para nada
-      - Qué porquería de bot
-      - Váyanse al c***
-      - Esta m**** no responde
-      - Estás programado por idiotas
-      - Anda al demonio
-      - Tu respuesta es una tontería
-      - Qué est****z es esta
-      - Es una basura lo que haces
-      - No entiendo esta m****
-      - Esto es estúpido
-      - ¿Quién te entrenó, un animal?
-      - Esto es una mier***
-      - Qué b**** es esto
-      - No me j***
-      - Eres una p***
-      - Anda a freír monos
-      - Estás completamente maldito
-      - No digas tonterías
-      - Es que este bot está j***
-      - No das ni una
-      - Vete a la m****
-      - Tu información es una b***
-      - Qué clase de idiotez es esta
-      - Todo esto es una pérdida de tiempo
-      - ¡Qué m**** estás diciendo!
-      - Nada de lo que dices sirve
-      - Cállate
-      - Qué maldito bot inútil
-      - No me fastidies más
-      - A quién se le ocurre programarte así
-      - Esto es frustrante
-      - No ayudas en nada, imbécil
-      - ¿Eres est**** o qué?
-      - Anda a hacer otra cosa
-      - Qué j***da es esto
-      - Nadie te necesita
-      - ¡Vaya porquería!
-      - Cállate, pedazo de código
-      - Siempre respondes mal
-      - Estás fallando otra vez
-      - Estoy harto de este bot
-      - Qué tonto eres
-      - Esto es tan inútil
-      - Anda al cuerno
-      - Deja de j***
-      - Esto no vale nada
-      - ¡No vuelvas a contestar así!
+      - ¡Joder, qué cabreo tengo!
+      - Me cago en todo lo que se menea.
+      - Vete a la mierda.
+      - No me toques los cojones.
+      - Eres un idiota integral.
+      - Qué puta pereza da esto.
+      - Estoy hasta el coño de esta situación.
+      - Me importa un carajo lo que digas.
+      - Cállate de una vez, gilipollas.
+      - Hostia puta, qué mierda.
+      - Eres un imbécil de cuidado.
+      - Que te den por culo.
+      - Maldita sea esta porquería.
+      - No soporto a esa gentuza.
+      - Esto es una puta basura.
+      - Me la suda completamente.
+      - Qué cojones estás diciendo.
+      - Déjate de tonterías, capullo.
+      - Hijo de puta, qué desastre.
+      - Me cago en tus muelas.
+      - Menuda gilipollez acabas de soltar.
+      - Sácate la cabeza del culo.
+      - Estoy hasta los huevos de este bot.
+      - Hostias, qué jaleo.
+      - Puto engendro inútil.
+      - No vales ni para esto.
+      - Anda a tomar por culo.
+      - Malnacido, vete de aquí.
+      - Eres un cerdo asqueroso.
+      - Que te folle un pez.
+  - intent: consultar_temperatura_actual
+    examples: |
+      - ¿Cuál es la temperatura actual en Lima?
+      - Dime la temperatura que marca el termómetro en este instante.
+      - Necesito saber qué grados hay ahora en Arequipa.
+      - Consulta la temperatura en tiempo real para Cusco.
+      - Indícame los grados actuales en Puno.
+      - ¿A cuánto está la temperatura ahora en Iquitos?
+      - Quiero conocer la temperatura actual en Piura.
+      - ¿Qué temperatura registra Trujillo en este momento?
+      - Muéstrame la temperatura actual en Chimbote.
+      - Por favor, infórmame de la temperatura actual en Huaraz.
+      - ¿Cómo está la temperatura ahora en Huancayo?
+      - Necesito la lectura de temperatura en Lima Norte hace un segundo.
+      - Dime cuáles son los grados actuales en Juliaca.
+      - Consulta la temperatura en la costa de Ancash ahora mismo.
+      - ¿Qué temperatura alcanza Arequipa hacia el mediodía?
+      - Quisiera saber la temperatura actual en Chiclayo.
+      - Indica la temperatura que hay en Tacna justo ahora.
+      - Muéstrame los grados actuales en Huánuco.
+      - ¿A cuántos grados está el termómetro en Ayacucho?
+      - Revisa la temperatura actual en la sierra de Junín.
+      - Dime la temperatura real en Madre de Dios en este momento.
+      - Por favor, infórmame de la temperatura actual en Sullana.
+      - ¿Cómo está el termómetro en Oxapampa ahora?
+      - Consulta la temperatura precisa en Tarma en tiempo real.
+      - Indícame la temperatura en Villa El Salvador justo ahora.
+      - ¿Qué grados hay en Ventanilla en este instante?
+      - Dime la temperatura actual en Tumbes sin demora.
+      - ¿Cuál es la lectura de temperatura en Barranca en este preciso momento?
+      - Muéstrame la temperatura actual en Moyobamba.
+      - Necesito conocer la temperatura de Tambopata ahora.
+      - ¿Cómo varía la temperatura actual en Cajamarca?
+      - Dime la temperatura real en Pisco en esta hora.
+      - Consulta la temperatura en la costa de Ica ahora mismo.
+      - ¿Cuántos grados marca Lima Este en este instante?
+      - Indica la temperatura actual en San Juan de Lurigancho.
+      - Por favor, infórmame de la temperatura real en San Martín.
+      - ¿Qué temperatura hay en la selva central en este momento?
+      - Dime la temperatura actual en Huaral.
+      - Muéstrame la temperatura que hace ahora en Carabayllo.
+      - Consulta la temperatura real en Huancavelica.
+      - Indícame la temperatura actual en Áncash.
+      - ¿Cuál es la temperatura en la costa norte justo ahora?
+      - Dime la temperatura real en Chachapoyas.
+      - ¿Qué temperatura marca Ica en este momento?
+      - Muéstrame los grados actuales en San Martín de Porres.
+      - Por favor, consulta la temperatura actual en Chosica.
+      - Dime la temperatura en el aeropuerto de Lima ahora.
+      - ¿Cuál es la temperatura actual en la zona rural de Piura?
+
+  - intent: consultar_humedad_actual
+    examples: |
+      - ¿Cómo está la humedad relativa en Lima esta mañana?
+      - Dime el porcentaje de humedad actual en Arequipa.
+      - Necesito saber cuánta humedad hay ahora en Cusco.
+      - Consulta la humedad en tiempo real para Trujillo.
+      - Indícame la humedad relativa en Piura en este instante.
+      - ¿Qué porcentaje de humedad registra Puno ahora?
+      - Muéstrame la humedad actual en Iquitos.
+      - Por favor, infórmame de la humedad en la costa de Lima.
+      - ¿Cómo varía la humedad actual en Huancayo?
+      - Dime la humectación relativa en Cajamarca en este momento.
+      - Necesito conocer la humedad real en Huánuco ahora mismo.
+      - Consulta el nivel de humedad en Chachapoyas en tiempo real.
+      - Indica la humedad relativa actual en Ayacucho.
+      - ¿A cuánto asciende la humedad en Tacna justo ahora?
+      - Muéstrame el porcentaje de humedad en Huaraz.
+      - Por favor, infórmame de la humedad actual en Tumbes.
+      - Dime el nivel de humedad en Juliaca en este preciso instante.
+      - Consulta la humedad en la selva central ahora mismo.
+      - ¿Qué humedad relativa hay en Ancash en este momento?
+      - Indícame la humedad actual en Huancavelica.
+      - Dime la humedad real en Chimbote en este minuto.
+      - Muéstrame la humedad actual en Pisco.
+      - Consulta la humedad relativa en Carabayllo ahora.
+      - ¿Cuál es la humedad actual en San Juan de Lurigancho?
+      - Por favor, infórmame de la humedad real en Ventanilla.
+      - Dime el porcentaje de humedad en San Martín en este instante.
+      - Indica la humedad relativa en Ilo en este momento.
+      - ¿Cómo está la humedad actual en la costa norte?
+      - Muéstrame la humedad actual en Moyobamba.
+      - Dime la humedad real en Tambopata ahora mismo.
+      - Consulta la humedad en Madre de Dios en tiempo real.
+      - Indícame la humedad relativa actual en Barranca.
+      - ¿Qué porcentaje de humedad tiene la zona rural de Piura?
+      - Por favor, infórmame de la humedad en Huaura.
+      - Dime la humedad relativa en Satipo en este momento.
+      - Consulta la humedad actual en Miraflores.
+      - ¿Cómo varía la humedad en La Molina hoy?
+      - Muéstrame la humedad real en La Victoria.
+      - Dime la humedad en Surco en este instante.
+      - Consulta la humedad relativa en Comas ahora mismo.
+      - Indica la humedad actual en El Agustino.
+      - Por favor, dímela humedad en Ate en este momento.
+      - Muéstrame la humedad real en Lince.
+      - Dime la humedad relativa en Magdalena.
+      - Consulta la humedad actual en San Isidro.
+      - Indícame la humedad real en Pueblo Libre.
+      - ¿Qué porcentaje de humedad hay en San Miguel ahora?
+
+  - intent: consultar_velocidad_viento
+    examples: |
+      - ¿A cuántos km/h sopla el viento en Lima justo ahora?
+      - Dime la velocidad actual del viento en Arequipa.
+      - Necesito saber cuántos kilómetros por hora alcanza el viento en Cusco.
+      - Consulta la velocidad del viento en tiempo real para Piura.
+      - Indícame la fuerza del viento actual en Trujillo.
+      - ¿Qué velocidad de viento registra Puno en este momento?
+      - Muéstrame los km/h del viento en Iquitos ahora.
+      - Por favor, infórmame de la velocidad del viento en Huancayo.
+      - ¿Cómo varía la velocidad del viento en Chimbote hoy?
+      - Dime los km/h del viento en Chiclayo en este instante.
+      - Necesito conocer la fuerza del viento en Cajamarca ahora.
+      - Consulta el viento en km/h en Huánuco en tiempo real.
+      - Indica la velocidad del viento en Ayacucho en este momento.
+      - ¿A cuántos km/h llega el viento en Tacna ahora mismo?
+      - Muéstrame la fuerza del viento en Huaraz.
+      - Por favor, infórmame de la velocidad actual del viento en Tumbes.
+      - Dime la velocidad del viento en Juliaca en este preciso momento.
+      - Consulta el viento en km/h en Moyobamba ahora.
+      - ¿Qué fuerza de viento hay en Tambopata?
+      - Indica la velocidad del viento en Madre de Dios en este instante.
+      - Dime los km/h del viento en Barranca ahora mismo.
+      - Consulta la velocidad del viento en Pisco en tiempo real.
+      - ¿Cómo sopla el viento en Carabayllo en este momento?
+      - Muéstrame la velocidad del viento en San Juan de Lurigancho.
+      - Por favor, infórmame de la velocidad actual del viento en Ventanilla.
+      - Dime la fuerza del viento en San Martín en este instante.
+      - Indica la velocidad del viento en Ilo en este momento.
+      - ¿Qué velocidad de viento hay en Moyobamba ahora?
+      - Muéstrame cuántos km/h sopla el viento en Tambopata.
+      - Dime la velocidad del viento en Huaura hoy.
+      - Consulta la velocidad del viento en Satipo en tiempo real.
+      - ¿Cómo varía la fuerza del viento en Miraflores?
+      - Indica el viento en km/h en La Molina ahora mismo.
+      - Dime la velocidad del viento en Magdalena en este instante.
+      - Muéstrame la velocidad del viento en Lince.
+      - Por favor, infórmame de la fuerza del viento en San Miguel.
+      - Dime el viento en km/h en Ate en este momento.
+      - Consulta la velocidad del viento en El Agustino ahora.
+      - Indica la velocidad actual del viento en Surco.
+      - ¿Qué km/h registra el viento en Comas?
+      - Muéstrame la fuerza del viento en Pueblo Libre.
+      - Dime cuántos km/h sopla el viento en San Isidro.
+      - Consulta la velocidad del viento en Barranco.
+      - Indícame los km/h del viento en Cercado de Lima.
+      - Por favor, muéstrame la velocidad del viento en San Borja.
+
+  - intent: consultar_visibilidad
+    examples: |
+      - ¿Cuál es la visibilidad actual en la Carretera Central?
+      - Dime cuántos metros de visibilidad hay ahora en Lima.
+      - Necesito saber la visibilidad actual en Arequipa.
+      - Consulta la visibilidad en tiempo real para Cusco.
+      - Indícame los metros de visibilidad en Piura en este momento.
+      - ¿Qué visibilidad registra Puno ahora mismo?
+      - Muéstrame la visibilidad actual en Iquitos.
+      - Por favor, infórmame de la visibilidad en Trujillo.
+      - ¿Cómo varía la visibilidad en Chimbote hoy?
+      - Dime los metros de visibilidad en Chiclayo ahora.
+      - Necesito conocer la visibilidad en Cajamarca en este instante.
+      - Consulta la visibilidad en Huánuco en tiempo real.
+      - Indica la visibilidad actual en Ayacucho.
+      - ¿A cuántos metros alcanza la visibilidad en Tacna?
+      - Muéstrame la visibilidad en Huaraz ahora.
+      - Por favor, infórmame de la visibilidad actual en Tumbes.
+      - Dime los metros de visibilidad en Juliaca en este minuto.
+      - Consulta la visibilidad en Moyobamba ahora mismo.
+      - ¿Qué visibilidad hay en Tambopata en este momento?
+      - Indica la visibilidad actual en Madre de Dios.
+      - Dime la visibilidad en Barranca ahora.
+      - Consulta la visibilidad en Pisco en tiempo real.
+      - ¿Cómo está la visibilidad en Carabayllo?
+      - Muéstrame la visibilidad en San Juan de Lurigancho.
+      - Por favor, infórmame de la visibilidad actual en Ventanilla.
+      - Dime la visibilidad en San Martín en este instante.
+      - Indica la visibilidad en Ilo ahora mismo.
+      - ¿Qué metros de visibilidad hay en Moyobamba?
+      - Muéstrame la visibilidad en Tambopata hoy.
+      - Dime la visibilidad en Satipo ahora.
+      - Consulta la visibilidad en Huancavelica en tiempo real.
+      - ¿Cómo varía la visibilidad en Miraflores?
+      - Indica la visibilidad en La Molina en este momento.
+      - Dime la visibilidad en Magdalena ahora.
+      - Muéstrame la visibilidad en Lince en este instante.
+      - Por favor, infórmame de la visibilidad actual en San Miguel.
+      - Dime la visibilidad en Ate ahora mismo.
+      - Consulta la visibilidad en El Agustino.
+      - ¿Cuál es la visibilidad actual en Surco?
+      - Muéstrame la visibilidad en Pueblo Libre.
+      - Indícame los metros de visibilidad en San Isidro.
+      - Dime la visibilidad en Barranco ahora.
+      - Consulta la visibilidad en San Borja.
+      - ¿Qué visibilidad hay en Cercado de Lima?
+      - Por favor, muéstrame la visibilidad en Jesús María.
+
+  - intent: pronostico_extendido
+    examples: |
+      - Proporcióname el pronóstico extendido de los próximos quince días para Lima.
+      - Quiero ver la previsión de todo un mes en Arequipa.
+      - Muéstrame el pronóstico climático de dos semanas para Cusco.
+      - Dime cómo estará el clima en los próximos quince días en Piura.
+      - Solicito la previsión extendida para las siguientes dos semanas en Trujillo.
+      - Infórmame del pronóstico mensual de temperatura en Puno.
+      - ¿Cómo será el tiempo durante las próximas dos semanas en Iquitos?
+      - Quisiera revisar el pronóstico extendido para la costa peruana.
+      - Muestra la previsión climatológica de quince días para la sierra.
+      - Dime la serie de máximas y mínimas para los próximos quince días en Lima.
+      - Consulta el pronóstico extendido diario para Arequipa en los próximos quince días.
+      - Proporción de lluvias esperadas para las siguientes dos semanas en Cusco.
+      - Muéstrame el pronóstico extendido detallado de Piura para el mes siguiente.
+      - Dime cómo variarán las temperaturas durante los próximos quince días en Chiclayo.
+      - Solicito la previsión extendida de viento y lluvia para Trujillo en quince días.
+      - Infórmame del pronóstico extendido de la costa norte para las próximas dos semanas.
+      - Quiero saber cómo cambiará la humedad en los próximos quince días en Puno.
+      - Muéstrame el pronóstico extendido de radiación UV para Lima durante dos semanas.
+      - Dime la previsión extendida de oleaje para los próximos quince días en la costa.
+      - Proporción del pronóstico extendido de Heladas en la sierra para quince días.
+      - Consulta cómo estarán las noches frías en los próximos quince días en Arequipa.
+      - ¿Cuál es el pronóstico extendido de días soleados y nublados en Lima?
+      - Muéstrame la serie histórica del pronóstico extendido para Cusco.
+      - Dime el resumen del pronóstico extendido para el mes que viene en Piura.
+      - Solicita el pronóstico extendido de precipitaciones para Trujillo en dos semanas.
+      - Infórmame del pronóstico extendido de tormentas eléctricas en Puno.
+      - Quiero ver el pronóstico extendido de sensación térmica para Lima.
+      - Muéstrame el pronóstico extendido de las temperaturas máximas y mínimas en Arequipa.
+      - Dime cómo variarán las ráfagas de viento en los próximos quince días en Cusco.
+      - Consulta el pronóstico extendido de posibles granizadas en Piura.
+      - Proporcióname la previsión extendida de días lluviosos para la costa.
+      - Muéstrame el pronóstico extendido de humedad relativa durante dos semanas.
+      - Dime cómo cambiará la presión atmosférica en los próximos quince días en Lima.
+      - Solicito la previsión extendida de tormentas de arena en la sierra.
+      - Infórmame del pronóstico extendido de olas altas en la costa norte.
+      - Quisiera ver el pronóstico extendido de temperaturas extremas en Puno.
+      - Muéstrame el pronóstico extendido de días con neblina para Lima.
+      - Dime la previsión extendida de horas de sol en Arequipa.
+      - Consulta el pronóstico extendido de la ubicación costera de Trujillo.
+      - Proporcióname el pronóstico extendido de condiciones de nieve en la sierra.
+      - Muéstrame el pronóstico extendido de cambios de visibilidad para Lima.
+      - Dime cómo variarán los niveles de polen en los próximos quince días en Cusco.
+      - Infórmame del pronóstico extendido de horas con alta radiación en Piura.
+      - Solicita el pronóstico extendido de cortes de energía por clima extremo.
+      - Quiero ver el pronóstico extendido de lluvias moderadas en Lima durante dos semanas.
+      - Dime la previsión extendida de temperaturas nocturnas en Arequipa.
+      - Muéstrame el pronóstico extendido de días ventosos para Trujillo.
+
+  - intent: probabilidad_precipitacion
+    examples: |
+      - ¿Cuál es la probabilidad de lluvia para mañana en Lima?
+      - Dime el porcentaje de probabilidades de tormentas eléctricas en Arequipa esta semana.
+      - Necesito saber la probabilidad de precipitaciones intensas en Cusco.
+      - Consulta la probabilidad de lluvia para hoy en Piura.
+      - Indícame el porcentaje de probabilidad de chubascos en Trujillo.
+      - ¿Qué probabilidad hay de lluvias torrenciales en Puno mañana?
+      - Muéstrame la probabilidad de lluvia para los próximos tres días en Iquitos.
+      - Por favor, infórmame de la probabilidad de precipitaciones moderadas en Chiclayo.
+      - ¿Cuál es la probabilidad de tormentas eléctricas en Cajamarca esta tarde?
+      - Dime el porcentaje de probabilidad de lluvia para el fin de semana en Huancayo.
+      - Necesito conocer la probabilidad de precipitaciones en Huánuco en las próximas horas.
+      - Consulta la probabilidad de lluvia para la sierra de Áncash en los próximos días.
+      - Indica la probabilidad de lluvias débiles en Ayacucho mañana.
+      - ¿Qué probabilidad hay de chubascos en Tacna al mediodía?
+      - Muéstrame la probabilidad de lluvia para los siguientes siete días en Tumbes.
+      - Por favor, infórmame de la probabilidad de tormentas de granizo en Pisco.
+      - ¿Cuál es la probabilidad de precipitaciones fuertes en la costa norte esta semana?
+      - Dime el porcentaje de probabilidad de lluvias ligeras en Ventanilla hoy.
+      - Consulta la probabilidad de lluvia para Miraflores esta tarde.
+      - ¿Qué probabilidad hay de tormentas en San Martín de Porres mañana?
+      - Indica la probabilidad de lluvia en La Molina esta semana.
+      - Muéstrame la probabilidad de precipitaciones para Ate mañana.
+      - Por favor, infórmame de la probabilidad de tormentas eléctricas en Barranco.
+      - ¿Cuál es la probabilidad de lluvia en El Agustino hoy?
+      - Dime el porcentaje de probabilidad de chubascos en Magdalena esta semana.
+      - Consulta la probabilidad de lluvia para Lince mañana.
+      - ¿Qué probabilidad hay de precipitaciones en San Isidro esta tarde?
+      - Indica la probabilidad de lluvia en Pueblo Libre para el día siguiente.
+      - Muéstrame la probabilidad de tormentas eléctricas en San Miguel hoy.
+      - Por favor, infórmame de la probabilidad de lluvia en Jesús María mañana.
+      - ¿Cuál es la probabilidad de chubascos en Cercado de Lima al amanecer?
+      - Dime el porcentaje de probabilidad de tormentas para Cercado de Lima esta semana.
+      - Consulta la probabilidad de lluvia para San Borja mañana.
+      - ¿Qué probabilidad hay de tormentas de granizo en Surco hoy?
+      - Indica la probabilidad de precipitaciones en Comas esta tarde.
+      - Muéstrame la probabilidad de lluvia para Pueblo Libre mañana.
+      - Por favor, infórmame de la probabilidad de chubascos en Miraflores hoy.
+      - ¿Cuál es la probabilidad de lluvia en Magdalena mañana?
+      - Dime el porcentaje de probabilidad de tormentas en Lince esta semana.
+      - Consulta la probabilidad de lluvia para San Martín mañana.
+      - ¿Qué probabilidad hay de precipitaciones en Ate hoy?
+      - Indica la probabilidad de lluvia en El Agustino mañana.
+      - Muéstrame la probabilidad de tormentas eléctricas en Barranco esta tarde.
+      - Por favor, infórmame de la probabilidad de lluvia en San Miguel mañana.
+      - ¿Cuál es la probabilidad de chubascos en Jesús María hoy?
+      - Dime el porcentaje de probabilidad de tormentas en Ventanilla esta semana.
+      - Consulta la probabilidad de lluvia para Huacho mañana.
+      - ¿Qué probabilidad hay de precipitaciones en Pucallpa hoy?
+      - Indica la probabilidad de lluvia en Tarma mañana.
+      - Muéstrame la probabilidad de tormentas eléctricas en Satipo esta tarde.
+      - Por favor, infórmame de la probabilidad de lluvia en Moyobamba mañana.
+      - ¿Cuál es la probabilidad de chubascos en Tambopata hoy?
+  - intent: pronostico_oleaje
+    examples: |
+      - ¿Cuál será la altura y el periodo de las olas en Punta Hermosa mañana?
+      - Muéstrame el pronóstico de oleaje en Máncora para el fin de semana.
+      - Dime la altura de las olas y el tiempo entre oleaje en la costa norte hoy.
+      - Quiero saber el pronóstico de olas en Huanchaco para surfear el miércoles.
+      - Consulta la altura de las olas y su periodo en Paracas esta semana.
+      - ¿Cómo estará el oleaje en la playa de Ancón el próximo sábado?
+      - Infórmame del pronóstico de olas y periodo en Chorrillos mañana por la mañana.
+      - Proporcióname la predicción de oleaje para Punta Sal el viernes.
+      - Dime la altura máxima de olas en Chicama durante los próximos dos días.
+      - ¿Cuál es el periodo de las olas en Lobitos este mediodía?
+      - Quiero ver la previsión de oleaje para Pacasmayo esta tarde.
+      - Consulta el pronóstico de altura de olas en La Herradura para mañana.
+      - Muéstrame el periodo de oleaje en Pisagua el fin de semana.
+      - ¿Qué altura de olas habrá en Órganos la próxima semana?
+      - Dime la predicción de oleaje en Cabo Blanco para el viernes por la tarde.
+      - Infórmame sobre el pronóstico de olas en Punta Negra el jueves.
+      - ¿Cómo varían el periodo y la altura de oleaje en Puerto Eten esta mañana?
+      - Consulta la predicción de oleaje para El Ñuro mañana por la tarde.
+      - Muéstrame el pronóstico de olas en Zorritos durante el fin de semana.
+      - Quiero saber el periodo de las olas y su altura en Camaná el martes.
+      - Dime la altura de olas en Mollendo esta semana.
+      - ¿Cuál es el pronóstico de oleaje en El Chaco el próximo lunes?
+      - Proporcióname el periodo de oleaje para Huarmey mañana.
+      - Consulta la predicción de altura de olas en Sechura este sábado.
+      - ¿Cómo estará el oleaje en Salaverry para surfear el domingo?
+      - Dime el pronóstico de olas y periodo en Villa María del Triunfo mañana.
+      - Muéstrame la altura de las olas en Ventanilla el miércoles.
+      - Infórmame sobre el periodo de oleaje en Barranca esta tarde.
+      - ¿Qué pronóstico de olas hay para Paracas el próximo viernes?
+      - Quiero conocer la altura de olas y periodo en Salinas para hoy.
+      - Consulta el pronóstico de oleaje en Carquín mañana al amanecer.
+      - Proporcióname la predicción de olas en Pimentel este fin de semana.
+      - Dime el espacio de tiempo entre oleajes en Ancón hoy por la tarde.
+      - ¿Cómo variará la altura de olas en Huacho el lunes?
+      - Muéstrame el pronóstico de oleaje en Punta Veleros para el jueves.
+      - Infórmame acerca de la altura máxima de olas en Islote El Frontón mañana.
+      - Dime el periodo de oleaje en El Ñuro el viernes por la mañana.
+      - Consulta la predicción de olas en Bayóvar para este fin de semana.
+      - ¿Qué pronóstico de olas hay en Pacoche mañana?
+      - Quiero saber la altura de olas en Pisco el próximo martes.
+      - Muéstrame el periodo de oleaje en Cerro Azul mañana.
+      - Infórmame de la predicción de olas en San José esta tarde.
+      - Dime la altura de las olas en Lurín para el sábado.
+      - ¿Cuál es el periodo de oleaje en Ballestas mañana por la noche?
+      - Consulta la predicción de altura de olas en San Bartolo el fin de semana.
+      - Proporcióname el pronóstico de oleaje en Punta Hermosa para surfistas.
+      - ¿Cómo estará el oleaje en La Playa de los Frailes el próximo miércoles?
+
+  - intent: pronostico_uv
+    examples: |
+      - ¿Qué índice UV se espera hoy en Lima?
+      - Dime el pronóstico de radiación ultravioleta para mañana en Arequipa.
+      - Consulta el nivel de UV al mediodía en Trujillo.
+      - ¿Cuál es el índice UV máximo previsto para Cusco esta semana?
+      - Muéstrame la radiación UV en Piura para el fin de semana.
+      - Infórmame del pronóstico UV en Puno hoy por la tarde.
+      - ¿Cómo variará el índice UV en Iquitos esta semana?
+      - Quiero saber el pronóstico de UV para la costa peruana.
+      - Dime el nivel de radiación ultravioleta en Huancayo mañana.
+      - Consulta el índice UV en Cajamarca al amanecer.
+      - ¿Qué valor UV pronostican para Huánuco mañana?
+      - Muéstrame la radiación UV en Chiclayo durante la próxima semana.
+      - Infórmame del índice UV en Tacna hoy.
+      - ¿Cómo estará la radiación UV en Huaraz el viernes?
+      - Dime el pronóstico UV para Tumbes este fin de semana.
+      - Consulta la radiación ultravioleta en Juliaca mañana.
+      - ¿Cuál es el índice UV en Sullana esta tarde?
+      - Muéstrame el pronóstico de UV en Oxapampa para el lunes.
+      - Infórmame del índice UV en Tarma mañana por la mañana.
+      - ¿Qué valor UV hay previsto en Ventanilla mañana?
+      - Dime la radiación ultravioleta en Chachapoyas hoy.
+      - Consulta el pronóstico UV en San Juan de Lurigancho.
+      - ¿Cómo variará el índice UV en Miraflores esta semana?
+      - Muéstrame el pronóstico de radiación UV en Surco mañana.
+      - Infórmame del índice UV en La Molina para hoy.
+      - ¿Qué UV pronostican para Lince esta tarde?
+      - Dime el pronóstico UV en Magdalena mañana.
+      - Consulta la radiación ultravioleta en Barranco esta mañana.
+      - ¿Cuál es el índice UV en Pueblo Libre para el fin de semana?
+      - Muéstrame el pronóstico de UV en Ate mañana.
+      - Infórmame del valor UV en San Miguel hoy.
+      - ¿Cómo variará la radiación UV en Comas esta semana?
+      - Dime el pronóstico UV en El Agustino mañana.
+      - Consulta el índice UV en Ancash para todo el mes.
+      - ¿Qué UV pronostican en Madre de Dios hoy?
+      - Muéstrame el índice UV en Satipo mañana.
+      - Infórmame del pronóstico de UV en Moyobamba.
+      - ¿Cuál es el valor de radiación UV en Tambopata hoy?
+      - Dime el pronóstico UV en Lima Metropolitana esta semana.
+      - Consulta la radiación UV en Chimbote mañana.
+      - ¿Cómo variará el índice UV en Tacna el próximo jueves?
+      - Muéstrame la radiación UV en Ica para este fin de semana.
+      - Infórmame del pronóstico de UV en Pisco mañana.
+      - Dime el índice UV en Huánuco hoy.
+      - Consulta la radiación UV en Ayacucho mañana.
+      - ¿Qué UV pronostican para Huancavelica esta semana?
+
+  - intent: suscribir_alertas
+    examples: |
+      - Quiero suscribir alertas de lluvia intensa por correo.
+      - Activa notificaciones push para avisos de tormentas eléctricas.
+      - Suscríbeme a alertas de granizo en mi zona.
+      - Deseo recibir SMS cuando haya heladas.
+      - Apúntame para recibir alertas de inundación vía WhatsApp.
+      - Habilita notificaciones de ola de calor en mi email.
+      - Suscribe a mi número a alarmas de vendaval.
+      - Solicito alerta de huaicos por push.
+      - Regístrame en alertas de granizadas por SMS.
+      - Quiero recibir avisos de sequía prolongada en mi correo.
+      - Activa notificaciones de rios crecidos en tiempo real.
+      - Suscríbeme a alertas de calidad del aire.
+      - Deseo alertas de nevadas por WhatsApp.
+      - Suscribe mi email a reportes de friaje.
+      - Apúntame en notificaciones de radiación UV alta.
+      - Habilita alarmas de tsunami vía SMS.
+      - Suscribe mis canales de Telegram a alertas de vendavales.
+      - Quiero notificaciones de probabilidad de lluvias.
+      - Activa alertas de temperatura extrema en mi zona.
+      - Suscríbeme a avisos de polen alto en primavera.
+      - Deseo recibir alertas de granizadas por correo.
+      - Suscribe mi WhatsApp a alertas de sequías.
+      - Regístrame en notificaciones de tormentas de arena.
+      - Habilita alertas de colapso de diques por email.
+      - Quiero alarmas de desbordes de ríos vía SMS.
+      - Activa notificaciones de incendios forestales en mi región.
+      - Suscríbeme a alertas de nevadas en montaña.
+      - Deseo recibir avisos de corrimientos de tierra.
+      - Suscribe mi correo a alertas de rayos.
+      - Quiero notificaciones de caída de granizo.
+      - Activa alertas de polvo en suspensión en mi zona.
+      - Suscríbeme a notificaciones de viento huracanado.
+      - Habilita SMS para alertas de caída de árboles.
+      - Suscríbeme a alarmas de inundaciones costeras.
+      - Quiero recibir notificaciones de niveles de polen.
+      - Activa alertas de tormentas severas en este distrito.
+      - Suscribe mi email a avisos de granizada súbita.
+      - Deseo alarmas de marejadas rápidas.
+      - Suscríbeme a reportes de radiación UV. 
+      - Habilita alertas de neblina densa. 
+      - Suscribe mi WhatsApp a avisos de fenómeno El Niño.
+      - Quiero notificaciones de vientos cruzados.
+      - Activa alertas de corte de energía por clima.
+      - Suscríbeme a alarmas de lluvias torrenciales.
+      - Deseo recibir avisos de inundación subterránea.
+      - Suscríbeme a notificaciones de banco de niebla.
+      - Activa alertas de granizadas intensas por SMS.
+      - Suscribe mi correo a notificaciones de vendavales costeros.
+
+  - intent: desuscribir_alertas
+    examples: |
+      - Cancela mi suscripción a las alertas de lluvia intensa.
+      - Desuscríbeme de notificaciones push para tormentas.
+      - Quita mi número de SMS de alertas de granizo.
+      - Deseo dejar de recibir avisos de heladas.
+      - Elimina mi suscripción a alertas de inundación por WhatsApp.
+      - Cancela las notificaciones de ola de calor en mi correo.
+      - Desuscribe mi email de alarmas de vendavales.
+      - Quiero dejar de recibir alertas de huaicos.
+      - Retira mi número de SMS de granizadas.
+      - Cancela mi suscripción a avisos de sequía.
+      - Desactiva notificaciones de ríos crecidos.
+      - Elimina mi suscripción a alertas de calidad del aire.
+      - Desuscribe mi WhatsApp de avisos de nevadas.
+      - Cancela alertas de friaje en mi email.
+      - Quita notificaciones de UV alta.
+      - Elimina mis alarmas de tsunami.
+      - Desuscribe mis canales de Telegram de vendavales.
+      - Cancela alarmas de probabilidad de lluvias.
+      - Desuscríbeme de notificaciones de temperatura extrema.
+      - Quita mi correo de alertas de polen.
+      - Retira mi WhatsApp de alertas de granizadas.
+      - Cancela mis SMS de alertas de sequías.
+      - Desactiva notificaciones de tormentas de arena.
+      - Elimina mi email de alertas de colapso de diques.
+      - Desuscribe mis SMS de alarmas de desbordes.
+      - Cancela mi suscripción a incendios forestales.
+      - Quita mis alertas de nevadas en montaña.
+      - Desactiva mis avisos de corrimientos de tierra.
+      - Elimina mis notificaciones de rayos.
+      - Desuscríbeme de avisos de caída de granizo.
+      - Quita mis alertas de polvo en suspensión.
+      - Cancela notificaciones de viento huracanado.
+      - Desactiva mis SMS de caída de árboles.
+      - Elimina mis alarmas de inundaciones costeras.
+      - Quita mis notificaciones de niveles de polen.
+      - Cancela mis alertas de tormentas severas.
+      - Desuscríbeme de avisos de granizada súbita.
+      - Quita mis alarmas de marejadas.
+      - Cancela mi suscripción a reportes de radiación UV.
+      - Elimina mis alertas de neblina densa.
+      - Desuscribe mi WhatsApp de El Niño.
+      - Quita mis notificaciones de vientos cruzados.
+      - Cancela mis alertas de corte de energía.
+      - Desactiva mis SMS de lluvias torrenciales.
+      - Elimina mis avisos de inundación subterránea.
+      - Desuscribe mis alertas de banco de niebla.
+      - Cancela mis notificaciones de granizadas intensas.
+      - Quita mi correo de vendavales costeros.
+      - Elimina mis SMS de ola de calor.
+
+  - intent: gestionar_preferencias
+    examples: |
+      - Quiero cambiar mi región predeterminada a Cusco.
+      - Actualiza mis unidades de temperatura a Fahrenheit.
+      - Configura notificaciones solo por SMS.
+      - Ajusta mis alertas para que lleguen antes de la lluvia.
+      - Cambia mi canal de notificaciones a WhatsApp.
+      - Modifica mi zona de interés a la sierra central.
+      - Establece mis unidades de viento en millas por hora.
+      - Quiero recibir solo alertas críticas por correo.
+      - Actualiza mi configuración para alertas de granizo.
+      - Configura mi región por defecto como Lima Metropolitana.
+      - Ajusta mis preferencias para avisos de inundaciones.
+      - Cambia mis unidades de visibilidad a metros.
+      - Quiero notificaciones de humedad solo a diario.
+      - Modifica mi canal de pronóstico extendido a email.
+      - Establece mis alertas de tsunamis solo por push.
+      - Ajusta mi zona de interés a la costa norte.
+      - Cambia mis unidades de precipitaciones a milímetros.
+      - Actualiza mis preferencias para alertas de heladas.
+      - Configura mis notificaciones de UV solo en verano.
+      - Quiero recibir alertas de vendavales vía Telegram.
+      - Cambia mi región predeterminada a Arequipa.
+      - Ajusta mis unidades de presión a hectopascales.
+      - Configura mi canal de reports históricos a email.
+      - Modifica mis alertas para tormentas eléctricas.
+      - Establece mis preferencias de oleaje en km y segundos.
+      - Ajusta mis notificaciones de calidad del aire solo en zonas urbanas.
+      - Quiero alertas de caídas de granizo solo en temporada alta.
+      - Cambia mis unidades de temperatura a Kelvin.
+      - Actualiza mi configuración de región a Madre de Dios.
+      - Configura mis notificaciones de polen en primavera.
+      - Ajusta mis alertas de sismos asociados al clima.
+      - Modifica mi canal de inundaciones a SMS y email.
+      - Quiero pronósticos extendidos solo en verano.
+      - Cambia mis preferencias de probabilidad de lluvia a diario.
+      - Ajusta mis alertas de nevadas a nivel de distrito.
+      - Establece mis unidades de viento en nudos.
+      - Configura mis notificaciones de radiación UV solo por la mañana.
+      - Quiero alertas de marejadas solo si superan 2 metros.
+      - Cambia mi región predeterminada a la selva alta.
+      - Ajusta mis unidades de humedad a porcentaje.
+      - Modifica mi canal de tweets meteorológicos.
+      - Configura mis notificaciones de banco de niebla.
+      - Quiero recibir alertas de ríos crecidos solo por SMS.
+      - Cambia mis preferencias de polen a otoño.
+      - Actualiza mis alertas de extrema sequía por correo.
+
+  - intent: consultar_datos_historicos
+    examples: |
+      - Muéstrame el histórico de temperaturas de Lima en los últimos diez años.
+      - Dime cómo variaron las precipitaciones en Cusco durante la última década.
+      - Consulta los registros de humedad de Arequipa en enero de 2020.
+      - Proporcióname los datos de lluvia mensual de Piura en los últimos cinco años.
+      - Infórmame sobre las máximas y mínimas históricas de Trujillo.
+      - ¿Cómo han cambiado las temperaturas en Puno desde 2000?
+      - Muéstrame el histórico de días con heladas en Huaraz.
+      - Dime el total de precipitaciones anuales en Chimbote durante los últimos cinco años.
+      - Consulta los registros de olas máximas en Huanchaco en la última década.
+      - Proporcióname datos históricos de radiación UV en Lima.
+      - Infórmame sobre la evolución de la humedad en Iquitos desde 2015.
+      - ¿Cómo variaron las velocidades de viento en Tacna en los últimos diez años?
+      - Muéstrame el histórico de visibilidad en Cusco durante los inviernos pasados.
+      - Dime los registros de sequías en Piura entre 2010 y 2020.
+      - Consulta los datos históricos de granizadas en Cajamarca.
+      - Proporcióname el histórico de tormentas eléctricas en Arequipa.
+      - Infórmame sobre los días con mucha neblina en Huancayo desde 2018.
+      - ¿Cómo han variado las olas en Máncora en la última década?
+      - Muéstrame el histórico de días de calor extremo en Lima.
+      - Dime el promedio de lluvia mensual en Cusco en los últimos cinco años.
+      - Consulta los registros de vendavales en Ancash desde 2010.
+      - Proporcióname datos históricos de tormentas de arena en Ica.
+      - Infórmame sobre la evolución de UV en Puno en la última década.
+      - ¿Cómo ha cambiado la humedad relativa en Trujillo desde 2005?
+      - Muéstrame el histórico de temperaturas mínimas en Ayacucho.
+      - Dime las precipitaciones diarias registradas en Piura el año pasado.
+      - Consulta los registros de rayos en Tacna durante los últimos cinco años.
+      - Proporcióname el histórico de heladas en Junín.
+      - Infórmame sobre los días con lluvia intensa en Chachapoyas desde 2012.
+      - ¿Cómo variaron las temperaturas en la costa norte entre 2000 y 2020?
+      - Muéstrame histórico de humedad relativa en Madre de Dios.
+      - Dime los registros de tormentas eléctricas en el valle del Mantaro.
+      - Consulta los datos históricos de marejadas en Paracas.
+      - Proporcióname el histórico de polen en Lima en primavera.
+      - Infórmame sobre la evolución de neblina en la Carretera Central.
+      - ¿Cómo han variado los días soleados en Iquitos desde 2010?
+      - Muéstrame el histórico de precipitaciones máximas en Arequipa.
+      - Dime los registros de temperatura diaria en Pisco en los últimos cinco años.
+      - Consulta histórico de días con vendavales en Tacna.
+      - Proporcióname los datos históricos de ciclones costeros en Piura.
+      - Infórmame sobre la variación de UV en Tumbes durante la última década.
+      - ¿Cómo ha cambiado la visibilidad en Lima desde 2010?
+      - Muéstrame el histórico de vientos huracanados en Chimbote.
+      - Dime los registros de granizadas intensas en Huaraz.
+      - Consulta los datos históricos de sismos relacionados con clima en Cusco.
+      - Proporcióname el histórico de lluvias torrenciales en Piura.
+      - Infórmame sobre los días con temperaturas bajo cero en Puno.
+  - intent: comparar_condiciones
+    examples: |
+      - Compara el clima actual en Lima y Arequipa.
+      - ¿Cómo se compara la temperatura de hoy en Cusco con la de ayer?
+      - Quiero ver las diferencias de humedad entre Trujillo y Piura esta mañana.
+      - Compara las precipitaciones de la última semana en Puno y Huancayo.
+      - ¿Cuál es la diferencia de viento entre la costa y la sierra hoy?
+      - Compara la visibilidad actual en Iquitos con la que había el día anterior.
+      - Muestra un comparativo de temperatura máxima entre Lima y Chiclayo esta semana.
+      - ¿Cómo difieren las velocidades de viento en Tacna y Arequipa hoy?
+      - Comparación de lluvia acumulada en Cusco y Huancavelica el mes pasado.
+      - Compara los índices UV de Lima y Piura en la última semana.
+      - ¿Cuál es la diferencia en la probabilidad de lluvia entre Junín y Ancash hoy?
+      - Comparar temperatura y humedad en la selva vs la costa esta mañana.
+      - Dime cómo varía la presión atmosférica entre Lima y Cajamarca.
+      - Compara las condiciones climáticas actuales de Ancón y Máncora.
+      - ¿Cómo se compara la sensación térmica entre la costa y la sierra?
+      - Comparación de días soleados en Cusco y Puno durante el mes pasado.
+      - ¿Qué diferencias hay en la calidad del aire entre Lima y Arequipa hoy?
+      - Compara el pronóstico de lluvia para mañana en Piura y Tumbes.
+      - ¿Cuál es la diferencia de temperatura entre el amanecer y el mediodía en Lima?
+      - Compara la humedad relativa en la selva alta vs la selva baja hoy.
+      - Quiero un análisis comparativo de vientos entre el sur y el norte de Perú.
+      - Muestra las diferencias de visibilidad entre Huancayo y Cajamarca.
+      - Compara la intensidad de tormentas eléctricas en Trujillo vs Chiclayo.
+      - ¿Cómo varían los índices de polen entre Lima y Arequipa?
+      - Comparación de días con niebla en Lima y La Paz el año pasado.
+      - ¿Qué diferencia hay en la sensación térmica entre Lima y Piura?
+      - Compara la acumulación de nieve en Huaraz y Junín.
+      - Quiero comparar la frecuencia de granizadas en Tacna y Lima.
+      - Compara la velocidad media de viento en las últimas 24 horas en Cusco y Puno.
+      - ¿Cuál es la diferencia de lluvias nocturnas entre Piura y Tumbes?
+      - Compara la visibilidad mínima registrada hoy en Ica y Arequipa.
+      - Muestra comparativo de temperaturas nocturnas en Lima y Trujillo.
+      - ¿Cómo se comparan las ráfagas de viento entre Chiclayo y Chimbote?
+      - Comparar la acumulación de lluvia en la sierra central vs selva central.
+      - Quiero comparar la humedad matutina en Huancavelica y Puno.
+      - Compara la presión atmosférica de hoy con la de hace una semana en Lima.
+      - ¿Cuál es la diferencia de máxima térmica entre Cusco y Arequipa?
+      - Compara el registro de heladas en Huaraz y Cajamarca.
+      - Comparación de días de calor extremo en Lima vs Piura.
+      - ¿Cómo difiere el índice UV de Lima y Huacho hoy?
+      - Compara la probabilidad de tormentas para mañana en Ancash y Apurímac.
+      - Muestra diferencias de clima entre la costa sur y la costa norte.
+      - Compara niveles de smog en Lima y Callao.
+      - ¿Qué diferencia hay en la lluvia acumulada de enero en Cusco y Puno?
+      - Compara temperaturas y humedad entre oficina y exterior en Lima.
+      - Comparación de vientos huracanados hipotéticos en Lima y Callao.
+      - Dime cómo varía la probabilidad de granizo en Trujillo vs Chiclayo.
+      - Compara la visibilidad de hoy con la de hace un mes en Cusco.
+      - ¿Qué diferencias existen en las máximas diarias de Lima y Arequipa?
+      - Compara la predicción de lluvias de la próxima semana entre Piura y Tumbes.
+
+  - intent: riesgo_salud
+    examples: |
+      - ¿Cuál es el riesgo para asmáticos con el nivel de polen actual en Lima?
+      - Dime el riesgo de irritación ocular por contaminación en Arequipa.
+      - Consulta el riesgo respiratorio para alérgicos en Cusco hoy.
+      - ¿Cómo afecta la calidad del aire de hoy a personas con EPOC en Trujillo?
+      - Indica el riesgo de broncoespasmo en Puno por PM2.5.
+      - Dime el riesgo de insolación para deportistas al mediodía en Piura.
+      - Consulta la peligrosidad de la radiación UV para niños en Lima.
+      - ¿Qué riesgo de golpe de calor hay mañana en la Amazonía?
+      - Dime la probabilidad de alergias por pólenes en Chachapoyas.
+      - ¿Cuál es el índice de riesgo para asmáticos con humo de quema agrícola?
+      - Consulta el riesgo de enfermedades respiratorias en Huancayo.
+      - Dime el nivel de riesgo de hipotermia en Huaraz para obreros.
+      - ¿Cómo afecta la alta humedad a los alérgicos en Iquitos?
+      - Dime el índice de salud por radiación UV alta en Lima.
+      - Consulta el riesgo de asma por polvo en suspensión en Piura.
+      - ¿Qué riesgo hay de insolación para ciclistas en la costa?
+      - Dime el índice de riesgo de COV por smog en Arequipa.
+      - Consulta el riesgo de conjuntivitis alérgica en Cusco.
+      - ¿Cómo varía el riesgo de golpe de calor entre Lima y Trujillo?
+      - Dime el riesgo de enfermedades respiratorias por neblina en Puno.
+      - Consulta el índice de riesgo de polen alto en Huancavelica.
+      - ¿Qué riesgo de hipotermia existe en zonas altas de Puno?
+      - Dime el riesgo de fatiga térmica para obreros en la costa norte.
+      - Consulta el índice de salud pública por contaminación en Lima.
+      - ¿Cuál es el riesgo de deshidratación en Ica al mediodía?
+      - Dime el riesgo de bronquitis por PM10 en Chimbote.
+      - Consulta el riesgo de quemaduras solares en Piura.
+      - ¿Cómo afecta la radiación UV a adultos mayores en Arequipa?
+      - Dime el riesgo de edema por calor en Cusco.
+      - Consulta el índice de salud respiratoria en Huánuco.
+      - ¿Qué riesgo de alergias hay por esporas de hongos en Puno?
+      - Dime el índice de riesgo de emergencia sanitaria en Lima.
+      - Consulta el riesgo de descompensación para diabéticos por calor.
+      - ¿Cuál es el riesgo de migrañas por presión baja en Cusco?
+      - Dime el riesgo de problemas por viento frío en Huaraz.
+      - Consulta el índice de riesgo de agotamiento térmico en Iquitos.
+      - ¿Qué peligro hay de asma por quema de residuos en Lima?
+      - Dime el riesgo de cataratas a largo plazo por UV en Arequipa.
+      - Consulta el riesgo de irritación de piel por polución en Piura.
+      - ¿Cómo varía el riesgo de asma en autobuses ventilados?
+      - Dime el riesgo de fallo renal por deshidratación en la sierra.
+      - Consulta el índice de riesgo de enfermedades virales agravadas por clima.
+      - ¿Cuál es el riesgo de ataque cardíaco por calor extremo?
+      - Dime el índice de riesgo de neumonía en niños por neblina.
+      - Consulta el riesgo de empeoramiento de EPOC por smog en Arequipa.
+      - ¿Qué peligro hay de alergias alimentarias por polen en la costa?
+      - Dime el riesgo de hipotermia en pescadores de Punta Hermosa.
+      - Consulta el riesgo de insolación en ciclistas de ruta.
+      - ¿Cómo varía el riesgo de deshidratación en Lima y Piura?
+      - Dime el índice de riesgo de problemas respiratorios en edificios mal ventilados.
+
+  - intent: sugerir_ropa
+    examples: |
+      - ¿Qué abrigo debo llevar hoy con lluvia ligera en Lima?
+      - Recomiéndame qué ropa usar para un día ventoso en Arequipa.
+      - ¿Cuál es el atuendo ideal para la ola de calor en Piura?
+      - Sugiere capas para soportar la humedad alta en Iquitos.
+      - ¿Qué tipo de calzado recomiendas si hay neblina en Trujillo?
+      - Dime si necesito impermeable para las lluvias en Cusco.
+      - Recomiéndame sombrero y gafas para el sol fuerte en Lima.
+      - ¿Qué prenda liviana uso para protegerme del viento en Puno?
+      - Sugiere guantes y bufanda para el friaje en Huaraz.
+      - ¿Qué chaqueta es adecuada para el clima templado de Arequipa?
+      - Recomiéndame ropa reflectante para correr al amanecer en Piura.
+      - ¿Debe llevar paravientos si hay ráfagas en Tacna?
+      - Sugiere ropa de secado rápido para excursión por la selva.
+      - ¿Qué tipo de gorra uso ante alta radiación UV en Huancayo?
+      - Recomiéndame pantalones resistentes al viento en la costa.
+      - ¿Necesito gafas de sol polarizadas para la playa de Ancón?
+      - Sugiere vestimenta térmica para escalada en Huaraz.
+      - ¿Qué abrigo me proteja de la llovizna en Junín?
+      - Recomiéndame camiseta técnica para calor extremo en Ica.
+      - ¿Qué prenda corta vientos uso en la sierra central?
+      - Sugiere protector solar y mangas largas para Iquitos.
+      - ¿Es mejor ropa de algodón o sintética con alta humedad?
+      - Recomiéndame chaqueta cortaviento para Cusco.
+      - ¿Qué calzado impermeable me sirve para lima lluviosa?
+      - Sugiere sombrilla vs capa de lluvia para Miraflores.
+      - ¿Qué gorra con protección UV usar en Tacna?
+      - Recomiéndame ropa interior térmica para Puno.
+      - ¿Qué tipo de chaleco usar en días soleados con viento?
+      - Sugiere bufanda ligera para días fríos de la costa.
+      - ¿Es necesario paraguas si hay chubascos en Piura?
+      - Recomiéndame ropa de neopreno para deportes acuáticos.
+      - ¿Qué abrigo fino usar en Lima con brisa fría?
+      - Sugiere pantalones cortos vs largos para calor nocturno.
+      - ¿Debo usar capa reflectante para ciclismo matutino?
+      - Recomiéndame gorro térmico para frío intenso en Huaraz.
+      - ¿Qué camiseta transpirable usar en Arequipa de día?
+      - Sugiere chaleco impermeable para excursión en Puno.
+      - ¿Qué ropa de protección usar ante polvo en suspensión?
+      - Recomiéndame respirador y gafas en caso de smog.
+      - ¿Qué prenda ligera usar en la selva con calor y lluvia?
+      - Sugiere ropa blanca vs oscura para calor extremo.
+      - ¿Necesito chaleco salvavidas para marejadas en la costa?
+      - Recomiéndame ropa de abrigo para excursión nocturna.
+      - ¿Qué gorro de lluvia usar en Trujillo si hay pronóstico de chubascos?
+      - Sugiere ropa cómoda para caminata en clima templado.
+      - ¿Qué calzado antideslizante usar en calles inundadas?
+      - Recomiéndame chaqueta de franela para Puno en invierno.
+      - ¿Qué prenda cortaviento usar en playa con brisa fuerte?
+      - Sugiere protección solar y manga larga para días soleados.
+      - ¿Qué abrigo transpirable usar en caminata por la sierra?
+
+  - intent: recomendaciones_salud
+    examples: |
+      - Dame consejos para evitar insolación con UV alto en Lima.
+      - ¿Qué precauciones tomar si soy asmático y hay alto polen?
+      - Recomendaciones para hidratarse durante la ola de calor.
+      - ¿Cómo prevenir hipotermia en la sierra por la noche?
+      - Consejos de protección ocular con alta contaminación.
+      - ¿Qué hacer para aliviar la congestión por humedad alta?
+      - Sugerencias de primeros auxilios ante golpe de calor.
+      - ¿Cómo cuidar la piel con radiación UV intensa?
+      - Recomendaciones para alérgicos cuando hay pesta polen.
+      - ¿Qué debo hacer si tengo bronquitis y hay smog?
+      - Consejos para evitar calambres por calor extremo.
+      - ¿Cómo mantener las vías respiratorias limpias con polvo?
+      - Recomendaciones para tratar quemaduras solares leves.
+      - ¿Qué desayunar para soportar altas temperaturas?
+      - Consejos para evitar gripe en días de friaje.
+      - ¿Cómo proteger a los niños de la neblina densa?
+      - Recomendaciones para prevenir agotamiento térmico.
+      - ¿Qué ropa ligera usar para minimizar la transpiración?
+      - Consejos para llevar agua suficiente en excursión.
+      - ¿Cómo ventilar casa con smog fuera para respirar mejor?
+      - Recomendaciones para uso de mascarillas con alto PM2.5.
+      - ¿Qué hacer tras inhalar polvo en suspensión?
+      - Consejos para regresar del sol sin quemaduras.
+      - ¿Cómo aliviar dermatitis por polvo y polen?
+      - Recomendaciones para el cuidado de ancianos en frio.
+      - ¿Qué vitaminas tomar para soportar calor extremo?
+      - Consejos para proteger mascotas de altas temperaturas.
+      - ¿Cómo preparar bebidas isotónicas caseras?
+      - Recomendaciones de descanso tras exposiciones prolongadas al sol.
+      - ¿Qué hacer si me deshidrato con calor seco?
+      - Consejos para corredores en días de niebla matinal.
+      - ¿Cómo tratar picaduras de insectos con lluvias?
+      - Recomendaciones para mantener el calor corporal durante la noche.
+      - ¿Qué hacer si sufro dolor de cabeza por presión baja?
+      - Consejos para dormir con alta humedad.
+      - ¿Cómo auxiliar a un familiar con asma de emergencia?
+      - Recomendaciones para uso de gafas en días de viento fuerte.
+      - ¿Qué hacer si inhalo humo de quema agrícola?
+      - Consejos para proteger los labios con viento seco.
+      - ¿Cómo recuperar ritmo respiratorio tras neblina densa?
+      - Recomendaciones para prevenir calambres por frío intenso.
+      - ¿Qué hacer ante una reacción alérgica por polen?
+      - Consejos para conducir con baja visibilidad.
+      - ¿Cómo mantener la piel hidratada en clima seco?
+      - Recomendaciones para el cuidado ocular con neblina.
+      - ¿Qué hacer si tengo dolor de garganta por aire frío?
+      - Consejos para caminar con calor extremo sin deshidratarse.
+      - ¿Cómo ajustar la dieta en días de lluvia constante?
+
+  - intent: estado_carreteras
+    examples: |
+      - Consulta si la carretera Central está bloqueada por lluvias.
+      - ¿Hay cortes en la Panamericana Norte por inundaciones?
+      - Infórmame del estado de la ruta Lima–Cajamarca tras vendaval.
+      - ¿La vía de Junín a Tarma presenta deslizamientos?
+      - Dime si hay cierres en la Carretera Longitudinal de la Sierra.
+      - ¿Cómo está la Panamericana Sur tras la nevada en Arequipa?
+      - Verifica el paso entre Puno y Juliaca por heladas.
+      - ¿Hay cortes de ruta en Cusco por huaicos?
+      - Consulta el estado del túnel de Oroya después de las lluvias.
+      - ¿La carretera a Huaraz está transitab le tras aluvión?
+      - Infórmame sobre derrumbes en la vía a Abancay.
+      - ¿La ruta del Manu está habilitada por friaje?
+      - Dime si hay tapas de alcantarilla levantadas en la Panamericana.
+      - ¿Cómo está el tramo Yungay–Caraz tras deslave?
+      - Verifica cortes en la vía entre Trujillo y Huanchaco.
+      - ¿La carretera Cuzco–Puno está cerrada por neblina densa?
+      - Consulta estado de la ruta Arequipa–Majes tras granizada.
+      - ¿Hay interrupción en la vía a Iquitos por crecida de ríos?
+      - Infórmame de cierres en la ruta Moyobamba–Tarapoto.
+      - ¿La Panamericana Norte tiene desvíos por tormenta?
+      - Dime si hay cortes en la Carretera Central por incendios forestales.
+      - ¿Cómo está el acceso a Chachapoyas tras lluvias torrenciales?
+      - Verifica si la vía Ayacucho–Andahuaylas presenta derrumbes.
+      - ¿La ruta Tacna–Moquegua está habilitada tras neblina?
+      - Consulta estado de la ruta a Oxapampa por granizo.
+      - ¿Hay acceso bloqueado en la carretera a Pisco tras inundación?
+      - Infórmame sobre desvíos en la ruta a Huaral por lluvia.
+      - ¿La Carretera Central está cortada en La Oroya?
+      - Dime si la vía Arequipa–Tacna presenta deslaves.
+      - ¿Cómo está el acceso a Pucallpa tras vendaval?
+      - Verifica cortes en la ruta Huancavelica–Ayacucho.
+      - ¿La carretera a Ica está transitab le tras lluvia intensa?
+      - Infórmame de cierre parcial en la vía a Cajamarca.
+      - ¿Hay interrupción en la ruta Lunahuaná por crecida?
+      - Consulta estado de la Panamericana Sur en Cañete.
+      - ¿La ruta Pasco–Huánuco está habilitada tras nevadas?
+      - Dime si hay cortes en la vía a Uchiza por inundación.
+      - ¿Cómo está la Carretera Central tras sismo y lluvia?
+      - Verifica si la ruta a Huaraz está abierta tras huaico.
+      - ¿La vía Cusco–Abancay presenta derrumbes hoy?
+      - Infórmame sobre cortes en la ruta a Callao por tormenta.
+      - ¿La carretera a Carabayllo está inundada?
+      - Dime si la ruta a San Martín está transitab le tras vendaval.
+      - ¿Cómo está el acceso a Chimbote tras granizada?
+      - Verifica cierres en la ruta a Sullana por lluvias.
+      - ¿La Panamericana Norte tiene desvíos por desborde de ríos?
+      - Infórmame de cortes en la carretera Lima–Huacho por niebla.
+
+  - intent: puntos_servicio
+    examples: |
+      - ¿Dónde está la gasolinera 24 h más cercana en Lima?
+      - Indícame refugios con atención médica activa en Puno.
+      - ¿Cómo encuentro estaciones de bombeo de agua en Trujillo?
+      - Busca albergues con servicios de primeros auxilios en Arequipa.
+      - Dime la ubicación de puntos de carga de celular en Cusco.
+      - ¿Dónde hay tanques de agua potable en Piura?
+      - Muéstrame farmacias de turno cercanas en Huancayo.
+      - Indica estaciones de bomberos disponibles en Tumbes.
+      - ¿Dónde puedo recargar tanques de oxígeno en Iquitos?
+      - Busca comedores comunitarios en Lima Norte.
+      - Dime la ubicación de albergues para víctimas de inundaciones.
+      - ¿Dónde están las clínicas móviles en Ancash?
+      - Muéstrame dispensarios médicos en Cajamarca.
+      - Indica los puntos de agua potable en Arequipa centro.
+      - ¿Dónde hay estaciones de policía abiertas 24 h en Lima?
+      - Busca zonas Wi-Fi gratis en Miraflores.
+      - Dime la ubicación de comedores populares en Puno.
+      - ¿Dónde están los albergues temporales habilitados en Piura?
+      - Muéstrame dispensarios de medicamentos en Cusco.
+      - Indica farmacias con guardia nocturna en Trujillo.
+      - ¿Dónde puedo encontrar generadores de energía en Ica?
+      - Busca sitios de atención socioemocional en Huaraz.
+      - Dime la ubicación de albergues con energía eléctrica estable.
+      - ¿Dónde hay cocinas comunitarias en Huancayo?
+      - Muéstrame estaciones de agua potable en Juliaca.
+      - Indica clínicas veterinarias de emergencia en Iquitos.
+      - ¿Dónde están refugios con camillas en Lima?
+      - Busca centros de acopio de víveres en Arequipa.
+      - Dime la ubicación de puntos de rescate en la sierra.
+      - ¿Dónde hay albergues con WIFI en Cusco?
+      - Muéstrame farmacias con oxígeno portátil en Piura.
+      - Indica gasolineras con estación de servicio rápido en Lima.
+      - ¿Dónde puedo cargar mi batería de auto en Tacna?
+      - Busca dispensarios de insulina en Trujillo.
+      - Dime la ubicación de refugios con sillas de ruedas en Huancavelica.
+      - ¿Dónde están comedores y cocinas comunitarias en Pisco?
+      - Muéstrame estaciones de bomberos en la costa norte.
+      - Indica puntos de caravana médica en Iquitos.
+      - ¿Dónde hay albergues con ducha caliente en Lima?
+      - Busca farmacias con guardia en la sierra.
+      - Dime la ubicación de tanques de agua potable en Ancash.
+      - ¿Dónde puedo encontrar refugios con atención psicológica?
+      - Muéstrame dispensarios de agua y alimentos en Cusco.
+      - Indica gasolineras con taller mecánico en la costa.
+      - ¿Dónde hay albergues con kit de primeros auxilios?
+      - Busca comedores móviles en Piura.
+      - Dime la ubicación de puntos de información en Lima.
+      - ¿Dónde puedo recargar mi celular en la sierra?
+      - Muéstrame refugios con acceso para discapacitados en Arequipa.
+      - Indica clínicas móviles de vacunación en Trujillo.

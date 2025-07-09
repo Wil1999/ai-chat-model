@@ -16,72 +16,162 @@ rules:
       - intent: agradecimiento
       - action: utter_agradecimiento
 
-  - rule: Ayuda
-    steps:
-      - intent: ayuda
-      - action: utter_ayuda
-
-  - rule: Obtener pronóstico
-    steps:
-      - intent: obtener_pronostico
-      - action: utter_obtener_pronostico
-
-  - rule: Alertas meteorológicas
-    steps:
-      - intent: alertas_meteorologicas
-      - action: utter_alertas_meteorologicas
-
-  - rule: Calidad del aire
-    steps:
-      - intent: calidad_del_aire
-      - action: utter_calidad_del_aire
-
-  - rule: Plan de emergencia
-    steps:
-      - intent: plan_emergencia
-      - action: utter_plan_emergencia
-
-  - rule: Reportar evento
-    steps:
-      - intent: reportar_evento
-      - action: utter_reportar_evento
-
-  - rule: Refugios cercanos
-    steps:
-      - intent: refugios_cercanos
-      - action: utter_refugios_cercanos
-
-  - rule: Rutas de evacuación
-    steps:
-      - intent: rutas_evacuacion
-      - action: utter_rutas_evacuacion
-
-  - rule: Fecha de simulacro
-    steps:
-      - intent: simulacro_fecha
-      - action: utter_simulacro_fecha
-
-  - rule: Explicar tipo de desastre
-    steps:
-      - intent: explicar_tipo_desastre
-      - action: utter_explicar_tipo_desastre
-
   - rule: Intención desconocida
     steps:
       - intent: intencion_desconocida
-      - action: utter_default
+      - action: utter_intencion_desconocida
 
   - rule: Lenguaje inapropiado
     steps:
       - intent: lenguaje_inapropiado
       - action: utter_lenguaje_inapropiado
 
-  - rule: Recomendaciones meteorológicas (DeepSeek)
+  - rule: NLU fallback
+    steps:
+      - intent: nlu_fallback
+      - action: utter_default
+
+  - rule: Generar recomendación para recomendar_medidas
     steps:
       - intent: recomendar_medidas
       - action: action_generar_recomendacion_deepseek
 
-  - rule: Activar respuesta por defecto si no se reconoce
+  - rule: Generar recomendación para obtener_pronostico
     steps:
-      - intent: nlu_fallback
-      - action: utter_default
+      - intent: obtener_pronostico
+      - action: action_generar_recomendacion_deepseek
+
+  - rule: Generar recomendación para alertas_meteorologicas
+    steps:
+      - intent: alertas_meteorologicas
+      - action: action_generar_recomendacion_deepseek
+
+  - rule: Generar recomendación para plan_emergencia
+    steps:
+      - intent: plan_emergencia
+      - action: action_generar_recomendacion_deepseek
+
+  - rule: Generar recomendación para reportar_evento
+    steps:
+      - intent: reportar_evento
+      - action: action_generar_recomendacion_deepseek
+
+  - rule: Generar recomendación para calidad_del_aire
+    steps:
+      - intent: calidad_del_aire
+      - action: action_generar_recomendacion_deepseek
+
+  - rule: Generar recomendación para explicar_tipo_desastre
+    steps:
+      - intent: explicar_tipo_desastre
+      - action: action_generar_recomendacion_deepseek
+
+  - rule: Generar recomendación para simulacro_fecha
+    steps:
+      - intent: simulacro_fecha
+      - action: action_generar_recomendacion_deepseek
+
+  - rule: Generar recomendación para refugios_cercanos
+    steps:
+      - intent: refugios_cercanos
+      - action: action_generar_recomendacion_deepseek
+
+  - rule: Generar recomendación para rutas_evacuacion
+    steps:
+      - intent: rutas_evacuacion
+      - action: action_generar_recomendacion_deepseek
+
+  - rule: Generar recomendación para ayuda
+    steps:
+      - intent: ayuda
+      - action: action_generar_recomendacion_deepseek
+
+  - rule: Generar recomendación para consultar_temperatura_actual
+    steps:
+      - intent: consultar_temperatura_actual
+      - action: action_generar_recomendacion_deepseek
+
+  - rule: Generar recomendación para consultar_humedad_actual
+    steps:
+      - intent: consultar_humedad_actual
+      - action: action_generar_recomendacion_deepseek
+
+  - rule: Generar recomendación para consultar_velocidad_viento
+    steps:
+      - intent: consultar_velocidad_viento
+      - action: action_generar_recomendacion_deepseek
+
+  - rule: Generar recomendación para consultar_visibilidad
+    steps:
+      - intent: consultar_visibilidad
+      - action: action_generar_recomendacion_deepseek
+
+  - rule: Generar recomendación para pronostico_extendido
+    steps:
+      - intent: pronostico_extendido
+      - action: action_generar_recomendacion_deepseek
+
+  - rule: Generar recomendación para probabilidad_precipitacion
+    steps:
+      - intent: probabilidad_precipitacion
+      - action: action_generar_recomendacion_deepseek
+
+  - rule: Generar recomendación para pronostico_oleaje
+    steps:
+      - intent: pronostico_oleaje
+      - action: action_generar_recomendacion_deepseek
+
+  - rule: Generar recomendación para pronostico_uv
+    steps:
+      - intent: pronostico_uv
+      - action: action_generar_recomendacion_deepseek
+
+  - rule: Generar recomendación para suscribir_alertas
+    steps:
+      - intent: suscribir_alertas
+      - action: action_generar_recomendacion_deepseek
+
+  - rule: Generar recomendación para desuscribir_alertas
+    steps:
+      - intent: desuscribir_alertas
+      - action: action_generar_recomendacion_deepseek
+
+  - rule: Generar recomendación para gestionar_preferencias
+    steps:
+      - intent: gestionar_preferencias
+      - action: action_generar_recomendacion_deepseek
+
+  - rule: Generar recomendación para consultar_datos_historicos
+    steps:
+      - intent: consultar_datos_historicos
+      - action: action_generar_recomendacion_deepseek
+
+  - rule: Generar recomendación para comparar_condiciones
+    steps:
+      - intent: comparar_condiciones
+      - action: action_generar_recomendacion_deepseek
+
+  - rule: Generar recomendación para riesgo_salud
+    steps:
+      - intent: riesgo_salud
+      - action: action_generar_recomendacion_deepseek
+
+  - rule: Generar recomendación para sugerir_ropa
+    steps:
+      - intent: sugerir_ropa
+      - action: action_generar_recomendacion_deepseek
+
+  - rule: Generar recomendación para recomendaciones_salud
+    steps:
+      - intent: recomendaciones_salud
+      - action: action_generar_recomendacion_deepseek
+
+  - rule: Generar recomendación para estado_carreteras
+    steps:
+      - intent: estado_carreteras
+      - action: action_generar_recomendacion_deepseek
+
+  - rule: Generar recomendación para puntos_servicio
+    steps:
+      - intent: puntos_servicio
+      - action: action_generar_recomendacion_deepseek

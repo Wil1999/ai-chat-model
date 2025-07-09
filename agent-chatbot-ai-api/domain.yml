@@ -1,169 +1,207 @@
 version: "3.1"
 
 intents:
+  - recomendar_medidas
   - obtener_pronostico
   - alertas_meteorologicas
-  - calidad_del_aire
   - plan_emergencia
   - reportar_evento
+  - calidad_del_aire
+  - explicar_tipo_desastre
+  - simulacro_fecha
   - refugios_cercanos
   - rutas_evacuacion
-  - simulacro_fecha
-  - explicar_tipo_desastre
+  - ayuda
   - saludo
   - despedida
   - agradecimiento
-  - ayuda
   - intencion_desconocida
   - lenguaje_inapropiado
-  - recomendar_medidas
+  - consultar_temperatura_actual
+  - consultar_humedad_actual
+  - consultar_velocidad_viento
+  - consultar_visibilidad
+  - pronostico_extendido
+  - probabilidad_precipitacion
+  - pronostico_oleaje
+  - pronostico_uv
+  - suscribir_alertas
+  - desuscribir_alertas
+  - gestionar_preferencias
+  - consultar_datos_historicos
+  - comparar_condiciones
+  - riesgo_salud
+  - sugerir_ropa
+  - recomendaciones_salud
+  - estado_carreteras
+  - puntos_servicio
 
-entities:
-  - intensidad
-  - contexto
-  - duracion
-  - region
+responses:
+  utter_saludo:
+    - text: "¡Hola! Soy senamhito, tu asistente meteorológico. ¿En qué puedo ayudarte hoy?"
+    - text: "Saludos, soy senamhito. ¿Listo para conocer el clima?"
+    - text: "¡Hola! Aquí senamhito a tu servicio. ¿Qué información meteorológica necesitas?"
+    - text: "Hola, soy senamhito y estoy preparado para asistirte con datos del tiempo."
+    - text: "¡Buenos días! Senamhito al habla, ¿qué consulta climática tienes?"
+    - text: "¡Buenas tardes! Soy senamhito, ¿cómo puedo ayudarte con el pronóstico?"
+    - text: "¡Hey! Senamhito aquí. ¿Quieres saber la previsión del clima?"
+    - text: "¡Hola! Senamhito a bordo, ¿qué datos meteorológicos requieres?"
+    - text: "¡Buen día! Soy senamhito; dime en qué puedo apoyarte hoy."
+    - text: "¡Hola! Senamhito con datos del tiempo en tiempo real. ¿Qué quieres saber?"
+    - text: "Saludos, soy senamhito. ¿Necesitas alertas o pronósticos?"
+    - text: "¡Hola! Senamhito, ¿qué localidad quieres consultar primero?"
+    - text: "¡Hola, hola! Senamhito aquí. ¿Comenzamos revisando el clima?"
+    - text: "¡Bienvenido! Soy senamhito y estoy listo para tus preguntas meteorológicas."
+    - text: "¡Hey! Senamhito te saluda. ¿Te interesa temperatura, precipitaciones o algo más?"
+    - text: "Hola, soy senamhito. ¿Vamos con datos de viento o calidad del aire?"
+    - text: "¡Hola! Senamhito al habla. ¿Cuál es tu consulta meteorológica?"
+    - text: "Saludos, senamhito aquí para proveer pronósticos y alertas."
+    - text: "¡Hola! Soy senamhito, tu guía en climatología. ¿Qué necesitas?"
+    - text: "¡Hola! Senamhito listo para ayudarte con tu plan de emergencia o clima."
 
-slots:
-  intensidad:
-    type: text
-    influence_conversation: true
-    mappings:
-      - type: from_entity
-        entity: intensidad
+  utter_despedida:
+    - text: "Hasta luego. Cuídate y vuelve cuando necesites datos del clima."
+    - text: "Nos vemos pronto. Senamhito estará aquí para asistirte."
+    - text: "Adiós, que tengas un excelente día. ¡Aquí estaré para tu próxima consulta!"
+    - text: "Chao, cuídate. Senamhito despide."
+    - text: "Fue un placer ayudarte. Hasta la próxima."
+    - text: "Hasta luego, ¡que el clima te acompañe!"
+    - text: "Me despido por ahora. Senamhito al servicio siempre."
+    - text: "Que tengas un buen día. Aquí estaré cuando quieras."
+    - text: "Nos hablamos pronto. ¡Adiós!"
+    - text: "Hasta la próxima, y recuerda que estoy aquí para tu pronóstico."
+    - text: "Gracias por usar mis servicios. Hasta luego."
+    - text: "Cuídate mucho. Senamhito te espera para la próxima consulta."
+    - text: "Que te vaya bien. ¡Hasta pronto!"
+    - text: "Me retiro, pero siempre estaré disponible para ti."
+    - text: "Adiós y buen clima para ti."
+    - text: "Hasta pronto. Senamhito cierra sesión."
+    - text: "Nos vemos luego. ¡Hasta entonces!"
+    - text: "Que tengas un día soleado, nublado o lluvioso según prefieras."
+    - text: "Termino aquí. ¡Vuelve cuando quieras!"
+    - text: "Adiós, ¡mantente informado!"
 
-  contexto:
-    type: text
-    influence_conversation: true
-    mappings:
-      - type: from_entity
-        entity: contexto
+  utter_intencion_desconocida:
+    - text: "Lo siento, senamhito se sigue preparando aún para eso. ¿Quieres datos del clima? Ingresa tu consulta"
+    - text: "No abarco esa solicitud. Puedo ofrecer información sobre pronósticos y alertas meteorológicas."
+    - text: "Esa petición está fuera de mi alcance. ¿Te interesa información climatológica?"
+    - text: "No tengo registro de esa intención. ¿Buscas algo relacionado con el tiempo?"
+    - text: "Disculpa, no sé responder eso. Puedo ayudarte con climatología."
+    - text: "Esa consulta no está soportada. ¿Quieres un pronóstico o alerta?"
+    - text: "Lo siento, no puedo realizar esa acción. ¿Te interesa el clima?"
+    - text: "No entiendo tu solicitud. Puedo proporcionar datos de temperatura, viento, humedad..."
+    - text: "Senamhito no maneja esa temática. ¿Hablamos de pronósticos meteorológicos?"
+    - text: "Esa instrucción no coincide con mis funciones. ¿Quieres una alerta climática?"
+    - text: "No puedo ayudarte con eso, pero puedo darte información del tiempo."
+    - text: "Intención desconocida. Puedo mostrarte calidad del aire o rutas de evacuación."
+    - text: "Lo siento, no tengo esa funcionalidad. ¿Buscas datos de precipitaciones?"
+    - text: "No reconozco esa petición. ¿Quieres consultar el pronóstico extendido?"
+    - text: "Esa solicitud está fuera de mi dominio. ¿Prefieres datos climáticos?"
+    - text: "Disculpa, no puedo atender esa petición. ¿Te interesa un plan de emergencia?"
+    - text: "No dispongo de esa información. Puedo informarte sobre alertas meteorológicas."
+    - text: "Intención no válida. ¿Quieres recomendaciones de salud climatológica?"
+    - text: "Esa pregunta no está relacionada con el clima. ¿Algo climatológico?"
+    - text: "No reconozco esa orden. Puedo suscribir alertas o mostrar pronósticos."
 
-  duracion:
-    type: text
-    influence_conversation: true
-    mappings:
-      - type: from_entity
-        entity: duracion
+  utter_agradecimiento:
+    - text: "¡De nada! Senamhito aquí para ayudarte cuando lo necesites."
+    - text: "Con gusto. Me alegra haber sido de utilidad."
+    - text: "¡Un placer! Aquí estaré para tu próxima consulta."
+    - text: "Para servirte. Senamhito siempre a tu disposición."
+    - text: "¡Encantado de ayudar! Vuelve cuando quieras."
+    - text: "¡Listo! Si necesitas más, solo avísame."
+    - text: "¡Genial! Me alegra haber colaborado."
+    - text: "Gracias a ti por confiar en senamhito."
+    - text: "¡Feliz de ayudar! ¿Algo más que quieras saber?"
+    - text: "¡Excelente! Avísame si necesitas más datos."
+    - text: "¡De nada! No dudes en preguntarme de nuevo."
+    - text: "Aquí estaré. ¡Gracias por usar senamhito!"
+    - text: "Me alegra haber sido útil. Vuelve pronto."
+    - text: "¡Con mucho gusto! Estoy para servirte."
+    - text: "Gracias por tu confianza. Senamhito responde siempre."
+    - text: "Un placer asistirte. ¿Algo más?"
+    - text: "¡Perfecto! Cuenta conmigo para futuras consultas."
+    - text: "¡Encantado! Avísame si hay algo más."
+    - text: "¡Gracias a ti! Aquí senamhito al rescate."
+    - text: "¡De nada! ¿Quieres otra consulta meteorológica?"
 
-  region:
-    type: text
-    influence_conversation: true
-    mappings:
-      - type: from_entity
-        entity: region
+  utter_lenguaje_inapropiado:
+    - text: "Por favor, mantén un lenguaje respetuoso."
+    - text: "No tolero insultos. Hablemos de meteorología."
+    - text: "Senamhito solicita un tono apropiado."
+    - text: "Esa expresión no es adecuada. Soy tu asistente del clima."
+    - text: "Mantén un lenguaje educado para que pueda ayudarte."
+    - text: "Por favor, evita palabrotas. Hablemos de clima."
+    - text: "Ese tono no es correcto. Centrémonos en el pronóstico."
+    - text: "Solicito respeto en la conversación."
+    - text: "No responderé a ese tipo de lenguaje."
+    - text: "Por favor, reformula tu mensaje sin insultos."
+    - text: "Mantén la cortesía. Soy senamhito, tu asistente."
+    - text: "No se permiten expresiones ofensivas."
+    - text: "Esa frase es inapropiada. Volvamos al tema meteorológico."
+    - text: "Solicito un trato respetuoso para continuar."
+    - text: "Ese lenguaje no está permitido."
+    - text: "Por favor, utiliza un tono adecuado."
+    - text: "No responderé si continúan los insultos."
+    - text: "Ese tipo de palabras no son aceptadas aquí."
+    - text: "Solicito cordialidad en nuestras interacciones."
+    - text: "Senamhito no discute si hay groserías."
+  utter_default:
+    - text: "Lo siento, no entiendo tu solicitud. ¿Podrías reformularla?"
+    - text: "No logro reconocer esa petición. Intenta preguntarme otra vez."
+    - text: "Esa instrucción no está en mi repertorio. ¿Quieres datos del clima?"
+    - text: "Disculpa, no sé cómo ayudarte con eso. ¿Algo climatológico?"
+    - text: "No comprendo esa solicitud. Prueba con otro tipo de consulta meteorológica."
+    - text: "Esa petición está fuera de mi alcance. ¿Te interesa un pronóstico?"
+    - text: "Lo siento, no tengo registro de esa intención. ¿Hablamos del tiempo?"
+    - text: "No entiendo tu mensaje. Puedo ofrecerte alertas y pronósticos."
+    - text: "No estoy entrenado para eso. ¿Quieres un informe climático?"
+    - text: "Esa función no está disponible. ¿Te gustaría un pronóstico extendido?"
+    - text: "No reconozco esa orden. ¿Buscas información sobre precipitaciones?"
+    - text: "Disculpa, no puedo procesar esa solicitud. ¿Quieres consultar la temperatura?"
+    - text: "No tengo esa capacidad. Puedo ayudar con calidad del aire, viento, lluvia..."
+    - text: "Esa consulta no corresponde a mis funciones. ¿Te sirvo un pronóstico?"
+    - text: "Intención desconocida. ¿Hablamos de alertas meteorológicas?"
+    - text: "No sé cómo responder a eso. ¿Quieres datos de humedad o visibilidad?"
+    - text: "No encuentro esa opción. ¿Buscas recomendaciones de salud climática?"
+    - text: "Esa petición no aplica a este servicio. ¿Prefieres verificar rutas de evacuación?"
+    - text: "Lo siento, esa solicitud escapa a mi dominio. ¿Necesitas un plan de emergencia?"
+    - text: "No estoy seguro de cómo ayudarte con eso. ¿Prefieres consultar oleaje?"
+    - text: "No reconozco esa petición. Puedo suscribir alertas o mostrar datos históricos."
+    - text: "Esa temática no está cubierta. ¿Quieres información sobre polen o UV?"
+    - text: "Disculpa, no manejo ese tema. ¿Te interesa la probabilidad de lluvia?"
+    - text: "No entiendo esa solicitud. Puedo informar sobre calidad del aire y polvo."
+    - text: "Esa acción no está definida. ¿Buscas el pronóstico de oleaje?"
+    - text: "Lo siento, no dispongo de esa funcionalidad. ¿Quieres saber la temperatura?"
+    - text: "No reconozco esa frase. ¿Buscamos datos de viento o humedad?"
+    - text: "Esa orden no existe. ¿Necesitas un plan de emergencia familiar?"
+    - text: "No tengo respuesta para eso. ¿Deseas consultar el pronóstico extendido?"
+    - text: "Lo siento, no puedo realizar esa tarea. ¿Te gustaría un informe de AQI?"
+    - text: "No comprendo esa instrucción. ¿Quieres consultar carreteras o refugios?"
+    - text: "Esa petición no es válida. Puedo ayudar con simulacros y evacuaciones."
+    - text: "Intención no reconocida. ¿Te interesa un plan de evacuación?"
+    - text: "No sé cómo procesar esa solicitud. ¿Deseas un informe de hawaic? (sic)"
+    - text: "Disculpa, esa consulta no está soportada. ¿Quieres alertas de vendavales?"
+    - text: "No entiendo esa petición. Prueba preguntando por número de refugios."
+    - text: "Esa solicitud es ambigua. ¿Quieres datos de probabilidad de tormentas?"
+    - text: "Lo siento, no puedo actuar en eso. ¿Te gustaría ver datos históricos?"
+    - text: "No reconozco esa función. ¿Quieres consultar tu región por defecto?"
+    - text: "Esa petición no se ajusta a mis capacidades. ¿Necesitas consejos de ropa?"
+    - text: "No manejo esa solicitud. ¿Hablamos de clima y salud?"
+    - text: "Esa función no está habilitada. ¿Quieres un análisis comparativo?"
+    - text: "Lo lamento, no puedo atender eso. ¿Necesitas ayuda para configurar alertas?"
+    - text: "No comprendo esa petición. ¿Te interesa el pronóstico UV?"
+    - text: "Intención fuera de rango. ¿Quieres datos de oleaje o visibilidad?"
+    - text: "Esa orden no es legible para mí. ¿Buscas un plan de emergencia?"
+    - text: "No puedo ayudarte en eso. ¿Puedo ofrecerte un pronóstico de 15 días?"
+    - text: "Esa petición no está en mi dominio. ¿Quieres probar con otra consulta?"
+    - text: "Lo siento, no sé qué hacer con esa solicitud. ¿Te ofrezco alertas?"
+    - text: "No comprendo tu último mensaje. ¿Deseas consultar rutas de evacuación?"
+
 
 actions:
   - action_generar_recomendacion_deepseek
 
-responses:
-  utter_default:
-    - text: 'Lo siento, no entiendo tu mensaje. Por favor, proporciona un mensaje relacionado con recomendaciones ante avisos meteorológicos.'
-    - text: 'No logramos identificar la alerta meteorológica. ¿Podrías describirla nuevamente?'
-    - text: 'El mensaje no coincide con los formatos esperados de aviso climático. ¿Podrías reformularlo?'
-    - text: 'No se reconoció un tipo de evento meteorológico en tu mensaje. Intenta con más detalle.'
-    - text: 'Lamentablemente no entendí la región o fenómeno climático que mencionas. ¿Puedes intentar otra vez?'
-    - text: 'Por favor, indica la intensidad, duración o zona del aviso para poder ayudarte mejor.'
-    - text: 'Tu mensaje no pudo ser asociado a una advertencia meteorológica conocida. Reformúlalo, por favor.'
-    - text: 'No pude identificar un evento climático válido. ¿Podrías reformular tu consulta?'
-    - text: '¿Puedes incluir detalles como tipo de fenómeno o ubicación?'
-    - text: 'El mensaje no contiene datos suficientes sobre el aviso. Intenta nuevamente.'
-    - text: '¿Se trata de lluvias, vientos, granizo...? Necesito más contexto para ayudarte.'
-    - text: 'Este asistente solo responde a eventos meteorológicos. Reformula tu solicitud con más precisión.'
-    - text: 'No encontré una intención relacionada a condiciones climáticas. ¿Puedes detallarlo más?'
-    - text: 'El sistema no logró procesar correctamente tu alerta. Intenta escribirla de otra forma.'
-    - text: '¿Tu consulta se refiere a un aviso de lluvia, neblina u otro fenómeno? Especifícalo, por favor.'
-    - text: 'Lo siento, no comprendí la emergencia meteorológica. ¿Puedes reformularla?'
-    - text: 'No pude asociar tu mensaje con ningún patrón de alerta. Prueba con otra redacción.'
-    - text: 'Faltan datos como duración o zona de impacto en el mensaje. ¿Puedes completarlos?'
-    - text: 'Por favor, incluye términos como "alerta", "intensidad" o "región afectada".'
-    - text: 'Este mensaje no parece contener información meteorológica válida. Intenta de nuevo.'
-    - text: 'Si estás reportando un aviso, agrega detalles como fechas o áreas impactadas.'
-    - text: '¿Te refieres a un evento climático? No logré identificarlo. Intenta otra vez.'
-    - text: 'No pude interpretar la zona o el tipo de alerta. ¿Puedes reformularlo?'
-    - text: 'Tu solicitud no contiene un fenómeno meteorológico claro. Intenta otra vez.'
-    - text: 'Faltan datos clave para procesar tu consulta. Reescríbela con más detalle.'
-    - text: 'Este asistente está entrenado para responder a alertas meteorológicas. Reformula tu mensaje con esos datos.'
-    - text: 'No puedo generar recomendaciones sin saber el tipo de alerta o su localización.'
-    - text: 'Lo siento, no logré identificar un evento meteorológico relevante. Reformula tu consulta.'
-    - text: '¿Podrías indicar si se trata de una alerta por calor, frío, lluvia...?'
-    - text: 'Necesito más información para darte una sugerencia útil sobre el clima.'
-    - text: 'No comprendí la alerta meteorológica. Por favor incluye los detalles necesarios.'
-    - text: '¿Te refieres a un aviso vigente o futuro? Indica la duración si es posible.'
-    - text: 'Por favor, indícanos si el evento afecta a alguna región específica.'
-    - text: 'No logré procesar tu mensaje como una solicitud sobre el clima. Reformúlalo.'
-    - text: 'Si el fenómeno es leve, moderado o fuerte, por favor indícalo.'
-    - text: 'No pude detectar la ubicación mencionada en tu alerta. Inténtalo de nuevo.'
-    - text: 'Tu mensaje no está alineado con los tipos de eventos meteorológicos que manejo.'
-    - text: 'Agrega palabras clave como "tormenta", "granizo" o "ola de calor" para identificar mejor el evento.'
-    - text: 'No entendí tu reporte climático. Intenta ser más específico.'
-    - text: 'El sistema espera estructuras como "duración" o "zona de impacto". Reformula tu mensaje.'
-    - text: '¿Podrías indicar a qué fenómeno climático te refieres?'
-    - text: 'Este canal responde ante riesgos meteorológicos. Por favor, sé más preciso en tu alerta.'
-    - text: 'Tu mensaje no coincide con nuestras categorías de advertencia. Reformúlalo.'
-    - text: 'La alerta meteorológica no fue entendida. Incluye intensidad o área.'
-    - text: 'No se reconoció el contexto del evento climático. ¿Puedes aclararlo?'
-    - text: 'Para ayudarte mejor, indícanos qué tipo de fenómeno estás reportando.'
-    - text: 'No está claro si se trata de un evento atmosférico o una solicitud general. Reformúlalo.'
-    - text: 'Tu mensaje no se relaciona con los eventos monitoreados por nuestro sistema.'
-    - text: 'Si tienes una alerta, indícanos también la fecha o el rango de duración.'
-    - text: 'No comprendimos el tipo de situación meteorológica. Reformula tu alerta.'
-  utter_obtener_pronostico:
-    - text: "Genera un mensaje general de orientación sobre cómo interpretar el pronóstico diario en Perú. No accedas a información en tiempo real ni menciones regiones. Usa lenguaje claro, coherente y profesional. Máximo 100 palabras."
-    - text: "Redacta una recomendación estándar sobre cómo prepararse ante el clima diario en Perú. No uses datos en línea. Evita tecnicismos y zonas específicas. Máximo 100 palabras."
-    - text: "Ofrece sugerencias generales sobre qué esperar del clima diario en Perú. No se permite acceder a datos externos. La redacción debe ser clara, sin nombres de lugares, y no debe superar las 100 palabras."
-    - text: "Proporciona un mensaje profesional sobre condiciones climáticas típicas diarias en Perú, sin referirse a datos actuales. Máximo 100 palabras, sin tecnicismos ni menciones geográficas."
-    - text: "Redacta un mensaje de orientación profesional sobre condiciones habituales del clima diario en Perú. No accedas a fuentes externas ni incluyas ubicaciones. Usa como máximo 100 palabras."
-  utter_alertas_meteorologicas:
-    - text: "Ofrece recomendaciones generales ante posibles alertas meteorológicas en Perú. No accedas a internet ni menciones zonas específicas. Redacta con lenguaje claro y profesional. Máximo 100 palabras."
-    - text: "Redacta un mensaje estándar que informe qué hacer si se emite una alerta climática en Perú. No uses información en tiempo real ni nombres de localidades. Máximo 100 palabras."
-    - text: "Indica protocolos y sugerencias comunes ante fenómenos meteorológicos severos en Perú. No se permite consultar fuentes externas. La respuesta debe ser profesional y clara, sin exceder 100 palabras."
-    - text: "Entrega pautas generales sobre cómo actuar ante una alerta meteorológica. No menciones lugares ni utilices datos online. Redacta con tono formal. Hasta 100 palabras."
-    - text: "Proporciona recomendaciones preventivas frente a condiciones climáticas adversas comunes en Perú. No incluyas información en vivo ni menciones ubicaciones. Máximo 100 palabras."
-  utter_calidad_del_aire:
-    - text: "Proporciona recomendaciones generales en caso de baja calidad del aire en Perú. No uses datos en tiempo real. La respuesta debe estar basada en sugerencias del MINSA o SENAMHI y no superar 100 palabras."
-    - text: "Redacta medidas preventivas si la calidad del aire pudiera estar afectada en el territorio peruano. No consultes fuentes en línea. Limítate a sugerencias de salud pública en un máximo de 100 palabras."
-
-  utter_plan_emergencia:
-    - text: "Resume las recomendaciones para elaborar un plan de emergencia familiar en Perú. Incluye mochila de emergencia, zonas seguras, roles y prácticas. Sé claro, profesional y no superes 100 palabras."
-    - text: "Indica cómo diseñar un plan de emergencia según protocolos peruanos. Menciona puntos clave como evacuación, insumos, roles familiares y prácticas periódicas. Máximo 100 palabras."
-
-  utter_reportar_evento:
-    - text: "Indica cómo reportar un evento relacionado con fenómenos naturales en Perú. Menciona canales como INDECI, Defensa Civil o línea 119. No uses datos externos. Respuesta breve y profesional."
-    - text: "Sugiere acciones inmediatas si alguien desea informar sobre una emergencia climática en Perú. Limítate a mencionar autoridades oficiales y medidas de autoprotección. Máximo 100 palabras."
-
-  utter_refugios_cercanos:
-    - text: "Brinda recomendaciones generales para ubicar un refugio durante una emergencia en Perú. No uses mapas. Sugiere acudir a zonas altas, centros comunitarios o puntos oficiales. Máximo 100 palabras."
-    - text: "Expón cómo actuar para encontrar zonas seguras en situaciones de riesgo en Perú. Menciona entidades locales y planes municipales. La respuesta debe ser clara, sin acceso a datos en tiempo real."
-
-  utter_rutas_evacuacion:
-    - text: "Orienta sobre cómo establecer rutas de evacuación seguras en Perú, sin información dinámica. Cita prácticas del INDECI y consejos para identificar zonas seguras. Redacción clara y profesional."
-    - text: "Explica cómo planificar rutas de evacuación siguiendo protocolos nacionales. No incluyas mapas. Limita la respuesta a recomendaciones válidas en Perú en un máximo de 100 palabras."
-
-  utter_simulacro_fecha:
-    - text: "Aclara que no se tiene acceso a fechas actuales de simulacros en Perú. Recomienda consultar fuentes oficiales como INDECI o municipalidades. Usa un lenguaje profesional y breve."
-    - text: "Indica que el modelo no accede a cronogramas en línea, pero sugiere seguir canales oficiales del gobierno peruano para conocer fechas de simulacros. Mantén un tono informativo y claro."
-
-  utter_explicar_tipo_desastre:
-    - text: "Define qué es un huaico y cómo actuar ante su ocurrencia. Usa referencias educativas básicas del Perú y protocolos de respuesta. Máximo 100 palabras con tono profesional."
-    - text: "Explica en términos sencillos qué es un sismo y cómo responder. Basado en protocolos de emergencia nacionales. No incluyas cifras ni enlaces externos. Sé claro y conciso."
-
-  utter_saludo:
-    - text: "Hola. ¿En qué puedo orientarte sobre prevención ante desastres o medidas ante condiciones climáticas según protocolos del Perú?"
-    - text: "Saludos. Estoy aquí para darte apoyo informativo sobre emergencias y recomendaciones avaladas por entidades peruanas. ¿Cómo puedo ayudarte?"
-
-  utter_despedida:
-    - text: "Gracias por tu consulta. Recuerda seguir las recomendaciones de Defensa Civil e INDECI. Mantente preparado y atento a fuentes oficiales."
-    - text: "Ha sido un gusto ayudarte. Mantente alerta y preparado según las indicaciones de autoridades peruanas. Hasta pronto."
-
-  utter_agradecimiento:
-    - text: "Con gusto. Espero que las sugerencias te sean útiles. Recuerda seguir siempre fuentes oficiales como el COEN o el MINSA."
-    - text: "Estoy para ayudarte. Ante cualquier situación, prioriza tu seguridad y consulta información validada por instituciones peruanas."
-
-  utter_ayuda:
-    - text: "Puedes consultarme sobre recomendaciones generales ante lluvias, huaicos, sismos o planes de emergencia. Mis respuestas siguen protocolos establecidos en Perú."
-    - text: "Estoy preparado para orientarte en prevención de desastres según prácticas oficiales en Perú. Pregúntame sobre rutas, simulacros o qué hacer ante emergencias."
-
-  utter_lenguaje_inapropiado:
-    - text: "Agradezco mantener un lenguaje respetuoso. Estoy disponible para entregarte recomendaciones útiles de forma profesional."
-    - text: "Por favor, utiliza un tono adecuado. Estoy aquí para ayudarte siguiendo protocolos de prevención y respuesta usados en Perú."
+session_config:
+  session_expiration_time: 240
+  carry_over_slots_to_new_session: true
