@@ -57,7 +57,7 @@ class ActionGenerarRecomendacionDeepseek(Action):
                 prompt_final = (
                     f"Tu tarea es analizar el siguiente escenario climático y proporcionar recomendaciones claras, prácticas y basadas en evidencia para proteger a la población,\n"
                     f"Que la respuesta sea como máximo 150 palabras con un mensaje claro y profesional y no actues como robot, para generar las recomendaciones considera la siguiente información:\n"
-                    f"Frase clave: {resp_recom['mensaje']},\n"
+                    f"Frase clave: {resp_recom['frase']},\n"
                     f"{resp_recom['prompt']},\n"
                     f"Dentro de la respuesta considera los siguientes enlaces informativos: {resp_recom['enlaces']},\n"
                 )
