@@ -1,5 +1,6 @@
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk.events import BotUttered
 import requests
 
 class ActionGenerarRecomendacionDeepseek(Action):
@@ -45,7 +46,7 @@ class ActionGenerarRecomendacionDeepseek(Action):
             texto_final = raw.encode("utf-8", "replace").decode("utf-8")
 
             # 5. Único dispatcher.utter_message
-            dispatcher.utter_message(text=texto_final)
+            return [BotUttered(text=texto_final)]
 
         except Exception as e:
             dispatcher.utter_message(
