@@ -34,6 +34,7 @@ services:
   rasa:
     image: rasa/rasa:3.6.20-full
     network_mode: "host"
+    user: "0"
     volumes:
       - ./:/app
     command:
