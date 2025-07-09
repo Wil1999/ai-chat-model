@@ -22,11 +22,11 @@ async def chat(request: Request):
         return enviar_a_rasa(mensaje)
     
     prompt_final = (
-        f"Tu tarea es analizar el siguiente escenario climático y proporcionar recomendaciones claras, prácticas y basadas en evidencia para proteger a la población,\n"
+        f"Analizar el siguiente escenario climático y proporcionar recomendaciones claras, prácticas y basadas en evidencia para proteger a la población, \n"
         f"Que la respuesta sea como máximo 150 palabras con un mensaje claro y profesional y no actues como robot, para generar las recomendaciones considera la siguiente información:\n"
         f"Frase clave: {mensaje},\n"
         f"{prompt},\n"
-        f"Dentro de la respuesta considera los siguientes enlaces informativos: {enlaces},\n"
+        f"Es sumamente importante cuando realices la respuesta se debe presentar y/o referenciar el siguiente enlace: {enlaces},\n"
     )
     response = await enviar_a_agente_ia(prompt=prompt_final)
     return response

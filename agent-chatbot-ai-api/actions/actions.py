@@ -31,11 +31,11 @@ class ActionGenerarRecomendacionDeepseek(Action):
 
             # Construcción del prompt para el modelo IA
             prompt_final = (
-                f"Tu tarea es analizar el siguiente escenario climático y proporcionar recomendaciones claras, prácticas y basadas en evidencia para proteger a la población,\n"
+                f"Analizar el siguiente escenario climático y proporcionar recomendaciones claras, prácticas y basadas en evidencia para proteger a la población,\n"
                 f"Que la respuesta sea como máximo 150 palabras con un mensaje claro y profesional y no actúes como robot, para generar las recomendaciones considera la siguiente información:\n"
                 f"Frase clave: {resp_recom['frase']},\n"
                 f"{resp_recom['prompt']},\n"
-                f"Dentro de la respuesta considera los siguientes enlaces informativos: {resp_recom['enlaces']},\n"
+                f"Es sumamente importante cuando realices la respuesta se debe presentar y/o referenciar el siguiente enlace: {resp_recom['enlaces']},\n"
             )
 
             payload_ia = {"prompt": prompt_final}
