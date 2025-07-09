@@ -46,9 +46,10 @@ class ActionGenerarRecomendacionDeepseek(Action):
             data_ia = response_ia.json()
             respuesta_modelo = data_ia.get("respuesta", [])
 
-            # Enviar solo el primer mensaje si es lista, o directamente si es string
-            if isinstance(respuesta_modelo, list) and len(respuesta_modelo) > 0:
-                dispatcher.utter_message(text=respuesta_modelo[0])
+           # Si es lista, unir todo en un solo texto
+            if isinstance(respuesta_modelo, list):
+                texto_unico = "\n\n".join(respuesta_modelo)
+                dispatcher.utter_message(text=texto_unico)
             elif isinstance(respuesta_modelo, str):
                 dispatcher.utter_message(text=respuesta_modelo)
             else:
