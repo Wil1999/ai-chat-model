@@ -32,7 +32,7 @@ async def chat(request: Request):
     response = await enviar_a_agente_ia(prompt=prompt_final)
     return response
 
-@app.get("/parametros")
+@app.post("/parametros")
 async def parametros(request: Request):
     body = await request.json()
     levelName = body["level"]
