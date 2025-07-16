@@ -11,8 +11,6 @@ services:
       - "5000:5000"
     restart: unless-stopped
     environment:
-      - SCHEMA=SISCTRL2
-      - URL_CONNECTION=oracle+cx_oracle://SISCTRL2:SISCTRL2@172.25.0.188:1521/?service_name=DESAOTI
       - API_KEY_SEARCH_CUSTOM_ENGINE=AIzaSyAIEUUHD4lTAYMqhr1MnC9UoEtcZC3Ula4
       - CX_SEARCH_CUSTOM_ENGINE=222cc59320c3a4cde
     command: ["python", "mode_semantic.py"]

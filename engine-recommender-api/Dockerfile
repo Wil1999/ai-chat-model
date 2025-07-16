@@ -1,4 +1,4 @@
-FROM python:3.9-slim
+FROM python:3.11-slim
 
 # Configuración básica
 ENV DEBIAN_FRONTEND=noninteractive
@@ -10,6 +10,14 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libaio1 wget unzip gcc build-essential && \
     rm -rf /var/lib/apt/lists/*
+
+RUN apt-get update && \
+    apt-get install -y openjdk-17-jdk && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+ENV PATH=$JAVA_HOME/bin:$PATH
 
 RUN mkdir -p /opt/oracle && \
     cd /opt/oracle && \
@@ -24,6 +32,7 @@ COPY requirements.txt .
 
 # 3. Instalar las dependencias Python (esto se cachea si requirements.txt no cambia)
 RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --upgrade pip setuptools wheel && \
     pip install --no-cache-dir -r requirements.txt
 
 # 4. Copiar el resto del código (cambia más seguido)
