@@ -9,7 +9,7 @@
 #     environment:
 #       - PYTHONUNBUFFERED=1
 #     volumes:
-      # - .:/app
+#       - .:/app
 
 version: '3.9'
 
